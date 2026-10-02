@@ -1,6 +1,6 @@
 {
  "source": "https://epapers2.org/ius2026/ESR/session_sched_view.php?sched_id=1,2",
- "fetched": "2026-09-20",
+ "fetched": "2026-10-02",
  "sessions": [
   {
    "id": 54,
@@ -75,8 +75,8 @@
      "authors": [
       "Esteban Avilés",
       "Christian Soto",
-      "Adriana Romero",
       "Arelí Sanchez",
+      "Adriana Romero",
       "Andres Coila",
       "Roberto Lavarello"
      ],
@@ -400,16 +400,18 @@
       "Yvonne Sautriot",
       "Mohamed Heikal",
       "Pietro Simeoni",
-      "Tatiana Khokhlova",
+      "Gaia Giubilei",
       "Matteo Rinaldi",
-      "Soner Sonmezoglu"
+      "Tatiana Khokhlova",
+      "Sone..."
      ],
-     "abstract": "Lung cancer remains a leading cause of cancer-related mortality globally, and early malignancy assessment is critical for improving survival. We present a 0.5 mm-diameter, 60-element PMUT array as a key step toward a miniaturized endobronchial photoacoustic imaging (EB-PAI) probe. The long-term goal is to use the PMUT array to form an EB-PAI probe that combines optical absorption contrast and ultrasound-scale imaging depth to enable high-resolution 3D imaging of structural and functional biomarkers for early-stage lung nodule assessment. We fabricated the miniaturized PMUT array, characterized its frequency response and sensitivity, and used it to image a black wire phantom. Future work will evaluate animal tumor models to assess the system’s potential for clinical translation.",
+     "abstract": "Lung cancer remains a leading cause of cancer-related mortality globally, and early malignancy assessment is critical for improving survival. We present a 1 mm-diameter, 61-element PMUT array as a key step toward a miniaturized endobronchial photoacoustic imaging (EB-PAI) probe. The long-term goal is to use the PMUT array to form an EB-PAI probe that combines optical absorption contrast and ultrasound-scale imaging depth to enable high-resolution 3D imaging of structural and functional biomarkers for early-stage lung nodule assessment. We fabricated the miniaturized PMUT array, characterized its frequency response and sensitivity, and used it to image a black wire phantom. Future work will evaluate animal tumor models to assess the system’s potential for clinical translation.",
      "keywords": [
-      "PMUT",
-      "Photoacoustic",
-      "3D imaging",
-      "Endobronchial Imaging"
+      "Endobronchial imaging",
+      "photoacoustic imaging",
+      "pMUT",
+      "three-dimensional imaging",
+      "ultrasound array"
      ]
     },
     {
@@ -974,7 +976,7 @@
      "authors": [
       "Yvonne Sautriot",
       "Ahmed Zikrallah",
-      "Ahmet Alp Derin",
+      "Alp Derin",
       "Mohamed Heikal",
       "Pietro Simeoni",
       "Matteo Rinaldi",
@@ -1035,11 +1037,10 @@
      "id": 8141,
      "topic": "5.8",
      "topicName": "Piezoelectric and Other Materials (TPM)",
-     "title": "Impact of Titanium Encapsulation and ECoG Electrodes on the Acoustic Field of an UltrasoundECoG Implant Prototype : An Experimental Study",
+     "title": "Impact of Titanium Encapsulation and ECoG Electrodes on the Acoustic Field of an UltrasoundECoG Implant Prototype : an Experimental Study",
      "authors": [
       "Frank Nicolet",
       "Laurent Gerfault",
-      "Guillaume Charvet",
       "Fabien Sauter"
      ],
      "abstract": "Our group developed a 64-channel ECoG device to restore movement in disabled patients. To close the sensorimotor loop, we aim to integrate intracranial ultrasound (IUS) for chronic sensory feedback. However, clinical implants require biocompatible enclosures (typically titanium), whose effect on ultrasound fields remains poorly characterized. We investigate how Ti encapsulation and platinum ECoG electrodes affect a PZT transducer's pressure field. A PZT transducer was tested in three configurations: (1) bare in water; (2) mounted in the Ti housing; (3) with a platinum electrode array and silicone layer added. Pressure fields were mapped via hydrophone. PZT-on-Ti compatibility was assessed by recording ECoG noise on 4 electrodes with and without 60 Vpp ultrasound. The unoptimized Ti casing attenuates ultrasound comparably to skull, yet platinum electrodes partially counteract this by focusing the beam, recovering near-bare-transducer pressures at ~2 mm depth. Resolution reached 2.43 mm (z) and 1.48 mm (x). ECoG recordings showed no signal degradation with PZT integration. These results support IUS as a viable sensorimotor loop closure strategy.",
@@ -1364,9 +1365,9 @@
      "id": 8513,
      "topic": "6",
      "topicName": "Invited Presentations",
-     "title": "* INVITED * In vivo evaluation of safety and performance of a novel microbubble enhanced ultrasound pharmacomechanical procedure in animal models and initial human clinical trials",
+     "title": "* INVITED * In Vivo Evaluation of Safety and Performance of a Novel microbubble Enhanced Ultrasound pharmacomechanical Procedure in Animal Models and Initial Human Clinical Trials",
      "authors": [
-      "william Marston"
+      "William Marston"
      ],
      "abstract": "Background: Venous thromboembolism is a common clinical event, reported to cause up to 100,000 deaths annually in the U.S. A novel, pharmaco-mechanical device (ST system) was designed to eliminate acute thrombus from the vasculature. Methods: The ST system* was evaluated for safety and performance in a swine model of iliac vein thrombosis. Safety was evaluated by examination of the treated vessels following necropsy. A pilot study using the ST system in patients with acute DVT was completed to determine the feasibility and safety of the system in clinical use. Results: In the animal model, MMS was performed on clot for an average of 18 minutes. Forward flow restoration was achieved in all cases. Necropsy revealed no significant damage to the vessel walls. In the clinical trial in patients with acute DVT, clot elimination was achieved to re-establish flow in all patients. Conclusions: In a porcine DVT model and an initial human feasibility trial, a new microbubble enhanced ultrasound device was found to significantly reduce thrombus burden while preserving the vein walls. This data supports evaluation of this novel technology in a pivotal prospective human clinical trial.",
      "keywords": [
@@ -1396,7 +1397,7 @@
    "id": 151,
    "code": "A3L-02",
    "title": "MIS: Wave Propagation & Aberration Mitigation",
-   "expected": 6,
+   "expected": 5,
    "day": "Monday",
    "date": "Oct 5th, 2026",
    "time": "14:00-15:30",
@@ -1444,9 +1445,10 @@
      "id": 7248,
      "topic": "1.7",
      "topicName": "Medical Image and Signal Processing (MIS)",
-     "title": "Transcranial Ultrasound Imaging via Eikonal-Based Aberration Correction and Automated Murine Skull Boundary Extraction",
+     "title": "Eikonal-Based Aberration Correction for Mouse Transcranial B-Mode Imaging",
      "authors": [
       "Tieming Liu",
+      "Emma Lubel",
       "Antonios Pouliopoulos",
       "Wenfeng Xia"
      ],
@@ -1496,19 +1498,6 @@
       "Rayleigh scattering",
       "Maximum intensity projection"
      ]
-    },
-    {
-     "id": 7879,
-     "topic": "1.7",
-     "topicName": "Medical Image and Signal Processing (MIS)",
-     "title": "Closed-Loop Cavitation Control via Eigen-Subspace Separation of Passive Acoustic Signals",
-     "authors": [
-      "Mohammad Albuhssin",
-      "Nathan Caso",
-      "Tao Sun"
-     ],
-     "abstract": "",
-     "keywords": []
     }
    ]
   },
@@ -1671,8 +1660,8 @@
      "title": "High-Throughput and Resource-Efficient FPGA Beamforming for Ultrasound Imaging Using Delay Approximation- Initial Results",
      "authors": [
       "Ishant Kumar Bajpai",
-      "Arun Kumar Thittai",
-      "Nitin Chandrachoodan"
+      "Nitin Chandrachoodan",
+      "Arun Kumar Thittai"
      ],
      "abstract": "Ultrasound beamforming is computationally intensive due to high data rates and complex delay calculations, limiting real-time implementation on resource-constrained hardware. This work presents FPGA implementations of CFB-DAS and the diverging-beam BF2 using a Taylor-based delay approximation to reduce complexity. In CFB-DAS, 32 inputs are summed per cycle, while 64 inputs are computed in parallel per clock cycle to form a low-resolution sample, and 57 such samples are accumulated to generate a 32-bit output. Exact delay computation is infeasible on XC7ZU5EG-SFVC784; hence, a linear approximation reduces the operations to one multiply-add per channel. Experimental validation using AFE5832, XC7A100T, and a 5 MHz probe shows CFB-DAS achieves 1500 fps with 94% DSP, 95% FF, and 98% LUT reduction (22% BRAM), while BF2 achieves 26 fps with 88%, 97%, and 98% reductions (44% BRAM), with minimal LR/AR degradation.",
      "keywords": [
@@ -1803,7 +1792,7 @@
      "id": 8501,
      "topic": "3.2",
      "topicName": "General Physical Acoustics (PGP)",
-     "title": "* INVITED * Microwave phononic integrated circuits for sensing and analog computing",
+     "title": "* INVITED * Microwave phononic Integrated Circuits for Sensing and Analog Computing",
      "authors": [
       "Linbo Shao"
      ],
@@ -2088,7 +2077,7 @@
      "id": 8416,
      "topic": "1.10",
      "topicName": "Medical Tissue Characterization (MTC)",
-     "title": "A Flexible Ultrasound Array Patch for Simultaneous, Calibration-Free Monitoring of Carotid Pulse-Wave Velocity and Blood Pressure",
+     "title": "A Flexible Ultrasound Array Patch for Noninvasive Monitoring of Carotid Blood Pressure",
      "authors": [
       "Yuheng Liu",
       "Yuanyuan Wang",
@@ -2098,7 +2087,7 @@
       "Hong Song",
       "Jian Yang"
      ],
-     "abstract": "We present a lightweight flexible ultrasound array patch that enables calibration-free cuffless blood-pressure (BP) monitoring with concurrent vascular-stiffness assessment at the carotid artery. The patch integrates eight 1-3 piezoelectric composite elements at 5 MHz with 4 mm pitch, serpentine FPCB interconnects, and Ecoflex encapsulation, forming a 30 × 5 mm sensing core (~1 g). A decoupled-backing structure, relocating the backing layer above the negative electrode via silver-paste contact, reduces damping and enhances SNR. Carotid wall motion is extracted from M-mode ultrasound using a Kalman tracker, and local pulse-wave velocity (PWV) is computed from inter-element pulse-foot delays. Motion, waveform, and PWV features are fed into a PWV-adaptive framework, in which PWV serves as both an input variable and a stratification cue for systolic and diastolic BP estimation. On 100 measurements from 30 healthy volunteers under leave-one-subject-out cross-validation, the framework achieves R² of 0.978 and 0.909 with mean absolute errors of 2.7 and 3.4 mmHg for SBP and DBP, while simultaneously providing direct local carotid PWV as an indicator of arterial stiffness.",
+     "abstract": "We present a flexible ultrasound array patch that combines local pulse-wave velocity (PWV) with arterial waveform features for noninvasive blood pressure (BP) estimation. The patch integrates eight 5 MHz piezoelectric composite elements at a 4 mm pitch and acquires carotid wall motion at 1000 frames/s. Cross-correlation and spatial fitting of relative arrival times yielded a local PWV of 6.78 m/s. PWV and waveform features were incorporated into partial least-squares regression with PWV-based stratification and smooth weighting of local predictions. Evaluation of 100 paired ultrasound and cuff-reference records from 30 healthy volunteers using measurement-level leave-one-out cross-validation yielded coefficients of determination of 0.97 and 0.86 for systolic and diastolic BP, respectively, with mean absolute errors of 3.27 and 4.13 mmHg. These results support the feasibility of combining local arterial propagation measurements and waveform features for cuff-referenced BP estimation using a flexible ultrasound platform.",
      "keywords": [
       "Flexible ultrasound array",
       "Cuffless blood pressure monitoring",
@@ -2222,7 +2211,6 @@
       "Minghui Jing",
       "Wei Wei",
       "Yuan Wang",
-      "Wei Pang",
       "Yongquan Ma",
       "Pengfei Niu"
      ],
@@ -2259,13 +2247,14 @@
      "id": 8108,
      "topic": "5.5",
      "topicName": "Micromachined Ultrasonic Transducers (TMU)",
-     "title": "Capacitive Micromachined Ultrasound Transducer (CMUT)-Based Linear Array with Beam Steering for Low-Profile Wearable Doppler Ultrasound",
+     "title": "A Beam-Steerable CMUT Linear Array for Vessel Wall Motion Measurement for Wearable Doppler Ultrasound",
      "authors": [
       "Jeong Hoon Kim",
       "Hyeong Geun Jo",
       "Min Chul Kim",
       "Dong Young Kim",
       "Jin Hyuk Kim",
+      "Se Jong Shin",
       "Junmin Lee",
       "Kwan Kyu Park"
      ],
@@ -2453,7 +2442,7 @@
      "id": 8507,
      "topic": "2.3",
      "topicName": "Acoustic Sensors (NAS)",
-     "title": "* INVITED * Sensing in Oil-Gas industry and in Biomedical Applications",
+     "title": "* INVITED * Sensing in Oil-Gas Industry and in Biomedical Applications",
      "authors": [
       "Dipen Sinha"
      ],
@@ -2513,9 +2502,9 @@
      "title": "On the Interplay Between Laser Pulse Width and Absorber Size in Laser diode-Based photoacoustics",
      "authors": [
       "Javier Angel Navarro-Calvo",
-      "Alejandro Cebrecos",
+      "Juan José García-Garrigós",
       "Irene Pi-Martín",
-      "Juan José García-Garrigós"
+      "Alejandro Cebrecos"
      ],
      "abstract": "Low-cost optical sources such as laser diodes (LDs) and LEDs are enabling the translation of photoacoustic (PA) imaging to point-of-care settings, but their lower peak power requires longer pulses (>50 ns), reducing efficiency and shifting the acoustic spectrum to lower frequencies. Here, the PA wave equation is numerically analyzed by jointly considering pulse duration, shape, and absorber size, providing criteria to optimize excitation and detection. The model is validated with a custom LD-based PA microscope using absorbers of 50–150 µm and pulses of 20–150 ns. Results show that PA efficiency depends on the relation between pulse duration and the absorber’s acoustic transient time. Under constant-power conditions, shorter pulses do not necessarily increase pressure amplitude. Asymmetric pulses further reduce efficiency and shift the optimum duration. For small absorbers (<100 µm), pulses longer than ~75 ns are inefficient. Most energy is concentrated below 15 MHz, highlighting trade-offs between resolution, contrast, and penetration depth.",
      "keywords": [
@@ -2566,9 +2555,14 @@
      "id": 8504,
      "topic": "1.7",
      "topicName": "Medical Image and Signal Processing (MIS)",
-     "title": "* INVITED * Continuous emission echography: a new paradigm to break the temporal resolution in ultrasound imaging",
+     "title": "* INVITED * Continuous Emission echography: a New Paradigm to Break the Temporal Resolution in Ultrasound Imaging",
      "authors": [
-      "HERVE LIEBGOTT"
+      "Herve Liebgott",
+      "Benoit Bernas",
+      "Axel Adam",
+      "Mohamed Tamraoui",
+      "Barbara Nicolas",
+      "Adrian Basarab"
      ],
      "abstract": "This talk introduces continuous emission echography as the convergence of sparse array design, compressed acquisitions, and computational methods for image reconstruction. We will outline its core principles, the methods designed to decode the received raw signals and beamform M- and B-mode images, and demonstrate its ability to reach unprecedented imaging speeds—exceeding 100,000 frames per second—through simulations and early experimental results.",
      "keywords": [
@@ -2991,8 +2985,8 @@
       "Madhavanunni A. N.",
       "Clara Cousteix",
       "Barbara Nicolas",
-      "François Varray",
-      "Damien Garcia"
+      "Damien Garcia",
+      "François Varray"
      ],
      "abstract": "We present 3D vascular vector flow mapping (3D-vVFM), a physics-constrained optimization method designed to recover all three velocity components from a single volumetric color Doppler dataset. The 3D velocity field was estimated by minimizing a regularized least-squares cost function that combined a data fidelity term enforcing agreement between the projection of velocity onto the steered beam vector and the measured Doppler velocities, a Tikhonov regularization term to ensure spatial smoothness, and a soft parallel-flow prior to regularize under-determined transverse velocity components. Mass conservation and no-slip wall boundary conditions were enforced as hard constraints. The proposed method was validated with synthetic test cases and CFD based simulations. Experimental feasibility was demonstrated on a commercial vascular flow phantom using a 1024-channel programmable OpenSonics Discovery research system with two transmit steering configurations. The results suggests that 3D-vVFM enables volumetric vascular vector flow estimation from a single color Doppler volume using clinical matrix arrays, offering potential for non-invasive transtenotic pressure estimation.",
      "keywords": [
@@ -3046,7 +3040,7 @@
      "id": 7468,
      "topic": "1.3",
      "topicName": "Blood Flow Measurement (MBF)",
-     "title": "Synthetic Aperture Universal Sequence and Transverse Oscillation for in Vivo Wall Shear Imaging",
+     "title": "Influence of Scan-Line Position and Wall Delineation on in Vivo Wall Shear Stress Estimation",
      "authors": [
       "Julia Cámara Aracil",
       "Alexander Cuculiza Henriksen",
@@ -3428,7 +3422,6 @@
       "Songxin Guo",
       "Yongquan Ma",
       "Shen Cao",
-      "Wei Pang",
       "Pengfei Niu"
      ],
      "abstract": "Aluminum nitride (AlN)-based piezoelectric micromachined ultrasonic transducers (PMUTs) are attractive for wearable ultrasound imaging, but deep-organ applications are still limited by low transmit acoustic pressure, narrow bandwidth, and nonuniform channel responses. Here, we present a high-performance 64-channel AlN-PMUT array designed to improve acoustic output, bandwidth, and channel uniformity. Structural optimization enabled more uniform vibration of micro-elements within each channel, as verified by amplitude and displacement measurements. The silicone-covered array operated at a center frequency of 2 MHz, with a −6 dB fractional bandwidth of 62% and a gain-corrected pulse-echo sensitivity of 54.5 μV/V. Interfaced with a Verasonics system and driven by a 30 V single-cycle sinusoidal pulse, the array achieved phased-array imaging at depths up to 150 mm. Clear cardiac and bladder images demonstrate its potential for wearable deep-organ ultrasound imaging.",
@@ -3468,14 +3461,14 @@
      "id": 8239,
      "topic": "5.6",
      "topicName": "Biomedical Diagnostic and Imaging Transducers (TMI)",
-     "title": "Fully Wearable A-Mode Ultrasound for Real-Time-Compatible Torque Estimation During Weighted Elbow Flexion",
+     "title": "Fully Wearable A-Mode Ultrasound for FES-Evoked Torque Estimation with Adaptive Echo-Profile and Data-Driven Feature Selection",
      "authors": [
       "Xiangming Xue",
       "Vidisha Ganesh",
       "Yu Chu",
       "Huaiyu Wu",
       "Luca Benini",
-      "Spacone Giusy",
+      "Giusy Spacone",
       "Sebastian Frey",
       "Andrea Cossettini",
       "Niti..."
@@ -3499,7 +3492,6 @@
      "authors": [
       "Jiale Su",
       "Yongquan Ma",
-      "Wei Pang",
       "Yuan Wang",
       "Pengfei Niu"
      ],
@@ -3755,7 +3747,7 @@
      "id": 8343,
      "topic": "2.10",
      "topicName": "Structural Health Monitoring (NSH)",
-     "title": "Simultaneous SOC and Temperature Estimation for LFP Batteries at Low Temperatures via Guided Ultrasonic Waves and Convolutional Neural Networks",
+     "title": "State of Charge and Temperature Estimation for Lithium-Ion Batteries at Low Temperatures Using Guided Ultrasonic Waves and 1D-CNN",
      "authors": [
       "Jonghoon Koo",
       "Hyunjun Kim",
@@ -3763,11 +3755,12 @@
      ],
      "abstract": "This study proposes a novel ultrasound-assisted sensing method using Guided Ultrasonic Waves (GUW) and a Convolutional Neural Network (CNN) to simultaneously estimate the State of Charge (SOC) and temperature of LFP batteries in sub-zero environments. Bypassing the limitations of traditional electrical methods at low temperatures, the CNN directly processes raw ultrasonic waveforms to detect internal physicochemical changes without relying on external thermal sensors. The model achieved a Mean Absolute Error (MAE) of 0.92% for SOC and 0.11°C for temperature, providing a robust, thermocouple-free monitoring solution for Battery Management Systems.",
      "keywords": [
-      "Battery",
-      "SoC",
-      "Low Temperature",
-      "Guided Ultrasonic Waves",
-      "Machine Learning"
+      "lithium-ion battery",
+      "low temperature",
+      "state of charge estimation",
+      "temperature estimation",
+      "guided ultrasonic waves",
+      "deep learning"
      ]
     },
     {
@@ -4024,7 +4017,7 @@
      "id": 8247,
      "topic": "1.7",
      "topicName": "Medical Image and Signal Processing (MIS)",
-     "title": "Bayesian Cramér–Rao Bound for Quantifying Speed-of-Sound Imaging Limits",
+     "title": "A Bayesian Cramér–Rao Framework for Evaluating Pulse-Echo Speed-of-Sound Reconstruction",
      "authors": [
       "Jingyi Zuo",
       "Aiguo Han"
@@ -4038,13 +4031,12 @@
      "id": 8424,
      "topic": "1.7",
      "topicName": "Medical Image and Signal Processing (MIS)",
-     "title": "Fourier Neural Operator-Enhanced Physics-Embedded Full Waveform Inversion for Transcranial Ultrasound Sound-Speed Reconstruction",
+     "title": "Fourier Neural Operator-Enhanced Physics-Embedded Full Waveform Inversion for Transcranial Ultrasound Sound-Speed Measurement",
      "authors": [
       "Zixiao Guo",
       "Mengru Hua",
       "Kewei Xiao",
       "Yiwei Yang",
-      "Xu Guo",
       "Qiude Zhang",
       "Bo Ma"
      ],
@@ -4839,7 +4831,7 @@
       "Roberto Lavarello",
       "Andres Coila"
      ],
-     "abstract": "This project extends the pulse-echo depletion method for nonlinearity parameter (B/A) imaging to media with arbitrary power-law attenuation. The original depletion method estimates B/A from fundamental-band depletion but assumes quadratic frequency-dependent attenuation, which can bias estimates in soft tissues. A new closed-form expression for fundamental-band incident pressure was incorporated into an extended depletion model, while preserving the same low/high-pressure acquisition workflow and reference-phantom compensation. The method was validated using matched simulations and physical phantom experiments, including two uniform sample/reference pairs and one nonuniform inclusion phantom. Across uniform cases, the extended model reduced B/A bias from above 10–15% with the original model to below 1–4%. In the nonuniform case, inclusion bias decreased from 29% to 7% in simulation and from 29% to 5% in the phantom. These results suggest that accounting for arbitrary power-law attenuation improves the accuracy of depletion-based pulse-echo B/A imaging.",
+     "abstract": "This project extends the pulse-echo depletion method for nonlinearity parameter (B/A) imaging to media with arbitrary power-law attenuation. The original depletion method estimates B/A from fundamental-band depletion but assumes quadratic frequency-dependent attenuation, which can bias estimates in soft tissues. A new closed-form expression for fundamental-band incident pressure was incorporated into an extended depletion model, while preserving the same low/high-pressure acquisition workflow and reference-phantom compensation. The method was validated using matched simulations and physical phantom experiments, including two uniform sample/reference pairs and one nonuniform inclusion phantom. Across uniform cases, the extended model reduced B/A bias from 11–24% with the original model to below 4%, with simulation biases below 0.1%. In the nonuniform case, inclusion bias decreased from 30% to 7% in simulation and from 29% to 6% in the physical phantom. These results suggest that accounting for arbitrary power-law attenuation improves the accuracy of depletion-based pulse-echo B/A imaging.",
      "keywords": [
       "nonlinearity parameter",
       "arbitrary power-law",
@@ -4890,7 +4882,8 @@
       "Yiliu Wang",
       "Jiunn-Sheng Guo",
       "Motoyuki Tajima",
-      "Joji Fujiwara"
+      "Joji Fujiwara",
+      "Masafumi Iwaki"
      ],
      "abstract": "Conventionally, filters are designed with 50Ohm input and output impedances. Phone makers use matching circuits to shift the impedance to the desired operating point to optimize system performance. In recent years, however, major smartphone makers have increasingly adopted Front-End Module, where filters, Low Noise Amplifiers (LNA), matching networks, Power Amplifiers (PA), and switches are integrated into one module. This integration creates opportunities for co-design and module-level optimization, allowing the filter and surrounding components to be jointly tuned. A non-50Ohm impedance may yield a better overall performance than the 50Ohm design. Two examples illustrate the benefits of non-50Ohm design. (1) The total Rx chain Noise Figure (NF) is determined by the front-end loss combined with the LNA NF, which depends on the noise circle. Compared with a 50Ohm Rx design, using a 70Ohm can yield a lower overall NF. As Double Mode SAW (DMS) can be used as impedance transformer. This allows a SAW filter to bridge the gap between a 50Ohm antenna and a non-50Ohm LNA input impedance. (2) By modifying the Rx filter topology, module-level Tx leakage performance can be improved.",
      "keywords": [
@@ -5204,7 +5197,7 @@
      "id": 8062,
      "topic": "1.7",
      "topicName": "Medical Image and Signal Processing (MIS)",
-     "title": "Nanobubble-Enhanced in Vivo Vascular Imaging Within a Single Breathing Cycle Using High-Frame-Rate Plane-Wave Imaging",
+     "title": "Nanobubble-Enhanced Power Doppler and Peak-Density Imaging of the Mouse Kidney Using High-Frame-Rate Plane-Wave Imaging",
      "authors": [
       "Yu Weng",
       "Niloufar Shirazi",
@@ -5216,7 +5209,7 @@
      "abstract": "Microbubble-based super-resolution ultrasound imaging typically requires minutes-long acquisitions for localization and tracking of sparse individual bubbles. In contrast, the much higher achievable concentrations of nanobubbles (NBs) enable ensemble-based vascular imaging from much shorter data segments. This work investigated whether NB-enhanced in vivo vascular imaging could be achieved from high-frame-rate single-pulse plane-wave imaging (PWI) data acquired within individual breathing cycles. NBs were injected in mice for renal imaging on the Vevo F2 system using a customized PWI sequence. NB-enhanced signals were extracted per breathing cycle using singular value decomposition, followed by power Doppler reconstruction. Peak-density imaging was generated by accumulating detected NB signal peaks. Before NB injection, SVD-based power Doppler from a 0.64 s segment showed limited vascular visibility. After NB injection, power Doppler from 0.6 s revealed richer vasculature, while peak-density imaging from a 0.43 s segment resolved vessels down to ~67 μm versus ~140 μm for matched power Doppler. These results support NB-enhanced vascular imaging within a single breathing cycle.",
      "keywords": [
       "Nanobubbles",
-      "vascular imaging",
+      "contrast-enhanced ultrasound",
       "plane-wave imaging",
       "power Doppler",
       "peak-density imaging"
@@ -5897,6 +5890,9 @@
       "Yubeen Oh",
       "Hojun Kim",
       "Sanghoon Lee",
+      "Jeongyun Lee",
+      "Junhee Lee",
+      "Sua Bae",
       "F. Levent Degertekin",
       "Jaemyung Lim"
      ],
@@ -5916,10 +5912,13 @@
       "Xinzhe Xie",
       "Jinhai Hu",
       "Zhaoyang Cao",
+      "Jiaju Lu",
+      "Siqi Zhang",
       "Wang Ling Goh",
       "Liter Siek",
-      "Abdulkadir C. Yucel",
-      "Yuan Gao"
+      "Duanjian Goh",
+      "Sagnik Ghosh",
+      "Yul..."
      ],
      "abstract": "Ultrasound biomedical imaging requires low-noise receiver (RX) to achieve wider dynamic range. Conventional RXs adopt a wideband low-noise amplifier (LNA) followed by a bandpass filter. As noise is amplified by LNA, power-consuming high-order bandpass filter is required for noise rejection. The bandpass nature of PMUT is not yet fully exploited to optimize RX performance. This paper presents a RX LNA with bandpass response which can be tuned to matched with PMUT for optimum integrated noise with low power consumption.",
      "keywords": [
@@ -5966,7 +5965,7 @@
      "topicName": "Acoustic Wave Filters (AWF)",
      "title": "* INVITED * The Golden Age of Acoustic Resonators & Filters",
      "authors": [
-      "rich ruby"
+      "Rich Ruby"
      ],
      "abstract": "Early on, filters in RF systems were large and bulky. Even with the SAW filter in the early 1990s and FBAR in 2000, the potential seemed small. This changed dramatically starting in 2007 with the launch of Smartphones and the subsequent explosion of small high-quality filters. One of the most expensive components in Smartphones are the 10+ RF Radio Front End modules. The most expensive components inside these modules are the 3 to 50 filters collectively (per module). Filters define the cost. Filters define the size. And Filters define the performance of these modules. All 3 of these orthogonal demands from the customer can be solved with better filters. Currently, there are two competing technologies for high performance filters: Low band modules are dominated by TCSAWs, In the mid band (1.4 to 2.7 GHz), both Guided Wave Surface Acoustic Wave Devices and Free-Standing Bulk-Wave Devices compete. The ‘new frontier’ for acoustic filters are now radio bands above 4 GHz. Two new technologies are emerging; XBAR and RSBARs. Filters are also becoming commoditized Navigating our way through both the challenges of innovation and the horrors of commoditization will be the theme of my talk",
      "keywords": [
@@ -5988,7 +5987,11 @@
       "Chin-Yu Chang",
       "Ella Klein",
       "Pedram Yousefian",
-      "Roy Olsson"
+      "Matt Torpey",
+      "Brian Bersch",
+      "Taylor Brown",
+      "Eric Marksz",
+      "Mich..."
      ],
      "abstract": "Surface acoustic wave (SAW) resonators are critical for compact RF front-end filters, where strong electromechanical coupling is needed for wide-bandwidth operation. AlScN-on-diamond is a promising platform because diamond’s high acoustic velocity and elastic modulus support high-frequency Sezawa modes with larger coupling than Rayleigh modes, although diamond roughness and highly-oriented AlScN film growth remain key challenges. Here, we demonstrate a 4.9 GHz Al₀.₆Sc₀.₄N-on-diamond SAW resonator with 8.42% electromechanical coupling. Resonators with 1.38 μm wavelength were fabricated using e-beam lithography and Al liftoff. Measurements showed Rayleigh and Sezawa resonances at 3.3 and 4.9 GHz, with kₜ² values of 1.53% and 8.42%, respectively. MBVD fitting confirmed strong Sezawa coupling with extracted kₜ² of 7.46%. This work achieves Qp = 367 and the highest reported kₜ² among comparable Sezawa mode AlScN SAW resonators on diamond and SiC, highlighting its potential for frequency-scaled RF communication filters.",
      "keywords": [
@@ -6227,7 +6230,7 @@
      "id": 8516,
      "topic": "7",
      "topicName": "Spotlight Session: Ultrasound Neuromodulation: Devices & Applications",
-     "title": "* INVITED * Focused Ultrasound for Neurological Disorders: From Incisionless Surgery to Neuromodulation",
+     "title": "* INVITED * Focused Ultrasound for Neurological Disorders: from Incisionless Surgery to Neuromodulation",
      "authors": [
       "Vibhor Krishna"
      ],
@@ -6693,7 +6696,6 @@
      "title": "Angular Spectrum Reconstruction of Passive Acoustic Mapping with Spatial Coherence from Sub-Aperture Multiply-and-Sum (SA-MAS)",
      "authors": [
       "Yu-Chun Liu",
-      "Yu-An Hsu",
       "Che-Chou Shen"
      ],
      "abstract": "Passive acoustic mapping (PAM) is vital for monitoring cavitation during HIFU. While the angular spectrum (AS) method is computationally efficient, it suffers from limited axial resolution and high sidelobes. This study proposes a nonlinear AS framework using sub-aperture multiply-and-sum (SA-MAS). The receiving array is partitioned into non-overlapping sub-apertures for independent frequency-domain back-propagation. Their spatial coherence is estimated via the MAS algorithm to suppress incoherent noise and artifacts. The final PAM is synthesized by nonlinearly compounding sub-aperture spectra across a selected frequency range, leveraging inter-group coherence to narrow the point spread function. Simulation results show that SA-MAS significantly enhances image quality. Quantitative analysis reveals that the Image Signal-to-Noise Ratio (ISNR) improves by up to 9 dB and 8 dB for single and dual sources. A partition of 8 sub-apertures provides an optimal balance between complexity and quality, addressing the intrinsic resolution limits of conventional AS methods.",
@@ -6726,6 +6728,7 @@
      "title": "Thermal Diffusion in Laser-Programmed Polymer Acoustic Holograms: Effects and Compensation",
      "authors": [
       "Youlong Hua",
+      "Zhan Zhu",
       "Jian Chen"
      ],
      "abstract": "Conventional acoustic metasurfaces generally have fixed phase profiles, limiting their adaptability. Reconfigurable polymers offer a promising alternative, but their performance depends on both acoustic properties and thermal pattern transfer. The sound-speed contrast between material states determines the film thickness required for phase modulation, whereas film thickness and laser-heating conditions govern writing precision. Here, we examine phase switching in polymers, calculate the thickness required for binary phase modulation, and generate binary holograms using the iterative angular spectrum approach. We then analyze how thermal diffusion expands the molten region and degrades pattern fidelity, and use the measured expansion to precompensate the binary hologram. Experiments show that the compensated pattern more closely reproduces the designed phase distribution and improves the fidelity of the reconstructed acoustic field. These results provide practical guidance for precise and reconfigurable polymer-based acoustic holography.",
@@ -6889,7 +6892,7 @@
      "id": 8127,
      "topic": "1.1",
      "topicName": "Medical Beamforming and Beam Steering (MBB)",
-     "title": "ReFOCUS-Based Spatial-Frequency Apodization for Grating Lobe Suppression in Coherent Multi-Transducer Ultrasound Imaging",
+     "title": "REFoCUS-Based Spatial-Frequency Apodization for Grating Lobe Suppression in Coherent Multi-Transducer Ultrasound Imaging",
      "authors": [
       "Paul Dryburgh",
       "Joseph Hajnal",
@@ -7112,20 +7115,22 @@
      "id": 8384,
      "topic": "5.5",
      "topicName": "Micromachined Ultrasonic Transducers (TMU)",
-     "title": "Spectrum Fusion in Dual-Frequency PMUTs via Excitation-Vibration Phase Shift",
+     "title": "Spectrum Fusion in Dual-Frequency PMUTs via Excitation-Phase Control",
      "authors": [
       "Jinghan Gan",
-      "Chenyuan Song",
+      "Chong Yang",
       "Mingkai Gao",
+      "Junhao Wang",
+      "Chenyuan Song",
       "Bowen Sheng",
       "Yipeng Lu"
      ],
      "abstract": "This work presents an out-of-phase excitation strategy to achieve continuous broadband performance in dual-frequency piezoelectric micromachined ultrasonic transducers (PMUTs) without increasing fabrication complexity. It is revealed that the spectral dip conventionally observed in dual-frequency PMUTs originates from the inherent phase shift between electrical excitation and mechanical vibration, which is determined by the membrane structure. To address this issue, a dual-frequency PMUT was designed and fabricated using a 30% scandium-doped aluminum nitride thin film, featuring circular membranes with two distinct radii and independent electrode pads. Finite element method and modal analysis confirm that the spectral dip stems from vibration phase divergence between units in the mid-frequency region. Experimental results in deionized water demonstrate that the proposed out-of-phase excitation completely eliminates the spectral dip, increasing the -3 dB fractional bandwidth from 18% to approximately 62%—a threefold improvement. This approach offers dual-mode operation for harmonic and broadband imaging using a single transducer.",
      "keywords": [
       "PMUT",
-      "Dual-frequency",
-      "Broadband",
-      "Phase shift"
+      "bandwidth enhancement",
+      "phase control",
+      "ultrasound imaging"
      ]
     },
     {
@@ -7216,8 +7221,9 @@
      "authors": [
       "Jiao Xia",
       "Chong Yang",
-      "Kai Yang",
       "Jing Chen",
+      "Kai Yang",
+      "Chenyuan Song",
       "Bowen Sheng",
       "Yipeng Lu"
      ],
@@ -7253,9 +7259,12 @@
      "title": "Balancing Electrical and Acoustic Losses in High-Frequency BAW Resonators via Geometry Engineering",
      "authors": [
       "Chen Li",
-      "Zhiqiang Mu",
+      "Ruidong Qin",
+      "Wenzheng Jiang",
+      "Wentong Dou",
       "Xuanqi Huang",
-      "Ruidong Qin"
+      "Zhiqiang Mu",
+      "Wenjie Yu"
      ],
      "abstract": "This work investigates active-region geometry engineering to balance electrical and acoustic losses in high-frequency BAW resonators. As frequency increases, thinner piezoelectric stacks and electrodes raise electrode resistance, degrading Zs and Qs. Increasing the length-to-width aspect ratio can reduce current-path resistance and improve series-side performance, but excessive elongation may weaken acoustic confinement and increase acoustic loss. To clarify this trade-off, Al0.8Sc0.2N BAW resonators with the same active area of 1500μm2 and aspect ratios of 2:1, 3:1, 4:1, and 5:1 were designed, fabricated, and characterized. Simulations and de-embedded measurements show that the 2:1 devices exhibit higher Zp and a higher Qp of about 330, compared with about 206 for the 5:1 devices, indicating stronger acoustic confinement and lower acoustic loss. Wafer-level statistics further reveal that larger aspect ratios reduce electrical loss but increase acoustic loss. These results demonstrate that aspect-ratio optimization provides an effective guideline for loss-balanced high-frequency BAW resonators for wideband RF filters.",
      "keywords": [
@@ -7347,11 +7356,15 @@
      "id": 7973,
      "topic": "4.4",
      "topicName": "Microacoustic Resonators (AMR)",
-     "title": "Superior Performance of Al0.8Sc0.2N FBAR Resonator Enabled by Improved Crystallinity of Piezoelectric Film",
+     "title": "Enhanced Performance of Al0.8Sc0.2N FBAR Resonator Enabled by Improved Crystallinity of Piezoelectric Film",
      "authors": [
+      "Junqing Wang",
       "Wenzheng Jiang",
+      "Chen Li",
+      "Ruidong Qin",
       "Xuanqi Huang",
-      "Zhiqiang Mu"
+      "Zhiqiang Mu",
+      "Wenjie Yu"
      ],
      "abstract": "This work systematically evaluates the impact of Al₀.₈Sc₀.₂N film crystallinity on FBAR performance. Two resonators with identical structures but different XRD (002) rocking curve FWHM values (0.44° and 1.54°) were compared. The high-crystallinity device achieved a significantly higher Q (~1573 vs. ~374) and improved kₑff² (13.3% vs. 11.7%). MBVD analysis shows that improved crystallinity reduces dielectric loss resistance R₀ (0.28 Ω to 0.04 Ω) and motional resistance Rₘ (0.32 Ω to 0.14 Ω), indicating suppressed dielectric and acoustic dissipation. The broader FWHM film suffers from grain misalignment and defect-related losses, while the narrow FWHM film preserves well-oriented c-axis structure and stronger piezoelectric response. These results establish a clear link between AlScN crystallinity and FBAR loss mechanisms, highlighting the importance of film quality optimization for achieving high-Q, low-loss BAW devices.",
      "keywords": [
@@ -7562,7 +7575,7 @@
      "id": 8175,
      "topic": "1.5",
      "topicName": "Elastography (MEL)",
-     "title": "A Feasibility Study of 4-D Pulse Wave Imaging Using a Row-Column-Addressed Array: in Phantom and in Vivo",
+     "title": "A Feasibility Study of 4-D Pulse Wave Imaging Using a Row-Column-Addressed Array in Phantoms",
      "authors": [
       "Haokang Shi",
       "Shemar Anderson",
@@ -7571,7 +7584,7 @@
       "Cagla Ozsoy",
       "Elisa E. Konofagou"
      ],
-     "abstract": "Pulse wave imaging (PWI) is a high-frame-rate ultrasound elastography technique for characterizing arterial mechanics, but conventional implementations rely on 1-D transducers that capture only a single 2-D spatial plane. This study shows the feasibility of 4-D PWI using a row-column-addressed (RCA) array in phantom and in vivo. Coherently compounded plane wave acquisitions (7 angles per orientation, PRF = 7000 Hz) were performed on a polyvinyl alcohol carotid-mimicking phantom and on the common carotid artery of a healthy human subject. Axial wall velocity was reconstructed via 1-D normalized cross-correlation, and pulse wave velocity (PWV) was computed by planar linear regression at peak acceleration during end-diastole. In the phantom, RCA-derived PWV (8.08 ± 0.62 m/s) closely matched the nanoindentation reference based on the modified Moens–Korteweg equation (8.23 ± 0.87 m/s). In vivo, RCA-derived PWV (4.57 ± 1.15 m/s) agreed with an L7-4 linear-array reference (4.71 ± 0.68 m/s). Ongoing work will validate the framework in a larger in vivo cohort and assess its sensitivity in resolving 3-D modulus anisotropy and mapping stiffness across distinct plaque constituents.",
+     "abstract": "Pulse wave imaging (PWI) is a non-invasive, high-frame-rate ultrasound elastography technique for characterizing arterial mechanics that has conventionally utilized a 1-D transducer. Volumetric imaging can offer a distinct advantage by capturing the full arterial geometry in all spatial dimensions (x, y, z) and time (t) within a single acquisition. This study investigates the feasibility of 4-D PWI using a row-column-addressed (RCA) array in phantoms. Coherently compounded plane wave acquisitions (7 angles per orientation, PRF = 12000 Hz) were performed on a polyvinyl alcohol (PVA) carotid-mimicking phantom. The 3-D spatiotemporal map of axial wall velocities was reconstructed via 1-D normalized cross-correlation. The pulse wave velocity (PWV) was computed by planar linear regression at 50% of the upstroke of the axial velocity waveform during end-diastole. In the phantom, good agreement was observed between the PWVs estimated through traditional PWI (2.67 ± 0.44 m/s) and 4-D PWI (2.34 ± 0.66 m/s). In conclusion, this study represents the first application of 4-D PWI with an RCA array and demonstrates the feasibility of the technique in phantoms.",
      "keywords": [
       "Pulse Wave Imaging",
       "Row-Column-Addressed Array",
@@ -7762,7 +7775,7 @@
      "id": 8393,
      "topic": "1.7",
      "topicName": "Medical Image and Signal Processing (MIS)",
-     "title": "Estimation of Finger Joint Angles and Index Finger Contact Force from B-Mode Ultrasound Using Deep Learning: a Preliminary Study",
+     "title": "Estimation of Finger Joint Angles and Finger Contact Forces from B-Mode Ultrasound Using Deep Learning: a Preliminary Study",
      "authors": [
       "Jangho Ann",
       "Taehan Kim",
@@ -8044,6 +8057,7 @@
      "title": "Numerical Simulation of Acoustic Radiation Force for Microparticle Manipulation in Travelling Wave Acoustofluidic Systems",
      "authors": [
       "Ibrahim Ali",
+      "Farshad Bolamiri",
       "Einar Halvorsen",
       "Ulrik Hanke",
       "Agne Johannessen",
@@ -8328,8 +8342,9 @@
       "Merit Städler",
       "Sebastian Pregl",
       "Julius Weber",
-      "Edgar Manfred Gustav Dorausch",
-      "Cornelius..."
+      "Edgar M. G. Dorausch",
+      "Cornelius Kühnöl",
+      "..."
      ],
      "abstract": "Conventional ultrasound transducer arrays use the same elements for transmit and receive, forcing a single-material trade-off: piezoelectric elements offer high transmit pressure but limited receive sensitivity and bandwidth, while CMUTs provide broadband, sensitive reception but weak, nonlinear transmission. Element sharing also imposes a dead zone — reception is blocked during transmit — limiting SNR via short transmit signals. MIMO imaging with cyclic coded continuous excitation and dedicated TX/RX elements would lift both constraints: each technology operates at its strength, and SNR scales with signal length. The resulting transducer-level requirements — broadband response, low TX to RX crosstalk, and high sensitivity — must be met simultaneously, which is unproven for hybrid arrays at the device level. We present the first realization and end-to-end characterization of an array integrating 7 PMN-PT single-crystal TX elements with 96 CMUT RX channels, fabricated as two silicone-bonded stacked PCBs with windows in the upper TX PCB. Combined transfer functions across 64 TX/RX pairs and crosstalk measurements indicate the architecture meets MIMO imaging requirements.",
      "keywords": [
@@ -8426,10 +8441,10 @@
      "title": "A Dual-Mode ScAlN-Based PMUT Array for Integrated Respiratory Health Monitoring",
      "authors": [
       "Jialin Long",
-      "Zhongbin Dai",
       "Ningyuan Hu",
-      "Peng Zhang",
       "Juan Wang",
+      "Peng Zhang",
+      "Zhongbin Dai",
       "Chengjie Zuo"
      ],
      "abstract": "In this work, we demonstrate a dual-mode ScAlN-based PMUT array for smart nasal patches, integrating an active ultrasonic mode (AUM) for diagnostics/therapeutics and a passive sensor mode (PSM) for continuous snore detection. To mitigate inter-element crosstalk, deep trench isolation and a differential drive scheme are implemented. The device achieves high-SNR pulse-echo operation, with outer electrodes for transmission and inner electrodes for reception. Furthermore, successful snore acquisition is demonstrated via acoustic coupling to the nasal exterior of multiple volunteers, requiring no external excitation. This single-transducer approach provides a low-power and compact solution for obstructive sleep apnea (OSA) management, advancing next-generation wearable health monitors.",
@@ -8757,8 +8772,6 @@
      "title": "INTRAOPERATIVE Electromechanical Wave Imaging at Reduced Frame Rates in Pediatric Tachycardia Patients Using Deep Learning",
      "authors": [
       "Christina Proestaki",
-      "Rosalia Minyety",
-      "Yaffa Wolicki",
       "Elisa Konofagou"
      ],
      "abstract": "Electromechanical Wave Imaging (EWI) non-invasively maps cardiac electromechanical activation but requires high frame rates (FRs) incompatible with clinical ultrasound systems. This limitation is particularly constraining in supraventricular tachycardia (SVT) patients, where elevated heart rates demand high temporal resolution. We trained a dedicated 1D convolutional neural network (CNN) at each FR to estimate per-pixel activation time from intraoperative EWI strain waveforms, acquired in 15 pediatric SVT patients (13.8±4.1 yo, 9F) undergoing catheter ablation. RF data acquired at 2000 Hz were decimated to 500, 250, and 125 Hz; manual 2000 Hz isochrones served as ground truth. Evaluated on 3 held-out patients, the model achieved MAE = 22.8 ms and 58.8% ATD ≤ 20 ms at 2000 Hz, remaining robust at 500 Hz (24.9 ms, 55.6%), with progressive degradation at 250 Hz (31.9 ms, 45.3%) and 125 Hz (34.5 ms, 43.6%). The hallmark SVT activation pattern was preserved across all FRs, supporting strain-based deep learning as a viable framework for operator-independent EWI at clinically accessible frame rates.",
@@ -8823,6 +8836,7 @@
      "authors": [
       "Hannah Schleifer",
       "Kaylyne Rodriguez",
+      "Cagla Ozsoy",
       "Shemar Anderson",
       "Elisa Konofagou"
      ],
@@ -8874,7 +8888,7 @@
      "id": 8445,
      "topic": "1.5",
      "topicName": "Elastography (MEL)",
-     "title": "Multi-Frequency Acoustic Radiation Force Displacement Imaging (MARDI) Detects Kidney Mechanics Before Biomarker Changes in a Preclinical Model of Diabetic Kidney Disease (DKD)",
+     "title": "Multi-Frequency Acoustic Radiation Force Displacement Imaging Detects Longitudinal Kidney Biomechanics in a Type 2 Diabetes Preclinical Model",
      "authors": [
       "Md Ashiqur Rahman",
       "Md Walid Hassan",
@@ -8924,6 +8938,7 @@
      "authors": [
       "Maggie Nedbalek",
       "Anna Phillips",
+      "Doreen Steed",
       "Cherie Kuzmiak",
       "Caterina Gallippi"
      ],
@@ -9241,6 +9256,7 @@
       "Yifan Bu",
       "Handi Deng",
       "Tianhao Yuwen",
+      "Ming-Yuan Liu",
       "Yangchang Li",
       "Cheng Ma"
      ],
@@ -9651,17 +9667,17 @@
      "id": 8236,
      "topic": "5.6",
      "topicName": "Biomedical Diagnostic and Imaging Transducers (TMI)",
-     "title": "3D Super Resolution IVUS Catheter for in Vivo Imaging of Vaso Vasorum",
+     "title": "3D IVUS Catheter for in Vivo Imaging of Vaso Vasorum",
      "authors": [
       "Robert Wodnicki",
       "Mostafa Toubar",
-      "Matthew Ren",
-      "Xin Sun",
-      "Yushun Zeng",
       "Zhiyu Sheng",
+      "Matthew Ren",
+      "Yushun Zeng",
+      "Huaiyu Wu",
       "Baoqiang Liu",
-      "Mike Shuo-Wei Chen",
-      "Xi..."
+      "Xin Sun",
+      "Xiaoning Ji..."
      ],
      "abstract": "We propose 3D Super-Resolution IVUS (SR-IVUS) to map the vasa vasorum, a key marker of vulnerable atherosclerotic plaques. As opposed to previous IVUS \"pull-back\" techniques for 3D volume imaging, the device utilizes a 15 MHz 2D array to perform simultaneous volume acquisition, which is essential for tracking microbubbles in 3D space and eliminating out-of-plane artifacts. The device architecture comprises a custom high-voltage multiplexer ASIC, designed in a 0.35 µm BCD process, which employs plane-wave imaging and synthetic receive aperture (SRA) to acquire data for volumetric beamforming. Simulations of the ASIC demonstrate 57 mW power consumption and minimal switching glitch noise. The fabricated demonstration acoustic array achieved a 14.7 MHz center frequency with 32% fractional bandwidth. Imaging tests on wire targets and phantoms validate the acoustic array capability to operate at target frequencies necessary for in vivo micro-vessel characterization, providing a path toward better identification of risks for coronary heart disease and stroke.",
      "keywords": [
@@ -9967,7 +9983,7 @@
      "id": 8056,
      "topic": "1.6",
      "topicName": "Medical Imaging (MIM)",
-     "title": "Enhanced Mean-Shift Super Resolution (eMSSR) Method for Row-Column Array Based 3D Ultrasound Imaging",
+     "title": "Enhanced Mean-Shift Super Resolution (eMSSR) Method for RCA Based 3D Ultrasound Imaging: a Simulation Study",
      "authors": [
       "Qiandong Sun",
       "Rui He",
@@ -10135,7 +10151,7 @@
      "id": 7869,
      "topic": "1.10",
      "topicName": "Medical Tissue Characterization (MTC)",
-     "title": "A Preclinical Investigation of Oral Tissues Using Quantitative Ultrasound: Inflammation Tracking and Buccal-Lingual Analysis",
+     "title": "Buccal-Lingual Analysis and Inflammation Tracking in Oral Soft Tissues Using Quantitative Ultrasound: a Preclinical Study",
      "authors": [
       "Daria Poul",
       "Amanda Rodriguez Betancourt",
@@ -10379,7 +10395,7 @@
      "topicName": "Medical Photoacoustics (MPA)",
      "title": "Spatially Regularized Spectral Unmixing for Dual-Wavelength Photoacoustic Breast Oxygenation Imaging",
      "authors": [
-      "Jose Timana",
+      "José Timaná",
       "Joselyn Wei Chen",
       "Jamie Enslein",
       "Babita Panigrahi",
@@ -10559,6 +10575,7 @@
       "Ruixi Sun",
       "Yuyang Wang",
       "Zhe Chen",
+      "Hua Sang",
       "Jianwen Luo",
       "Hengrong Lan",
       "Fei Gao"
@@ -11003,7 +11020,7 @@
      "authors": [
       "Saeedeh Kabiriarani",
       "Luzhen Nie",
-      "Elliot Smith",
+      "Elliott Smith",
       "Thomas Carpenter",
       "David Cowell",
       "Steven Freear"
@@ -11167,7 +11184,9 @@
      "topicName": "Spotlight Session: Ultrasound Neuromodulation: Devices & Applications",
      "title": "A Miniature Ultrasound System to Stimulate Peripheral Neural System",
      "authors": [
+      "Trent Berrien",
       "Carlos Balbuena",
+      "Kelis Kim",
       "Connor Soncrant",
       "Srivanth Reddy",
       "Tansu Celikel",
@@ -11303,11 +11322,11 @@
      "id": 8332,
      "topic": "1.6",
      "topicName": "Medical Imaging (MIM)",
-     "title": "Generalized Transmission Modeling for Matrix Imaging with Flexible Acquisition Schemes",
+     "title": "Generalized Transmit Modeling for Matrix Imaging with Flexible Acquisition Schemes",
      "authors": [
       "Jingyi Zuo",
       "Yuanbin Zhu",
-      "Joseph Nicholas",
+      "Nicholas Joseph",
       "Megan Whitham",
       "Aiguo Han"
      ],
@@ -11625,7 +11644,7 @@
      "id": 7276,
      "topic": "3.1",
      "topicName": "Acoustic Tweezers and Particle Manipulation (PAT)",
-     "title": "Acoustically Localized Chemotherapy of magnesium-Gallate Metal Organic Frameworks",
+     "title": "Acoustically Localized Chemotherapy of Magnesium-Gallate Metal Organic Frameworks",
      "authors": [
       "Daehun Kim",
       "Badrinathan Sridharan",
@@ -11648,7 +11667,7 @@
      "id": 7799,
      "topic": "3",
      "topicName": "Physical Acoustics",
-     "title": "The impact of shear elasticity on the performance of acoustic holograms",
+     "title": "The Impact of Shear Elasticity on the Performance of Acoustic Holograms",
      "authors": [
       "Víctor Vegas-Luque",
       "Alba Eroles-Simó",
@@ -11788,11 +11807,11 @@
      "title": "Adaptive Scaled Subarray Coherence Based Postfilter for Ultrasound Imaging",
      "authors": [
       "Pei Tang",
-      "Yuanguo Wang",
       "Yadan Wang",
       "Zhihui Han",
       "Chichao Zheng",
-      "Hu Peng"
+      "Hu Peng",
+      "Yuanguo Wang"
      ],
      "abstract": "The subarray coherence based postfilter (SCBP), which demonstrated improvement in contrast ratio, has been proposed. However, improvements in terms of resolution and contrast ratio acquired by it is not enough. To go further, an adaptive subarray coherence based postfilter (ASCBP) was proposed. Nevertheless, there exist black artifacts beside the point targets and ASCBP degrades the speckle brightness. We propose a novel adaptive scaling factor using subarray zero-cross factor (SZF) with a dynamic subarray length, and normalized reciprocals of amplitude standard deviations for subarray coherence based postfilter, which is termed as adaptive scaled subarray coherence based postfilter (ASSCBP). We verified the proposed method on experimental point and cyst phantom datasets. The proposed ASSCBP can improve the resolution by 42.9% compared with SCBP. Furthermore, ASSCBP achieves average improvements of 74.7%, and 9.5% regarding CR, and gCNR in comparison to SCBP, and obtains improvement of 14.9% in terms of sSNR. Results demonstrates that the proposed method can effectively enhance the imaging performance of SCBP.",
      "keywords": [
@@ -11804,7 +11823,7 @@
      "id": 8397,
      "topic": "1.1",
      "topicName": "Medical Beamforming and Beam Steering (MBB)",
-     "title": "Adaptive Regional Spatiotemporal Smoothing Coherence Factor for Ultrasound Beamforming",
+     "title": "Adaptive Regional Spatio-Temporally Smoothed Coherence Factor for Ultrasound Beamforming",
      "authors": [
       "Chenzhi You",
       "Feng Yin"
@@ -11904,7 +11923,7 @@
      "id": 7422,
      "topic": "1.7",
      "topicName": "Medical Image and Signal Processing (MIS)",
-     "title": "Directional Filtering for Angle-Adaptive Transverse Oscillations in Sparse-Array 3D Ultrasound Motion Estimation",
+     "title": "Angle-Adaptive Transverse Oscillation Filtering in Sparse-Array 3D Ultrasound Motion Estimation",
      "authors": [
       "Celia Mansilla Usero",
       "Daniele Mazierli",
@@ -12165,7 +12184,12 @@
      "topicName": "Microacoustic Resonators (AMR)",
      "title": "Thermal Stability and Enhanced Power Handling of 14-GHz Bulk Acoustic Wave Resonators and Filters Using SMR and SiC Substrates",
      "authors": [
-      "Ruidong Qin"
+      "Shuojun Yuan",
+      "Ruidong Qin",
+      "Chen Li",
+      "Wentong Dou",
+      "Xuanqi Huang",
+      "Zhiqiang Mu"
      ],
      "abstract": "With the development of periodically poled piezoelectric film (P3F) technology, bulk acoustic wave (BAW) resonators operating above 10 GHz have emerged as promising candidates for next-generation RF front ends, while their reduced device dimensions and increased power density impose increasingly stringent requirements on thermal stability and power handling. In this work, the thermal stability and power durability characteristics of 14-GHz bulk acoustic resonator (FBAR) and the solidly mounted resonator (SMR) were experimentally investigated, and further investigate the influence of substrate selection on SMR temperature stability. Compared with the FBAR, the Si-based SMR reduces the magnitude of the first-order temperature coefficient of frequency by approximately 50% and increases the 1-dB power-handling threshold from 31.4 to 37.1 dBm. Replacing the Si substrate with SiC further improves the temperature stability, reducing the first-order TCF by up to 62.6%. These results demonstrate that the SMR architecture combined with SiC substrate engineering provides an effective approach for improving the thermal robustness and high-power capability of Ku-band BAW devices.",
      "keywords": [
@@ -12373,7 +12397,7 @@
      "id": 7402,
      "topic": "2.6",
      "topicName": "Flow Measurement (NFM)",
-     "title": "Aperture-Dependent Doppler Observability of Pipeline Leakage Jets Under Strong Wall Clutter Using a CFD-Ultrasound Digital Twin",
+     "title": "Aperture-Dependent Doppler Visualization of Pipeline Leakage Jets Under Strong Wall Clutter Using a CFD–Ultrasound Digital Twin",
      "authors": [
       "Yue Cai",
       "Hao Feng",
@@ -12488,13 +12512,14 @@
       "Ivan Wong",
       "Robert Adamson"
      ],
-     "abstract": "Femoroacetabular impingement syndrome (FAIS) is a leading cause of hip pain. Currently, diagnosis and pre-operative planning rely on computed tomography (CT). However, this increases surgical wait time and cost while exposing patients to ionizing radiation. Our study investigates whether this CT can be replaced by freehand 3D ultrasound imaging. Our system applies 3D tracking to a point-of-care ultrasound probe to localize images in 3D space. A convolutional neural network-based segmentation model extracts bone surfaces from B-mode images. These segments, combined with tracking data, form a point cloud to which a 3D surface mesh is fit. The system was tested in N=4 cadaveric hips and N=2 healthy participant hips and is currently in a clinical trial of N=50 patients with FAIS. RMS error was used to assess CT and ultrasound 3D mesh agreement (0.3-0.6mm) and mesh repeatability (0.57mm) across 3D ultrasound scans. Freehand ultrasound imaging can achieve bone surface reconstruction with submillimeter 3D agreement to CT. As clinically significant bone deformities associated with FAIS are ≥2 mm in prominence, freehand ultrasound is a viable alternative to CT in FAIS assessment.",
+     "abstract": "The current standard of care for diagnosis and pre-operative planning of femoroacetabular impingement syndrome (FAIS) is computed tomography (CT) imaging of the proximal femur. However, CT imaging has long surgical wait times and high cost and exposes patients to ionizing radiation. We present a freehand 3D ultrasound system that offers a potential alternative to CT. The system applies 3D optical tracking of a point-of-care ultrasound probe in conjunction with a convolutional neural network segmentation model to generate 3D images of the femur bone surface. The system was tested in N=4 cadaveric hips and a clinical cohort of N=25 hips of patients with FAIS. Geometric agreement of ultrasound-derived surface meshes was assessed against ground truth CT using multiple metrics and showed mean agreement of ~0.5 mm. The extent of the femur surface visible to ultrasound was measured and found to cover 91.6% of the clinically relevant anatomy for FAIS assessment on average. Statistical shape modeling (SSM) methods are presented that can extend ultrasound partial bone surface maps to full volumetric images of the proximal femur from which 3D morphometry can be estimated.",
      "keywords": [
-      "clinical ultrasound",
-      "medical imaging",
       "3D imaging",
-      "ultrasound image segmentation",
-      "orthopedic imaging"
+      "clinical ultrasound",
+      "femoroacetabular impingement syndrome",
+      "medical imaging",
+      "statistical shape modeling",
+      "ultrasound image segmentation"
      ]
     },
     {
@@ -12504,10 +12529,11 @@
      "title": "Automatic 3D Ultrasound Shape Completion Method for Intraoperative Lumbar Surgical Navigation",
      "authors": [
       "Yuchong Gao",
+      "Zhiyi Wang",
       "Jianhao Zhao",
       "Tianyi Liang",
       "Mingbo Zhang",
-      "Lawrence Le",
+      "Lawrence H Le",
       "Rui Zheng"
      ],
      "abstract": "This study is developed an automatic shape completion method for 3D ultrasound images based on preoperative CT images, enabling rapid intraoperative reconstruction of complete 3D structures of lumbar spine. This strategy preserved the pose information inside ultrasound while reducing modality-induced alignment errors. As a result, the method can rapidly produce a more shape-specific and geometrically consistent 3D lumbar model, demonstrating its potential for application in surgical navigation.",
@@ -14469,7 +14495,7 @@
       "Pauline Muleki-Seya",
       "Andres Coila"
      ],
-     "abstract": "This study evaluates the Structure Factor Model adapted for two scatterer types (SFM2) to estimate scan-plane maps of nuclear and cellular radius and volume fraction in dense JC cell-pellet biophantoms. Unlike prior work that fitted BSCs averaged across ROIs, this approach estimates parameters spatially using nonlinear least-squares optimization with isotropic total variation regularization. Eleven scan planes from 10 JC cell pellets were analyzed using BSCs measured from 25-55 MHz with a 40 MHz transducer. Four TV-based configurations were compared, including cases with radius and/or volume-fraction separation constraints. Relative to unregularized estimates, TV regularization reduced spatial fluctuations in the parameter maps. The resulting distributions were less sparse and more concentrated than the unregularized estimates. Adding radius and/or volume-fraction separation constraints shifted some estimates closer to histology-derived reference values, although variability increased in some cases. These results describe the effect of total variation regularization and simple physical constraints on SFM2-derived microstructure maps from cell-pellet BSC data.",
+     "abstract": "This study evaluates the Structure Factor Model adapted for two scatterer populations (SFM2) for spatially resolved estimation of nuclear and cellular microstructural parameters in JC cell-pellet biophantoms. Unlike previous work based on BSC averaging within each slice plane, the proposed approach preserves spatial information by incorporating isotropic total variation (TV) regularization into the SFM2 inversion. Eleven slice planes from each of 10 JC cell pellets were analyzed using BSC measurements over 25-55 MHz acquired with a 40-MHz transducer. Four configurations were evaluated: unconstrained, radius-constrained, volume-fraction-constrained, and fully constrained. TV regularization reduced estimation error and variability and produced more spatially continuous maps. The strongest improvements were observed for nuclear and cellular radii. The fully constrained configuration provided the most balanced agreement with histology. These results support TV-regularized SFM2 for spatially resolved microstructural mapping.",
      "keywords": [
       "quantitative ultrasound",
       "backscatter coefficient",
@@ -14699,7 +14725,7 @@
      "topicName": "Biological Effects & Dosimetry (MBE)",
      "title": "10 MHz Focused Ultrasound Restores Spike Output During Strong Depolarising States While Suppressing Near-Threshold Firing",
      "authors": [
-      "Negar Nicole Zoka",
+      "Negar N. Zoka",
       "Suzanne Hosie",
       "Jack Drummond",
       "David B. Grayden",
@@ -14947,7 +14973,7 @@
      "id": 8394,
      "topic": "1.11",
      "topicName": "Therapeutics, Hyperthermia & Surgery (MTH)",
-     "title": "Functional Ultrasound (fUS) Imaging of Displacement-guided Focused Ultrasound (DgFUS) Neuromodulation in Transgenically and Ototoxically Deafened Mouse Models",
+     "title": "Functional Ultrasound (fUS) Imaging of Displacement-Guided Focused Ultrasound (DgFUS) Neuromodulation in Transgenic and Ototoxically Deafened Mouse Models",
      "authors": [
       "Seongyeon Kim",
       "Jonas Bendig",
@@ -14956,10 +14982,10 @@
      "abstract": "Displacement-guided focused ultrasound (DgFUS) can modulate neuronal activity in the central (CNS) and peripheral nervous system (PNS) while simultaneously mapping FUS-induced displacement. Although DgFUS can elicit local hemodynamic changes, the evoked responses may be influenced by the indirect activation via an auditory pathway, which has not yet been studied at a length. In this study, we utilized a transgenic deafened mouse model and performed functional ultrasound (fUS) imaging to monitor hemodynamics simultaneously with either DgFUS or auditory stimulation. The objectives of this study were to image and quantify audible tone-evoked and DgFUS-evoked hemodynamic responses in the deafened and normal-hearing mice.",
      "keywords": [
       "Displacement-guided focused ultrasound (DgFUS)",
-      "Functional ultrasound (fUS)",
-      "Auditory pathway",
-      "Transgenic deafened mouse model",
-      "Hemodynamic response"
+      "functional ultrasound (fUS)",
+      "auditory confounds",
+      "deafened mouse model",
+      "cerebral blood volume (CBV)"
      ]
     }
    ]
@@ -15043,13 +15069,14 @@
      "topicName": "Biomedical Diagnostic and Imaging Transducers (TMI)",
      "title": "Design, Fabrication, and Acoustic Field Optimization of a Wearable Linear Array for Ultrasound Monitoring of Deep Vein Thrombosis",
      "authors": [
-      "Nicholas Nowicki",
       "Ying Liu",
+      "Nicholas Nowicki",
+      "Yilin Yang",
+      "Chenhao Shi",
+      "Sadman Labib",
+      "Janeth Marquez Rubio",
       "Constantin Smit",
-      "Kelley Leadingham",
-      "Haley Abramson",
-      "Joshua Punnoose",
-      "Mohammad-Hossein Ami..."
+      "Kelley Lead..."
      ],
      "abstract": "Deep vein thrombosis (DVT) remains underdiagnosed due to the intermittent nature of standard Duplex ultrasound, motivating continuous monitoring solutions. We present the optimized design and initial validation of a wearable ultrasound patch for automated DVT detection. A 32-element, 5 MHz linear array was first modeled using finite element simulations and fabricated with a 2×3 cm footprint suitable for placement over the popliteal vein. Initial results revealed pronounced sidelobes in both simulated pressure fields and experimental B-mode imaging. To address this, a second-generation design incorporated finer pitch, dual matching layers, an optimized kerf pattern, and an acoustic lens, increasing the element count to 64 while maintaining the same aperture. Simulations demonstrated improved beam coherence, enhanced main lobe intensity, and effective sidelobe suppression. These results highlight the importance of acoustic stack and aperture optimization in wearable ultrasound systems. Ongoing work focuses on fabrication of the optimized design and integration with automated clot detection algorithms for continuous bedside monitoring",
      "keywords": [
@@ -15284,7 +15311,7 @@
    "id": 21,
    "code": "A1P-23",
    "title": "ADS: Device Simulation and Synethesis",
-   "expected": 7,
+   "expected": 6,
    "day": "Monday",
    "date": "Oct 5th, 2026",
    "time": "10:00-11:00",
@@ -15369,28 +15396,6 @@
       "Quality Factor",
       "Bode-Q",
       "Acoustic Resonators"
-     ]
-    },
-    {
-     "id": 7365,
-     "topic": "4.2",
-     "topicName": "Device Modeling and Design (ADM)",
-     "title": "Theoretical and Experimental Analysis of SAW-on-Poi Sensitivity to Structural Parameter Dispersion",
-     "authors": [
-      "Sylvain Ballandras",
-      "Thierry Laroche",
-      "Laure Rolland Du Roscoat",
-      "Sylvain Dudit",
-      "Saly Ndiaye",
-      "Emilie Courjon",
-      "Florent Be..."
-     ],
-     "abstract": "POI have unlock SAW fiter performances. The dispersion of all the structure parameters must be accounted when design a SAW on POI. The influence of all the constitutive parameters on typical resonators figures of merit is studied.",
-     "keywords": [
-      "SAW on POI",
-      "full stack parameters dispersion",
-      "layer uniformity",
-      "electrodes CDs"
      ]
     },
     {
@@ -15557,7 +15562,7 @@
    "id": 12,
    "code": "A1P-25",
    "title": "NAS: Acoustic Sensors II",
-   "expected": 7,
+   "expected": 6,
    "day": "Monday",
    "date": "Oct 5th, 2026",
    "time": "10:00-11:00",
@@ -15568,30 +15573,13 @@
    "datetime": "Monday October 05, 2026 (10:00 - 11:00)",
    "papers": [
     {
-     "id": 7038,
-     "topic": "2.3",
-     "topicName": "Acoustic Sensors (NAS)",
-     "title": "Experimental Validation of a Volumetric Vascular Access Guidance System Using Hydrophone-Synthesized Sensor Emulation",
-     "authors": [
-      "Jintan Zhang",
-      "Keshuai Xu",
-      "Laeben Lester",
-      "Jeeun Kang",
-      "Emad Boctor"
-     ],
-     "abstract": "We experimentally validate a multi-sensor photoacoustic tracking system for which a prior simulation study demonstrated sub-millimeter IV tool-tip localization. To avoid fabricating each candidate sensor geometry, we emulate a 2x2 mm square sensor by raster-scanning a 0.4 mm needle hydrophone over a 5x5 grid and summing the waveforms, yielding the aggregate response of the target aperture. Using a bare-fiber photoacoustic source in a water tank and a four-sensor layout surrounding a 4x2 cm US probe footprint, we characterize tracking accuracy across 20 source positions in the elevational YZ plane, the plane most relevant to IV needle insertion. Sub-millimeter 3D error is achieved at 18 of 20 positions (mean 0.112 ± 0.083 mm) across the 2-5 cm depth range relevant to central venous access. Two shallow lateral points fail at elevated errors (3.2 and 20.1 mm), traced to TOF-detection breakdown at ~70° incidence, well outside the sensor's simulated 20° FOV half-angle. These results validate the simulated design in its intended operating range and quantify a concrete FOV limit guiding future sensor geometry refinement.",
-     "keywords": [
-      "Vascular Access Guidance",
-      "Photoacoustic Tool-tip Tracking"
-     ]
-    },
-    {
      "id": 7425,
      "topic": "2.3",
      "topicName": "Acoustic Sensors (NAS)",
      "title": "Low-Profile Hydrophone Based on Capacitive Micromachined Ultrasonic Transducer (CMUT) for Extreme high-Power Acoustic Sensing",
      "authors": [
       "Joo Young Pyun",
+      "Hyunsoo Jeong",
       "Butrus Khuri-Yakub",
       "Byung Chul Lee"
      ],
@@ -16029,13 +16017,13 @@
      "authors": [
       "Kaipeng Ji",
       "U-Wai Lok",
-      "Chengwu Huang",
       "Jingke Zhang",
       "Tao Wu",
       "Yanzhe Zhao",
       "Ryan Deruiter",
       "Jingyi Yin",
       "Lijie Huang",
+      "Chengwu Huang",
       "Shig..."
      ],
      "abstract": "Conventional ultrasound imaging assumes a uniform speed of sound (SoS), leading to phase aberrations and degraded image quality in heterogeneous media. Existing SoS inversion methods often neglect refraction and depend on accurate initial guesses, limiting robustness. This work proposes a computationally efficient, refraction-aware plane-wave travel-time framework for layered media. By decomposing travel time into horizontal and vertical components, a 2D map is constructed from separable 1D vectors, improving efficiency. The SoS profile is iteratively optimized using common middle angle (CMA)-based time-shift correction to enhance beamforming accuracy. Simulation results show high accuracy with a relative error of 0.98% and robustness to initial SoS (1500–1600 m/s). In vivo experiments on human liver data acquired with a Verasonics system demonstrate consistent SoS estimation (1596±1.34 m/s). Compared to conventional beamforming, the proposed method significantly improves spatial resolution in ultrasound microvessel imaging (UMI).",
@@ -16117,7 +16105,7 @@
       "Rahul Choudhary",
       "Pushpinder Singh Khera"
      ],
-     "abstract": "Acquiring diagnostic echocardiographic views requires years of hands-on training, yet no open simulator can generate realistic ultrasound images interactively from patient-specific CT anatomy at arbitrary transducer orientations. Existing approaches are expensive both financially and computationally. This work introduces CardiacSim, a hybrid simulator that takes a segmented cardiac CT mesh, synthesises anatomy-consistent pseudo B-mode echocardiography at any transducer pose, and targets deep learning refinement toward clinical realism.",
+     "abstract": "Acquiring diagnostic echocardiographic views requires extensive supervised practice, while existing simulators are either costly physical phantoms or computationally intensive wave solvers. CardiacSim is a lightweight alternative that runs interactively on a conventional laptop. It voxelizes a segmented 24-structure cardiac CT mesh, derives anatomical landmarks, and renders pseudo B-mode images for arbitrary transducer poses using a physics-inspired model. Each slice is also associated with a scene graph of structural contacts and blood-flow relationships. The pipeline operates at 28.8 frames/s on a single CPU thread. Comparison with real echocardiograms from the CAMUS dataset shows that the rendered four-chamber view achieves a generalized contrast-to-noise ratio of 0.44, with mean myocardial and blood intensities of 0.53 and 0.29, respectively, and a contrast of 5.3 dB. Real images show corresponding values of 0.57, 0.42, 0.27, and 3.8 dB, while both have a speckle SNR of 2.8. Similar results are obtained for the two-chamber view, demonstrating its potential for an echocardiographic simulation and training.",
      "keywords": [
       "Medical Imaging",
       "Interactive Echocardiography",
@@ -16584,7 +16572,7 @@
      "title": "Synthesis of 0th-Order Bessel Beams with a Sparse Array for Shear-Wave Super-Resolution Ultrasound",
      "authors": [
       "Daniele Mazierli",
-      "Jian-yu Lu",
+      "Jian-Yu Lu",
       "Alessandro Ramalli"
      ],
      "abstract": "A recently proposed super-resolution imaging technique modulates the point spread function of an imaging system with a focused shear wave generated remotely by the acoustic radiation force of a focused 0th-order Bessel beam. All experimental implementations reported so far have relied on fixed-focus annular transducers, which limit beamforming flexibility and prevent volumetric scanning. In this work, we report about the synthesis of focused 0th-order Bessel beams with a two-dimensional sparse array. A 256-element, 3.7 MHz spiral array with 50%-Tukey density tapering was used to synthesize Bessel beams with scaling parameters α ∈ [1200, 2400] m⁻¹ and focal depths F ∈ [10, 30] mm. Well-defined pressure rings were obtained over a wide range of geometries, with ring diameters between 1.4 mm and 8.9 mm, ring lengths between 1.9 mm and 37.1 mm, and ring-to-axis pressure ratios between 2.7 dB and 24.1 dB. Sparse arrays can replace annular transducers as electronically reconfigurable and steerable generators of Bessel fields for shear-wave super-resolution imaging, while keeping channel count and hardware complexity compatible with existing research scanners.",
@@ -16790,6 +16778,10 @@
      "title": "Real-Time 3D Contrast Imaging Using DC-Biased Row Column Arrays and Amplitude Modulation",
      "authors": [
       "Tarek Kaddoura",
+      "Darren Dahunsi",
+      "Randy Palamar",
+      "Shayan Khorassany",
+      "Mohammad Sobhani",
       "Roger Zemp"
      ],
      "abstract": "Contrast ultrasound imaging uses microbubble agents injected into the bloodstream to enhance the visualization of blood flow and blood vessels. 3D contrast-enhanced ultrasound imaging (CEUS) allows for better visualization of vessels in 3D, however row-column-array-based 3D CEUS methods like tilted plane-wave (TPW) imaging require minimal motion over volume compounding. Here, we propose a strategy that uses DC-biased RCAs, also called Top-Orthogonal-Bottom-Electrode (TOBE) arrays, with a fast synthetic aperture 3D imaging method (Walking uFORCES) that is modified for amplitude modulation. We show how this strategy is able to obtain 3D CEUS volumes at real-time rates, transmit-receive focused everywhere and with improved robustness to motion.",
@@ -17137,10 +17129,9 @@
      "authors": [
       "Natalia Perez Jimenez",
       "Emma Ertner Bengtsson",
+      "Borislav Gueorguiev Tomov",
       "Ana-Alexandra Brad",
-      "Caroline Clausen",
-      "Michael Bachmann Nielsen",
-      "Charlot..."
+      "Michael Bachmann Nielsen..."
      ],
      "abstract": "Super-resolution ultrasound imaging using erythrocytes (SURE) enables contrast-free visualization of microvascular networks, but its extension to volumetric imaging remains limited. This study demonstrates 3D SURE in the rat brain using a row-column array and synthetic aperture acquisition with only 80 receive elements. Microvascular maps and local vessel diameters were reconstructed from short acquisitions (20 s), revealing a dense vascular network and resolving vessel segments smaller than half the acoustic wavelength (λ/2 = 51.3 μm, λ = 102.6 μm). Results were consistent across multiple segments from a single acquisition. These findings demonstrate the feasibility of rapid, high-resolution, contrast-free 3D brain imaging using SURE.",
      "keywords": [
@@ -17395,7 +17386,7 @@
      "id": 8001,
      "topic": "5.5",
      "topicName": "Micromachined Ultrasonic Transducers (TMU)",
-     "title": "A Geometry-Programmable Flexible PMUT Array for Airborne Sensing of Non-Planar Obstacles",
+     "title": "Flexible PMUT Array with a Variable Field of View for Airborne Obstacle Detection",
      "authors": [
       "Ping Zhang",
       "Yisheng Zhong",
@@ -17568,8 +17559,8 @@
       "Dingjian Li",
       "Tangwei Hu",
       "Xuanqi Huang",
-      "Yumeng Yang",
       "Zhiqiang Mu",
+      "Yumeng Yang",
       "Wenjie Yu"
      ],
      "abstract": "This paper presents a reflection-coefficient phase-controlled synthesis method to relax resonator coupling requirements for wideband Ku-band acoustic filters. By leveraging phase tuning via non-resonating nodes (NS/NL) and external inductive compensation within a ladder topology, the proposed method significantly reduces the effective electromechanical coupling (keff2) demand on AlScN bulk acoustic wave (BAW) resonators. Unlike conventional ladder synthesis, which requires a keff2 up to 45%, the proposed design confines the requirement for all resonators to 20%, addressing a key limitation of AlScN technology. Simulation results demonstrate that the synthesized Ku-band filter achieves a 17.1% fractional bandwidth and superior impedance matching with significantly reduced S11 ripple compared to the reference design. This approach enables the realization of high-performance, wideband RF filters suitable for satellite front-ends using practical low-coupling resonators.",
@@ -18049,11 +18040,11 @@
      "id": 8353,
      "topic": "8",
      "topicName": "Technical Challenge: Quantitative Ultrasound Estimation of Attenuation and Speed-of-Sound",
-     "title": "Coherence-Anchored Spatial-Domain Reconstruction of Speed-of-Sound from Full-Matrix Pulse-Echo Ultrasound Data",
+     "title": "Coherence-Factor Angle-Stack Learning for Pulse-Echo Speed-of-Sound Imaging: Simulation Validation for QUASOS",
      "authors": [
       "Jonathan Langdon"
      ],
-     "abstract": "A GPU-accelerated spatial-domain reconstruction (SDR) pipeline is submitted to the 2026 QUASOS challenge for pulse-echo speed-of-sound (SoS) imaging from full-matrix-capture data. Three plane waves at 0° and ±20° are beamformed, ZNCC-tracked between 0°-anchored pairs, and inverted by an ℓ1-data ADMM with multi-angle anisotropic total-variation regularization on a 0.30 mm grid. Two extensions address known SDR failure modes: a per-column 2-D cumulative-mean coherence-factor anchor that constrains absolute SoS at every lateral coordinate using axial CF maximization, energy-balanced against the τ rows; and a depth-Hessian re-conditioning of the anchor block that restores the data Hessian's diagonal at depth without enlarging the prior. Beamforming, tracking, CF sweep, and ADMM run fully on the GPU in OpenCL; the full evaluable challenge batch reconstructs in ≈2.5 h on two consumer GPUs. SoS maps for every evaluable dataset across both probes and all groups have been submitted; quantitative ranking is deferred to the organisers' evaluation.",
+     "abstract": "For QUASOS 2026, a compact U-Net mapping coherence-factor (CF) focusing images at 17 angles to local speed of sound (SoS) was designed. On 28 new simulated cases per probe generated after model selection, frozen models achieved 4.00 m/s mean absolute error (MAE) for L7-4 and L11-5v arrays, with 95% confidence intervals of 3.44-4.58 and 3.41-4.63 m/s from resampling whole cases. Comparisons across 20 newly trained models showed modestly higher MAE with central-angle inputs and no consistent benefit from peak CF. Compared with the composite weighted-L_1, gradient, variation, and edge loss, plain L_1 reduced global MAE with a probe-dependent contrast trade-off. Four paired inclusion geometries showed limited echogenicity sensitivity, while tenfold higher noise raised L11-5v MAE from 3.1 to 24.0 m/s. Results apply within the tested straight-ray simulator, with quantitative physical-phantom validation still required.",
      "keywords": [
       "speed of sound",
       "spatial-domain reconstruction",
@@ -18234,7 +18225,7 @@
    "id": 115,
    "code": "B2P-14",
    "title": "MIM: Clinical AI - Segmentation & Diagnostic Applications",
-   "expected": 9,
+   "expected": 8,
    "day": "Tuesday",
    "date": "Oct 6th, 2026",
    "time": "10:00-11:00",
@@ -18248,7 +18239,7 @@
      "id": 7044,
      "topic": "1.6",
      "topicName": "Medical Imaging (MIM)",
-     "title": "foundation model, lung ultrasound, pseudo-mask refinement, Segment Anything Model, semi-supervised learning",
+     "title": "Semi-Supervised Lung Ultrasound Biomarker Segmentation with SAM-Refiner",
      "authors": [
       "Hyeonjik Lee",
       "Seokhwan Oh",
@@ -18262,10 +18253,11 @@
      ],
      "abstract": "Lung ultrasound (LUS) enables real-time pulmonary assessment using reverberation artifacts such as A-lines, B-lines, and consolidation. However, LUS biomarker segmentation remains challenging due to the low signal-to-noise ratio (SNR) and artifact-driven characteristics, which make accurate annotation difficult and limit the availability of labeled data. We propose BM-SAM, a semi-supervised pseudo-mask refinement framework based on a mean teacher–student model. Coarse pseudo-masks generated by the teacher are refined using a SAM-based refiner that exploits foundation model priors. The refined pseudo-masks, weighted by IoU-based confidence, supervise the student model, while the teacher is updated through an exponential moving average (EMA). Additionally, patch-wise augmentation based on uncertainty maps is applied to improve training stability. Experiments on 100 LUS images demonstrate that BM-SAM outperforms CNN-based, semi-supervised, and SAM-based methods, achieving the highest IoU (0.76) and mDice (0.86), with improved segmentation accuracy and stable convergence.",
      "keywords": [
-      "semi-supervised learning",
-      "pseudo-mask refinement",
+      "foundation model",
       "lung ultrasound",
-      "segmentation"
+      "pseudo-mask refinement",
+      "Segment Anything Model",
+      "semi-supervised learning"
      ]
     },
     {
@@ -18349,23 +18341,6 @@
       "Multimodal",
       "Lymphadenopathy",
       "Deep learning"
-     ]
-    },
-    {
-     "id": 7735,
-     "topic": "1.6",
-     "topicName": "Medical Imaging (MIM)",
-     "title": "Ultrasound Image Classification via Mask-Guided Learning for Standardized Liver Cancer Screening",
-     "authors": [
-      "Yungi Hong",
-      "Moonhyung Choi",
-      "Jinbum Kang"
-     ],
-     "abstract": "Standardized liver ultrasound acquisition for national liver cancer screening is highly operator-dependent. This study proposes a mask-guided gate ResNet (MGG-ResNet) that incorporates liver segmentation masks to improve standard scan plane classification. The liver mask is decomposed into inner, boundary, and outer regions, and mask-derived features are converted into sigmoid gating signals to modulate ResNet feature maps. Using 10,873 images from 10 standard scan planes and one non-defined class, MGG-ResNet achieved 73.91% accuracy and 73.10% macro-F1. It improved accuracy/macro-F1 by 3.43%/4.11% over image+mask ResNet-34 and by 6.20%/6.88% over image-only ResNet-34. Grad-CAM showed attention to clinically relevant anatomical structures, supporting robust real-time QA for liver ultrasound screening.",
-     "keywords": [
-      "Classification",
-      "Image",
-      "Liver"
      ]
     },
     {
@@ -18488,7 +18463,7 @@
      "title": "An Open-Source Pulse Sequencing Toolkit for Utilizing Row Column Arrays on Vantage Ultrasound Research Platforms for Streamlined 2D and 3D Ultrasound Imaging",
      "authors": [
       "Shayan Khorassany",
-      "Randy Palmar",
+      "Randy Palamar",
       "Darren Dahunsi",
       "Tarek Kaddoura",
       "Tyler Henry",
@@ -18550,19 +18525,21 @@
      "id": 7943,
      "topic": "1.7",
      "topicName": "Medical Image and Signal Processing (MIS)",
-     "title": "A Compound Multi-Angle Diverging Wave Imaging Method Based on Variable-Angle Transducers",
+     "title": "A Composite Multi-Angle Divergent Wave Imaging Method Based on a Dual-Micro-Phased Array",
      "authors": [
       "Yuwei Guo",
       "Yiheng Li",
       "Yuqi Zhao",
-      "Weiwei Shao",
-      "Yaoyao Cui"
+      "Yaoyao Cui",
+      "Weiwei Shao"
      ],
-     "abstract": "Background & Objective: Cerebral hemodynamics robustly map neuronal activity. To overcome the narrow field of view (FOV) of conventional Doppler ultrasound, we propose a variable-angle transducer compound multi-angle diverging wave imaging method for real-time, wide-FOV monitoring of cerebral blood volume (CBV) dynamics. Methods: First, subarray 1 is activated individually. Using its geometric center as the origin, it transmits diverging waves at steering angles ranging from -30° to 30° (in 10° increments) and records the corresponding backscattered echoes locally. Subarray 2 then repeats this process. The final wide-FOV image is generated by spatially compounding these independent echoes. Global signal intensity at point (X, Z) fuses local signals R_{S1} and R_{S2}: I(X, Z) = c_1 * R_{S1}(X, Z) + c_2 * R_{S2}(X, Z). Results: Using the Field II platform, we simulated the scanning of a digital vascular branch phantom by dual 7 MHz phased arrays. This yielded wide-FOV B-mode and Power Doppler images, validating the method's efficacy in expanding FOV and tracking hemodynamics, and establishing a solid foundation for future physical phantom and in vivo studies.",
+     "abstract": "To address the limited lateral coverage of a single probe, a dual miniature phased-array method for wide-field B-mode and power Doppler imaging (PDI) using multi-angle diverging waves is proposed. Each array independently performs seven-angle acquisition and reconstruction. The reconstructed B-mode envelopes and Doppler power maps are transformed into a common coordinate system and fused after gain matching. Five relative array angles (0°, 6°, 11°, 15°, and 18°) were evaluated at a fixed probe spacing. Dual-probe geometric tissue coverage reached 67.14%–74.30%, while effective tissue coverage at −9 dB was 52.37%–60.77%. PDI sensitivity was 92.94%–93.50%, improving by 3.84–5.05 percentage points over the best single probe, with centerline coverage of 92.89%–94.49%. These results demonstrate that complementary dual-probe views can extend tissue coverage and improve vascular detection in PDI.",
      "keywords": [
+      "Diverging Waves",
       "Beamforming",
-      "Diverging Wave",
-      "Doppler Ultrasound"
+      "Multi-probe Ultrasound",
+      "Wide Field of View",
+      "Power Doppler Imaging"
      ]
     },
     {
@@ -18647,7 +18624,7 @@
       "Haoyun Chen",
       "Daler Rakhmatov"
      ],
-     "abstract": "Fourier-domain beamforming (FDB) is a highly efficient approach to plane-wave (PW) image reconstruction, but it needs to access an entire 2D channel data frame at once to take advantage of the FFT algorithm. To reduce the cost of probe-to-beamformer data transfers, we propose to compress complex-valued IQ channel data using a simple quantization scheme that involves a small fixed codebook and a dynamic scaling factor updated at every snapshot of an array probe aperture during data acquisition. Our PICMUS-based results demonstrate that FDB can produce high-quality images after receiving only 4/4 bits per real/imaginary parts of each data sample. While this work is motivated by the FDB needs, our quantization scheme is also applicable in the case of delay-and-sum (DAS) beamforming.",
+     "abstract": "Fast Fourier-domain beamforming (FDB) is a highly efficient approach to plane-wave (PW) image reconstruction, but it needs to access each channel data frame all at once to take advantage of the Fast Fourier Transform (FFT) algorithm. To reduce the cost of probe-to-beamformer data transfers, we propose to compress complex-valued in-phase/quadrature (IQ) channel data using a simple quantization scheme that involves a small fixed codebook and a dynamic scaling factor updated at every snapshot of an array probe aperture during PW data acquisition. Our PICMUS-based results demonstrate that FDB can produce high-quality images after receiving only 4/4 bits per real/imaginary part of each IQ data sample. While this work is motivated by the FDB needs, our quantization scheme is also applicable in the case of delay-and-sum (DAS) beamforming.",
      "keywords": [
       "Plane-Wave Imaging",
       "IQ Demodulation",
@@ -18679,6 +18656,7 @@
      "authors": [
       "Peter Chukwuka",
       "Sanskriti Negi",
+      "Farah Deeba",
       "Kennita Johnson"
      ],
      "abstract": "Metabolic dysfunction-associated steatotic liver disease affects approximately 30% of the U.S. population and is a leading cause of chronic liver disease worldwide. Quantitative ultrasound (QUS) techniques can objectively quantify hepatic steatosis. Tissue-mimicking phantoms provide a controlled, grade-specific acoustic reference for QUS calibration across MASLD severity. We fabricated agarose-gel, tissue-mimicking phantoms and acquired images in B-mode and raw RF signals using Farino Cobot robotic arm and obtained three replicate scans per phantom. From each scan, we extracted attenuation coefficient (AC), backscatter coefficient (BSC), and Nakagami parameter (m). Results demonstrated a monotonic increase in AC, BSC, and Nakagami m with increasing oil volume fraction, which is consistent with theoretical acoustic predictions. These findings suggest that the proposed phantom platform produces acoustically distinct, grade-dependent QUS signatures and supports its use as a calibration standard for MASLD imaging. Robotic-assisted acquisition further enhances reproducibility, enabling reliable detection of subtle acoustic variations.",
@@ -18965,7 +18943,7 @@
      "id": 8049,
      "topic": "1.1",
      "topicName": "Medical Beamforming and Beam Steering (MBB)",
-     "title": "Aperture-Adaptive Scaled Wiener Postfilter for Second-Stage Synthetic Aperture Sequential Beamforming",
+     "title": "Aperture-Adaptive Scaled Wiener Postfilter for Synthetic Aperture Sequential Beamforming",
      "authors": [
       "Shuo Chen",
       "Chunlong Fei",
@@ -18983,7 +18961,7 @@
      "id": 8457,
      "topic": "1.1",
      "topicName": "Medical Beamforming and Beam Steering (MBB)",
-     "title": "A Hybrid Beamforming Approach for Plane-Wave Ultrasound Imaging Using Das and Eigenspace MVDR",
+     "title": "A Hybrid Beamforming Approach for Plane-Wave Ultrasound Imaging Using DAS, EIBMV, and BMAS",
      "authors": [
       "Farzad Azarmi",
       "Mohamed Almekkawy"
@@ -19096,7 +19074,7 @@
      "id": 7659,
      "topic": "1.4",
      "topicName": "Contrast Agents (MCA)",
-     "title": "Macrophage membrane-functionalized Biomimetic Microbubbles for Inflammation-Targeted Imaging of Acute Kidney Injury",
+     "title": "Macrophage Membrane functionalized Biomimetic Microbubbles for Inflammation Targeted Imaging of Acute Kidney Injury",
      "authors": [
       "Linjia Cheng",
       "Pengting Min",
@@ -19251,7 +19229,7 @@
      "title": "Measuring Acoustic Streaming in Air Using a Low-Cost Experimental Setup",
      "authors": [
       "Fleur Avontuur",
-      "Johno van IJsseldijk",
+      "Johno van Ijsseldijk",
       "Paul van Neer"
      ],
      "abstract": "In this study, we measure acoustic streaming velocities in air by visually observing the movement of smoke using a simple, low-cost experimental setup. The experimental setup consists of a cardboard box, the smoke from an incense stick, an LED strip and a camera. Tracker video analysis and modeling tool was used to estimate the airflow velocity from these recordings by manual tracking of identifiable smoke features such as streaks or regions of varying intensity, frame by frame. The setup was tested on a phased array of 40 kHz ultrasonic transducers. The measured streaming velocities were in the range of a few centimeters per second up to 14 cm/s. The streaming velocity appears to scale linearly with the applied voltage, implying a square-root dependence on the total acoustic power, which is consistent with the existing literature for high streaming Reynolds numbers.",
@@ -19591,11 +19569,12 @@
      "id": 8326,
      "topic": "1.12",
      "topicName": "Theranostics & Image Guidance in Therapy (MTN)",
-     "title": "Multi-Modal Imaging of sonoporation-Induced Vascular and Stiffness Responses in triple-Negative Breast Tumors",
+     "title": "Multi-Modal Imaging of Sonoporation-Induced Vascular and Stiffness Responses in Triple-Negative Breast Tumors",
      "authors": [
       "Ruoxuan Rosie Wang",
       "Yangpei Liu",
       "Shiqi Hu",
+      "Fotios Tsitsos",
       "Elisa Konofagou"
      ],
      "abstract": "Breast cancer is the most common female malignancy, with neoadjuvant chemotherapy as standard of care for locally advanced disease. Microbubble-assisted focused ultrasound (FUS) sonoporation can enhance drug delivery, but contrast-enhanced power-Doppler-guided targeting (CEPDgSNPR) uses perfusion alone, without mechanical or vascular response feedback. We pair harmonic motion imaging (HMI) with ultrasound localization microscopy (ULM) to characterize 4T1 triple-negative tumors at sonoporation-target resolution. Across 32 targets in 2 mice, baseline HMI and microvascular density (MVD) percentiles were positively correlated (ρ = 0.44, p = 0.012), with off-diagonal cases showing that stiffness adds information beyond perfusion alone. Acute imaging revealed a focal, target-localized vascular response (target/non-target ΔMVD ratio 2.28 at +0 min decaying to 1.07 at +30 min), with velocity changes that did not always track MVD, consistent with sonoporation-induced changes in vessel tone. Paired HMI-ULM identifies three target-level biomarkers (baseline stiffness/perfusion coupling, acute MVD response, MVD/velocity decoupling) as candidate predictors of sonoporation response.",
@@ -19686,16 +19665,17 @@
      "id": 8110,
      "topic": "5.5",
      "topicName": "Micromachined Ultrasonic Transducers (TMU)",
-     "title": "Near-Field HIFU Ablation in Ex Vivo Tissue Using an FPGA-Pulser System Based on Capacitive Micromachined Ultrasound Transducer (CMUT)",
+     "title": "High-Pressure Near-Field HIFU Using an Annular CMUT Array and a Multi-Channel Bipolar Pulser",
      "authors": [
       "Min Chul Kim",
       "Young Jin Cho",
       "Hyun Su Kim",
-      "Jeongwoo Hwang",
-      "Hyeong Geun Jo",
       "Se Jong Shin",
+      "Jeong Hoon Kim",
+      "Hyeong Geun Jo",
+      "Jeongwoo Hwang",
       "Inwoo Kim",
-      "Kwan Kyu Park"
+      "Kw..."
      ],
      "abstract": "Emerging near-field applications like ophthalmic treatments and neuromodulation demand miniaturized high-pressure devices, unlike conventional piezoelectric HIFU. CMUT fabricated via MEMS offers miniaturization, array integration, and versatile channel design. We present a 16×16 mm, 23-channel annular CMUT array (5 MHz center frequency) driven by an FPGA pulser for localized near-field HIFU lesion formation. Hydrophone measurements show a 5-14 kPa/V surface sensitivity at 3.57 MHz. The FPGA pulser controls time delays to synthesize a focused field at 12 mm depth, operating four grouped channels with 90-degree phase delays for stable high output. Thermal ablation potential is evaluated using CEM43, considering biological acoustic attenuation. Focal pressure reaches 6.87 MPa (1.57 kW/cm² spatial-peak pulse intensity). In an ex vivo porcine liver model, the thermal dose exceeds the 250 CEM43 threshold for exposures over 165 ms. Furthermore, TX sensitivity variations based on channel/cell layout and device self-heating under high AC voltages are analyzed to establish safe limits. These findings demonstrate the feasibility of CMUTs with FPGA beamforming for near-field HIFU ablation.",
      "keywords": [
@@ -20642,7 +20622,7 @@
    "id": 179,
    "code": "B5P-15",
    "title": "MIS: Physical & Wave Methods",
-   "expected": 11,
+   "expected": 10,
    "day": "Tuesday",
    "date": "Oct 6th, 2026",
    "time": "15:30-16:30",
@@ -20854,30 +20834,6 @@
       "sigmoid",
       "speckle",
       "biceps brachii"
-     ]
-    },
-    {
-     "id": 8192,
-     "topic": "1.7",
-     "topicName": "Medical Image and Signal Processing (MIS)",
-     "title": "A Differentiable Ultrasound Simulator for Image inversion, scatter-Level Motion tracking, and physics-Based Augmentation",
-     "authors": [
-      "Arturas Aleksandraus",
-      "Marco Voormolen",
-      "Anneke Meyer",
-      "Milda Poceviciute",
-      "Daniel Jönsson",
-      "Gabriel Eilertsen",
-      "Jonas Unge..."
-     ],
-     "abstract": "We propose a differentiable ultrasound simulator implemented in PyTorch. The medium is a set of point scatterers, each with a position, an amplitude and optionally a class label. Image formation is composed of four stages whose parameters carry gradients: a Fresnel spatial-impulse-response stage, a transmit-sequence stage, a delay-and-sum beamformer, and envelope detection with log-compression. The learnable parameters are the scatterer positions and amplitudes, the transmit waveform centre frequency and bandwidth, the probe element pitch, the sound speed in the forward model and, separately, the sound speed in the beamformer, the attenuation coefficient, and the dynamic range. Two uses are shown. A clinical B-mode image is inverted into a scatter phantom whose simulated image reproduces the acquired one. The phantom is then re-rendered under acquisitions that differ from the original: plane-wave, focused and synthetic-aperture transmit sequences, different steering angles, centre frequencies, focal depths, a changed forward-model sound speed, dynamic ranges, envelope or RF filters, and different virtual-source positions of the focused transmit.",
-     "keywords": [
-      "Ultrasound simulation",
-      "Differentiable rendering",
-      "Image inversion",
-      "Physics-based augmentation",
-      "Point scatterer model",
-      "Tissue motion tracking"
      ]
     }
    ]
@@ -21209,20 +21165,24 @@
      "title": "Temporal and Nonlinear Characterization of Nanobubble Signals in Mouse Tumors",
      "authors": [
       "Yu Weng",
-      "Tessa Kosmides",
+      "Michael Nguyen",
+      "Mahshid Yaali",
+      "Niloufar Shirazi",
+      "Theresa Kosmides",
       "Dorian Durig",
       "Eno Hysi",
       "Agata Exner",
-      "Michael Kolios"
+      "Mich..."
      ],
      "abstract": "Nanobubbles (NBs) are promising tumor contrast agents because they can circulate, accumulate, and potentially extravasate into tumor-associated spaces. This work used two complementary ultrasound strategies in vivo: high-frame-rate single-pulse plane-wave imaging (PWI) to monitor rapid NB transport after injection, and cross-amplitude modulation (xAM) to characterize nonlinear NB behavior. Undiluted phospholipid-shelled NBs were injected in mice bearing subcutaneous BxPC-3 tumors. PWI data were acquired on the Vevo F2, and NB-enhanced signals were isolated per breathing cycle using singular value decomposition, followed by power Doppler reconstruction. xAM was performed post-injection with transmit voltage varied from 10% to 100%. Power Doppler showed NB signals first mainly around the tumor, followed by increasing tumor-associated enhancement over time. xAM showed strong excitation dependence, with mean nonlinear signal intensity nearly tripling from 10% to 40% transmit voltage, then decreasing from 70% to 100% while localized enhancement persisted. These results show that PWI and xAM provide complementary characterization of NB signal dynamics and nonlinear behavior in tumors.",
      "keywords": [
       "Nanobubbles",
-      "tumor imaging",
+      "contrast-enhanced ultrasound",
       "plane-wave imaging",
-      "cross-amplitude modulation",
-      "power Doppler",
-      "nonlinear ultrasound"
+      "power Doppler imaging",
+      "peak-density imaging",
+      "cross amplitude modulation",
+      "tumor imaging"
      ]
     },
     {
@@ -21270,11 +21230,11 @@
      "id": 8310,
      "topic": "1.4",
      "topicName": "Contrast Agents (MCA)",
-     "title": "Sequence-Dependent Nonlinear Response of Microbubble Clouds to Therapeutic Ultrasound",
+     "title": "Nonlinear Response of Coupled Microbubble Clouds to Therapeutic Ultrasound",
      "authors": [
       "Reza Pakdaman Zangabad"
      ],
-     "abstract": "Therapeutic ultrasound with microbubbles depends on nonlinear radial oscillation, shell hysteresis, cloud coupling, and translation, yet cavitation feedback is often interpreted using isolated-bubble assumptions. This work investigates cloud response to pulse inversion (PI), amplitude modulation (AM), and asymmetric amplitude-modulation low-high (AMLH) excitation. A multi-bubble Keller-Miksis model coupled to a hysteretic Marmottant shell law was implemented, including translation and secondary Bjerknes interactions. The framework was tested for Definity, SonoVue, Optison, Sonazoid, and DSPC-type microbubbles at 1 and 0.5 MHz, with robustness checked against published ultrahigh-speed optical imaging. Scattered pressure from the full cloud was sequence-combined and analyzed over a pressure sweep. Subharmonic (SH) and nonlinear-frequency (NLF) changes were quantified relative to the first-burst fundamental. AM and AMLH produced stronger NLF growth than PI, approaching the first-burst fundamental at high pressure, while SH remained lower and more sequence-dependent. These results suggest that AM/AMLH can provide stronger nonlinear-feedback metrics for therapy monitoring.",
+     "abstract": "Therapeutic ultrasound with microbubbles involves nonlinear radial oscillation, shell hysteresis, interbubble coupling, and translational motion, yet these collective effects are often simplified using isolated-bubble assumptions. This work develops a coupled microbubble-cloud framework based on the Keller-Miksis equation with a hysteretic Marmottant shell model, including translation, secondary Bjerknes interactions, and ensemble scattered-pressure calculation. The framework was evaluated for Definity, SonoVue, Optison, Sonazoid, and DSPC-type microbubbles at 1 and 0.5 MHz, with model robustness checked against published ultrahigh-speed optical measurements. Cloud response was analyzed over a pressure sweep using representative pulse-processing schemes, with subharmonic and nonlinear-frequency components quantified relative to the first-burst fundamental. Results show that nonlinear cloud emissions evolve strongly with pressure and are shaped by the combined effects of shell mechanics, acoustic coupling, and translation. These findings support coupled-cloud modeling as a useful tool for interpreting therapeutic microbubble response.",
      "keywords": [
       "Keller-Miksis model",
       "Marmottant shell law",
@@ -21347,6 +21307,10 @@
      "authors": [
       "Tarek Kaddoura",
       "Nathaniel Haven",
+      "Nathaniel Bly",
+      "Darren Dahunsi",
+      "Randy Palamar",
+      "Mohammad Sobhani",
       "Roger Zemp"
      ],
      "abstract": "Current photoacoustic (PA) imaging methods combine high-contrast optical imaging with fine resolution and deep penetration of ultrasound imaging. However, acquisition of massive-volume 3D PA images is currently challenging. Top-Orthogonal-Bottom-Electrode (TOBE) arrays are an emerging row-column transducer technology that offer the potential to scale to large arrays for imaging such massive volumes. The Hadamard-Encoded Read-Out (HERO) scheme can be used with TOBE arrays to read out from every element and produce massive volumes that are receive-focused everywhere, albeit with motion artifacts for moving tissues. The objective of this study is to demonstrate how photoacoustic transmissions can be interleaved with ultrafast volumetric ultrasound acquisitions to produce complete motion-compensated high image quality photoacoustic and ultrasound volumes.",
@@ -21361,7 +21325,7 @@
      "id": 7802,
      "topic": "1.8",
      "topicName": "Medical Photoacoustics (MPA)",
-     "title": "For Accessible Real-Time Multi-Spectral Photoacoustic Imaging: Open-Sourced System Architecture for OPOTEK Phocus & Verasonics Vantage Combination",
+     "title": "OPERA: an Open-Source OPOTEK-Verasonics Architecture for Real-Time Multi-Spectral Photoacoustic Imaging",
      "authors": [
       "Ryo Murakami",
       "Yichuan Tang",
@@ -21719,7 +21683,7 @@
      "id": 7309,
      "topic": "1.9",
      "topicName": "System & Device Design (MSD)",
-     "title": "Performance of Long Coded Excitation Under Crosstalk Constraints for Wearable Muscle Monitoring Using a Low-Cost Commercially Available Microcontroller for Signal Transmission",
+     "title": "Performance of Long Coded Excitation Under Crosstalk Constraints Towards Wearable Muscle Monitoring Using a Commercial-off-the-Shelf Microcontroller for Signal Transmission",
      "authors": [
       "Erik Kaiser",
       "Nele Kirsch",
@@ -22030,6 +21994,7 @@
      "title": "A Feasibility Study and Computational Model for Ultrasound-Guided Directional Heat Transfer in Soft Tissue",
      "authors": [
       "V.S. Priyanka Jamjhyam",
+      "Guoliang Zhang",
       "S. Ali Mirbozorgi",
       "S. Abdollah Mirbozorgi"
      ],
@@ -22219,6 +22184,9 @@
      "topicName": "Modeling and Simulation (TMS)",
      "title": "SonarForge AI: an Accessible Ultrasound Field and Imaging Design Tool for Rapid Transducer Prototyping Using Rayleigh-Based Modeling",
      "authors": [
+      "Ying Liu",
+      "Sadman Labib",
+      "Janeth Marquez Rubio",
       "Amir Manbachi"
      ],
      "abstract": "We present SonarForge AI, an AI-built ultrasound simulation platform designed to improve accessibility and interpretability in transducer design and imaging physics. Established tools such as Field II, k-Wave, OnScale, and PiezoCAD enable high-fidelity modeling but require significant expertise and are not optimized for intuitive, goal-driven workflows. SonarForge AI introduces a plain-language interface where users specify imaging objectives (e.g., resolving 2 mm targets at 5 cm depth) and receive immediate feedback through beam profiles, resolution estimates, impedance predictions, and synthetic B-mode visualizations. The platform leverages simplified Rayleigh-based coherent summation under linear acoustic assumptions to generate real-time outputs. A dual-mode interface supports both novice users and experts by combining guided interpretation with explicit equations and assumptions. SonarForge AI serves as an educational and rapid prototyping tool while establishing a pathway toward validation against established ultrasound simulation frameworks.",
@@ -22313,10 +22281,11 @@
      "title": "Single-Ended Ku-Band Lattice BAW Filter Using a Phase-Flip Network",
      "authors": [
       "Tangwei Hu",
-      "Zhiqiang Mu",
       "Xuanqi Huang",
       "Yang Gao",
-      "Tingting Liu"
+      "Tingting Liu",
+      "Zhiqiang Mu",
+      "Dingjian Li"
      ],
      "abstract": "Ku-band RF front-ends require compact filters with low-loss passband and strong out-of-band rejection. Lattice BAW filters are promising but have a four-port differential structure that cannot directly adapt to single-ended systems, requiring baluns that increase volume and insertion loss. This study designs a high-performance lattice BAW filter for single-ended Ku-band RF front-ends. The resonators use a two-layer Al₀.₈Sc₀.₂N periodically poled (P3F) stack to match the uplink band. A second-order LC-LC network at the output provides a 180° phase flip, enabling balun-free single-ended operation. By analyzing its frequency response, this phase-flip network naturally generates a deep transmission zero in the downlink band, allowing removal of a shunt resonator conventionally dedicated to downlink rejection. Simulation results show operation in the 14–14.5 GHz uplink with 1 GHz 3-dB bandwidth, minimum insertion loss below 1.4 dB, return loss better than 14.5 dB, and downlink rejection >30 dB from 10–13 GHz. The proposed phase-flip lattice topology is a promising compact, balun-free solution for Ku-band RF front-ends.",
      "keywords": [
@@ -22351,11 +22320,14 @@
      "id": 8005,
      "topic": "4.2",
      "topicName": "Device Modeling and Design (ADM)",
-     "title": "Physics-Informed Neural Networks for Accelerated Forward Simulation and Inverse Thickness Design of P3F BAW Resonators",
+     "title": "Unified Physics-Guided Surrogate Modeling of Single-Piezoelectric-Layer and P3F BAW Resonators Across 3–20 GHz",
      "authors": [
       "Bozuo Jing",
+      "Wenzheng Jiang",
+      "Ruidong Qin",
       "Zhiqiang Mu",
-      "Xuanqi Huang"
+      "Xuanqi Huang",
+      "Wenjie Yu"
      ],
      "abstract": "This work presents a Physics-Informed Neural Network (PINN) framework for accelerated forward simulation and inverse thickness design of ultra-high-frequency Periodically Polarity-Inverted Piezoelectric Film (P3F) Bulk Acoustic Wave (BAW) resonators. It addresses trial-and-error design based on repeated Mason-model or finite-element simulations, especially above 10 GHz where polarity inversion and Q-enhancement microstructures increase complexity. The forward branch combines a Mason baseline, physics priors, and neural residual learning, so the network corrects impedance spectra rather than generating them from scratch. The inverse branch maps target fs, fp, Qs, Qp, and kt² to electrode and piezoelectric-layer thicknesses. Comparisons with ADS data, COMSOL 2D microstructure-enhanced data, Mason baseline, and NN prediction show close agreement with the enhanced response. Training curves show MSE below 0.01 and R² approaching unity, supporting target-metric-driven thickness prediction and spectral verification.",
      "keywords": [
@@ -22487,7 +22459,7 @@
      "id": 8470,
      "topic": "2.4",
      "topicName": "General NDE Methods (NDE)",
-     "title": "An extensive study of the use of high frequency ultrasonics from 50MHz up to 175MHz on very high accuracy sratigraphies simulation of Byzantine frescoes and icons of all the periods",
+     "title": "An Extensive Study of the Use of High Frequency Ultrasonics from 50MHz Up to 175MHz on Very High Accuracy sratigraphies Simulation of Byzantine Frescoes and Icons of All the Periods",
      "authors": [
       "Georgios Karagiannis"
      ],
@@ -22693,7 +22665,7 @@
      "id": 8451,
      "topic": "1.5",
      "topicName": "Elastography (MEL)",
-     "title": "Machine Learning-Based On-Axis Estimation of Elasticity and Viscosity Ratios from ARFI-Derived Displacement Features",
+     "title": "Machine Learning-Based On-Axis Estimation of Shear Modulus and Viscosity Ratios from ARFI Displacement Features",
      "authors": [
       "Simina Mannan Trisha",
       "Md Ashiqur Rahman",
@@ -22729,7 +22701,7 @@
      "id": 8491,
      "topic": "1.5",
      "topicName": "Elastography (MEL)",
-     "title": "Patch-Based Convolutional Neural Network (CNN) Estimation of Elasticity and Viscosity in Heterogeneous Media from Shear-Wave Motion Features",
+     "title": "Patch-Based CNN Reconstruction of Shear Modulus and Viscosity in Heterogeneous Media from Shear-Wave Motion Feature",
      "authors": [
       "Md Ashiqur Rahman",
       "Md Murad Hossain"
@@ -23050,7 +23022,7 @@
      "id": 8134,
      "topic": "1.6",
      "topicName": "Medical Imaging (MIM)",
-     "title": "Energy Efficient Implementations of Mismatched Filtering for Wearable Ultrasound",
+     "title": "Energy Efficient Implementations of Matched Filtering for Wearable Ultrasound",
      "authors": [
       "Franz Richter",
       "Edgar M. G. Dorausch",
@@ -23395,18 +23367,18 @@
      "id": 8047,
      "topic": "1.7",
      "topicName": "Medical Image and Signal Processing (MIS)",
-     "title": "SPADA: A Robust Algorithm for Ultrasound B-Mode Image-Based Sub-Pixel Arterial Diameter Tracking Towards Continuous Non-Invasive BP Measurement",
+     "title": "SPADA: Sub-Pixel Arterial Diameter Tracking in Ultrasound B-Mode Images Towards Continuous Non-Invasive Blood Pressure Measurement",
      "authors": [
       "Vincent Walter",
       "Yannick Fuchs",
       "Alan Thomas",
       "Tönnis Trittler",
+      "Edgar Dorausch",
       "Richard Nauber",
       "Jochen Hampe",
-      "Moritz Herzog",
-      "Erik Kaiser"
+      "Moritz Her..."
      ],
-     "abstract": "Ultrasound can enable continuous, non-invasive blood pressure (BP) measurement. For accurate BP monitoring, precise arterial diameter tracking is crucial. However, current ultrasound-based diameter tracking methods rely on raw data, inaccessible on most clinical systems, while B-mode-based tracking lacks required accuracy. This work hypothesizes that sub-pixel precision can overcome these limitations and introduces the deterministic SPADA (Sub-Pixel Arterial Diameter Analysis) algorithm for B-mode images. SPADA estimates the vessel center and applies radial scanline profiling. Gaussian fitting of the second derivative profiles enables sub-pixel wall localization beyond the sampling limit. Validation on simulated B-mode images showed low bias (-0.044 ± 0.017 mm) and tight limits of agreement (0.012 to 0.072 mm). In vivo, SPADA reconstructed physiologically plausible diameter waveforms from video sequences. In comparison, manually annotated waveforms showed high intra-observer variability. Both simulated and in-vivo results demonstrate SPADA as an accurate algorithm, enabling sub-pixel diameter estimation from standard B-mode images, which facilitates BP measurement.",
+     "abstract": "Ultrasound can enable continuous, non-invasive blood pressure (BP) measurement. For accurate BP monitoring, precise arterial diameter tracking is crucial. However, current ultrasound-based diameter tracking methods rely on raw data, inaccessible on most clinical systems, while B-mode-based tracking lacks required accuracy. This work hypothesizes that sub-pixel precision can overcome these limitations and introduces the deterministic SPADA (Sub-Pixel Arterial Diameter Analysis) algorithm for B-mode images. SPADA estimates the vessel center and applies radial scanline profiling. Gaussian fitting of the second derivative profiles enables sub-pixel wall localization beyond the sampling limit. Validation on simulated B-mode images showed low bias (-0.022 ± 0.010 mm) and tight limits of agreement (-0.041 to -0.003 mm). In vivo, SPADA reconstructed physiologically plausible diameter waveforms from video sequences. In comparison, manually annotated waveforms showed high intra-observer variability. Both simulated and in-vivo results demonstrate SPADA as an accurate algorithm, enabling sub-pixel diameter estimation from standard B-mode images, which facilitates BP measurement.",
      "keywords": [
       "Ultrasound imaging",
       "B-mode ultrasound",
@@ -23516,11 +23488,12 @@
      "authors": [
       "Yongtai Ma",
       "Siddharth Krishnan",
-      "Abdullah Zahi Alqahtani",
-      "Gang Wu",
+      "Sadman Labib",
+      "Janeth Marquez Rubio",
       "Matthias Ringkamp",
+      "Gang Wu",
       "Michael Caterina",
-      "Allan Belzberg..."
+      "All..."
      ],
      "abstract": "Accurate intraoperative delineation of peripheral nerve injury remains challenging due to spatially heterogeneous structural remodeling. This work investigates shear-wave elastography (SWE) for spatially resolved quantification of mechanical properties and introduces a centerline-based framework for extracting continuous stiffness profiles. Ex vivo porcine nerve specimens were imaged using SWE, and color-encoded data were converted to quantitative shear wave velocity (SWV) values through calibrated mapping. Spatial sampling along the nerve axis enabled reconstruction of continuous SWV profiles spanning proximal, lesion, and distal regions. Injured regions exhibited elevated SWV relative to surrounding tissue, with profiles revealing localized stiffness gradients and transitions corresponding to lesion boundaries. This approach enables reproducible quantification of mechanical heterogeneity and extends elastography beyond qualitative imaging toward spatially resolved tissue characterization. These findings support SWE-derived spatial profiling as a potential tool for intraoperative assessment of peripheral nerve injury.",
      "keywords": [
@@ -23673,7 +23646,10 @@
      "topicName": "System & Device Design (MSD)",
      "title": "A Handheld Dual Motor Scanner with Three Degrees of Freedom for Photoacoustic Imaging of Curved Surfaces",
      "authors": [
-      "Hua Sang"
+      "Hua Sang",
+      "Yunfan Li",
+      "Hengrong Lan",
+      "Fei Gao"
      ],
      "abstract": "Photoacoustic imaging on curved or irregular tissue surfaces is limited by unstable probe-tissue coupling, inconsistent scanning trajectories, and poor repeatability during manual operation. This work presents a surface-adaptive handheld 3-DOF dual-motor scanner for repeatable photoacoustic imaging on nonplanar targets. The scanner uses a motorized X-axis for linear scanning, a motorized Y-axis for probe angle adjustment, and a spring-based passive Z-axis with a 5 mm compliant displacement range to compensate local surface variations and maintain contact. The prototype is designed for integration with an existing photoacoustic acquisition platform equipped with a linear-array ultrasound probe. Preliminary handheld imaging visualized vascular targets, confirming the feasibility of the imaging configuration. The proposed scanner provides controllable probe motion and adaptive contact, supporting future quantitative evaluation on flat and curved phantoms and three-dimensional reconstruction.",
      "keywords": [
@@ -23689,9 +23665,11 @@
      "id": 7896,
      "topic": "1.9",
      "topicName": "System & Device Design (MSD)",
-     "title": "Smart Ultrasound-Based Non-Invasive ICP Monitoring Through Multi-Layer Skull Echo Features and AR-Guided Visualization",
+     "title": "Multi-Structure Detection in Intraoperative Brain Ultrasound Using Deep Learning",
      "authors": [
       "Jie-Ming Zheng",
+      "Tee-Tau Eric Nyam",
+      "Jinn-Rung Kuo",
       "Jian-Xing Wu"
      ],
      "abstract": "Intraoperative ultrasound (iUS) helps localize brain tumors and assess resection extent, but speckle noise, acoustic shadowing, hyperechoic artifacts, and resection-induced tissue changes make automated boundary identification challenging. We developed a deep learning workflow to detect four structures in intraoperative 3D brain ultrasound: tumor, resection cavity, sulci, and falx cerebri. A total of 17,362 annotated 2D slices were extracted from 69 3D B-mode volumes of 23 patients in the public RESECT and RESECT-SEG datasets, covering before-, during-, and after-resection stages. A YOLOv8 model was trained for multiclass detection, and a cross-slice consistency check flagged continuous or discontinuous detections. In slice-level internal validation, the model achieved an mAP50 of 92% and mAP50-95 of 73%, with confusion-matrix diagonal values of 0.91, 0.88, 0.84, and 0.84 for tumor, resection cavity, sulci, and falx cerebri, respectively. These results demonstrate the preliminary feasibility of YOLOv8 for multi-structure detection in iUS. Because a slice-level data split was used, cross-patient generalization requires confirmation through patient-level validation.",
@@ -23837,8 +23815,6 @@
      "title": "Anharmonic DFT Simulation of NIR Spectra for Wavelength Optimization in Vibrational Photoacoustic Imaging",
      "authors": [
       "Shiying Wu",
-      "Mengjiao Zhang",
-      "Zhonghang Wu",
       "Xiaoou Li",
       "Qian Cheng"
      ],
@@ -24145,7 +24121,7 @@
      "id": 8076,
      "topic": "1.12",
      "topicName": "Theranostics & Image Guidance in Therapy (MTN)",
-     "title": "Acoustic Distance-Based Correction of Optical Tracking Errors for Transcranial Focused Ultrasound Neuromodulation",
+     "title": "Estimation of Transducer Placement Errors from Acoustic Features for Transcranial Focused Ultrasound Targeting",
      "authors": [
       "Jixin Xia",
       "M.Anthony Phipps",
@@ -24366,6 +24342,9 @@
      "title": "H-Array Transducer for 4D Tissue Harmonic Echocardiography",
      "authors": [
       "Zoe Nussbaum",
+      "Amee Van",
+      "Dominic De La Torre",
+      "Arash Kheradvar",
       "Jesse Yen"
      ],
      "abstract": "4D transthoracic echocardiography (TTE) is a real-time, low-cost alternative to cardiac MR but lacks the spatial and temporal resolution needed for accurate 4D flow assessment. This work proposes an “H-Array” transducer that transmits at the fundamental frequency and receives higher-order harmonics from tissue and microbubbles, enabling high-volume-rate 4D imaging and improved sensitivity. The design also allows flexible selection of imaging planes, supporting techniques like EchoPIV for flow and strain analysis. The prototype includes one 32-element transmit array and two orthogonal 32-element receive arrays (96 elements total), using 2-2 PZT composites targeting 2 MHz transmit and 4 MHz receive. Cylindrical lenses broaden the field of view. Measurements show good element uniformity, widened beam profiles, and successful harmonic imaging of a wire phantom with ~5° resolution, demonstrating feasibility and potential for enhanced cardiac imaging.",
@@ -24445,8 +24424,11 @@
      "title": "A 1-3 Composite High-Frequency Imaging Transducer for Intravascular Plaque Imaging",
      "authors": [
       "Huaiyu Wu",
+      "Ali Naderi",
       "Benjamin C. Kreager",
       "Yu Chu",
+      "Robert Wodnicki",
+      "Jian Tian",
       "Qifa Zhou",
       "Kang Kim",
       "Xiaoning Jiang"
@@ -24562,7 +24544,6 @@
       "Renjie Gao",
       "Xiao Ying",
       "Yuhai Yuan",
-      "He Sun",
       "Haichao Liu",
       "Xiaobin Jiang",
       "Yang Liu"
@@ -24686,7 +24667,7 @@
       "Ihab Elkady",
       "Ahmed Allam"
      ],
-     "abstract": "Ultrasonic waves can transmit data through metallic barriers where electromagnetic solutions fail. However, existing ultrasonic channels are highly resonant, which limits their coherence bandwidth for broadband communications. This work designs and experimentally validates an ultrasonic stack that suppresses these mechanical resonances. Using 5 MHz piezoelectric transducers bonded to opposite sides of a 3 mm aluminum wall, we show via 1D analytical and 3D finite-element models that the resonances arise from internal reflections within the stack and cannot be removed by conventional backing. We introduce a graded filled-epoxy fronting layer integrated into the metal surface that minimizes reflections through gradient impedance matching and attenuation. Multiple epoxy formulations and micromachined patterns are evaluated and characterized with a vector network analyzer. The optimized stack reduces frequency-response ripple from over 30 dB to under 3 dB across the 3 to 20 MHz range. An OFDM communication link demonstrates the resulting throughput gains, enabling high-rate data transfer for sealed pressure vessels, nuclear waste canisters, and EMI-shielded electronics.",
+     "abstract": "Ultrasonic waves can transmit data through metallic barriers where electromagnetic solutions fail. However, existing ultrasonic channels are highly resonant, which limits their coherence bandwidth for broadband communications. This work designs and experimentally validates an ultrasonic stack that suppresses these mechanical resonances. Using 5 MHz piezoelectric transducers bonded to opposite sides of a 3 mm aluminum wall, we show via 1D analytical models that the resonances arise from internal reflections within the stack and cannot be removed by conventional backing. We introduce a metal filled-epoxy fronting layer integrated into the metal surface that minimizes reflections through impedance matching and attenuation. Multiple epoxy formulations are evaluated and characterized with a vector network analyzer. The optimized stack reduces frequency-response ripple from over 12 dB to under 3 dB across the 3 to 20 MHz range. A broadband communication link demonstrates the resulting throughput gains, enabling high-rate data transfer for sealed pressure vessels, nuclear waste canisters, and EMI-shielded electronics.",
      "keywords": [
       "Ultrasonic Communications",
       "Piezoelectric Transducers",
@@ -25508,7 +25489,7 @@
       "Roberto Lavarello",
       "Andres Coila"
      ],
-     "abstract": "This work evaluates deep learning methods for estimating local B/A maps from cumulative B/A maps obtained with the depletion method. The conventional linear inversion assumes that cumulative values are depth averages of local values, which may introduce bias when nonlinear effects are present in heterogeneous media. A U-Net and a disentangled autoencoder were trained on k-Wave simulations with different B/A spatial configurations and evaluated on both simulated data and out-of-distribution physical phantom data. Results showed that the autoencoder had lower errors beneath inclusions, while both DL methods performed similarly to or better than linear inversion in layered cases. These findings indicate that latent-space separation can be useful for local B/A reconstruction.",
+     "abstract": "This work evaluates deep learning methods for estimating local B/A maps from cumulative B/A maps obtained with the depletion method. The conventional linear mapping with total variation regularization (LMTV) assumes that cumulative values are depth-weighted averages of local values, which may introduce bias when nonlinear propagation effects are present in heterogeneous media. A U-Net and a disentangled autoencoder (DAE) were trained on k-Wave simulations with different B/A spatial configurations and evaluated on simulated test data, a matched OOD simulated phantom, and an OOD physical phantom. On the simulated test data, the U-Net achieved the lowest MAPE of 1.97%, while the DAE achieved the highest SSIM of 0.914. For the OOD physical phantom, the DAE achieved the best overall performance, with a MAPE of 5.26% and an SSIM of 0.752, compared with 17.06% and 0.596 for the U-Net and 13.21% and 0.631 for LMTV. These results indicate that deep learning can improve local B/A reconstruction and suggest that latent-space separation may provide greater robustness to conditions not represented during training.",
      "keywords": [
       "B/A estimation",
       "depletion method",
@@ -25524,14 +25505,14 @@
      "id": 8398,
      "topic": "1.10",
      "topicName": "Medical Tissue Characterization (MTC)",
-     "title": "Improving B/A Imaging with a Multi-Energy Level Regression Strategy",
+     "title": "Improving B/a Imaging with a Multi-Energy Level Regression Strategy",
      "authors": [
       "Esteban Avilés",
       "Michael Oelze",
       "Roberto Lavarello",
       "Andres Coila"
      ],
-     "abstract": "This work proposes multi-energy-level regression (MLR) to improve B/A imaging when hydrophone pressure-scaling measurements are uncertain. The depletion method estimates B/A from fundamental-band changes between two pressure levels, but it is sensitive to errors in the true low- and high-pressure scaling factor. MLR instead uses multiple drive levels and a nonlinear fundamental-band pressure model. Reference phantom data with known attenuation and Gol’dberg number estimate the optimal pressure-scaling axis, and sample data estimate the sample Gol’dberg number and B/A. The method was tested in matched simulations and physical phantoms with characterized sample/reference B/A values of 6.8 and 6.7. Simulations used 20 pressure levels and compared no scaling noise with 4% added noise; phantom data used hydrophone-measured scaling factors. In simulations, only one DM pair shifted less from baseline than MLR under noise. In phantoms, DM estimates showed high variability: the modal DM shifted 14.5% from simulation and the mean over all DM pairs shifted 43%, while MLR shifted 5.3%. These results suggest MLR reduces sensitivity to pressure-calibration uncertainty in B/A imaging.",
+     "abstract": "This work proposes multi-energy-level regression (MLR) to improve B/A imaging under pressure-calibration uncertainty. The depletion method (DM) estimates B/A from fundamental-band changes between two pressure levels but is sensitive to errors in their pressure ratio. MLR uses multiple drive levels and uses reference phantom data to jointly estimate relative pressure factors and a reference depletion coefficient. Sample coefficients are then fitted and converted to B/A using their ratio to the reference coefficient. Matched simulations and physical phantoms used 20 levels and sample/reference B/A values of 6.8/6.7. Simulations compared nominal calibration with a smooth pressure-factor perturbation of 3.37% normalized root-mean-square error. Phantom hydrophone measurements supplied the pressure factors to the DM and initialized MLR. In simulations, MLR changed negligibly, whereas DM showed a mean absolute change of 26.6% across 190 pairs. Phantom DM ROI means ranged from 2.86 to 40.08, while the MLR mean differed from its simulation baseline by 5.2%. These results suggest MLR reduces sensitivity to pressure-calibration uncertainty in B/A imaging.",
      "keywords": [
       "nonlinearity parameter",
       "multi-energy levels",
@@ -25666,7 +25647,7 @@
       "Haoyun Chen",
       "Daler Rakhmatov"
      ],
-     "abstract": "Fourier-domain beamforming (FDB) can reconstruct plane-wave ultrasound images at a much lower computational cost compared to the conventional delay-and-sum (DAS) approach. Note that the latter can handle both raw radio-frequency (RF) and in-phase/quadrature (IQ) channel data. As IQ beamforming is often preferable (e.g., baseband data processing), we investigate a simple extension of RF-based FDB to handle IQ signals. Based on the PICMUS experimental data, we demonstrate that IQ-based FDB produces high-quality B-mode images as anticipated.",
+     "abstract": "Fourier-domain beamforming (FDB) can reconstruct plane-wave ultrasound images at a much lower computational cost compared to the conventional delay-and-sum (DAS) approach. The latter can handle both raw radio-frequency (RF) and in-phase/quadrature (IQ) channel data, while the former is typically formulated for RF input. As IQ beamforming is often preferable (e.g., baseband data processing), we propose a simple extension of RF-based FDB to handle IQ signals. Utilizing the PICMUS experimental dataset, we compare an IQ-based FDB implementation against its RF-based counterpart, by evaluating the reconstructed B-mode images using the generalized contrast-to-noise ratio and full width at half maximum metrics, which demonstrates virtually identical image quality in both cases.",
      "keywords": [
       "Plane-Wave Imaging",
       "IQ Demodulation",
@@ -25799,22 +25780,26 @@
      "id": 8211,
      "topic": "1.8",
      "topicName": "Medical Photoacoustics (MPA)",
-     "title": "Micro-Ultrasound and Photoacoustic Imaging for Picosecond Infra-Red Laser Assisted Intra-Tumor Injections",
+     "title": "Intratumor Drug Delivery Platform for Prostate Cancer: Picosecond Infrared Laser Ablation with Photoacoustic Guidance",
      "authors": [
       "Nidhi Singh",
       "Yohannes Soenjaya",
       "Alexandria Schneider",
       "Sam Virtue",
-      "Dwayne Miller",
       "Darren Kraemer",
-      "Christine Demore"
+      "Dwayne Miller",
+      "Deepak Dinakaran",
+      "Ch..."
      ],
      "abstract": "This study evaluates Picosecond Infra-Red Laser (PIRL)-assisted intratumoral injections guided by micro-ultrasound (micro-US) and photoacoustic imaging (PAI) in DU-145 prostate cancer xenografts in mice. PIRL selectively vaporizes tissue water, creating lesions with cavities at the center that can be used for localized drug deposition, potentially improving drug diffusion and reducing backflow during intratumoral dye delivery. For ablation, a sapphire fiber was inserted into tumors and operated at 0.9 mJ/pulse for 120 min under micro-US guidance. For dye delivery, 50 µL methylene blue was administered through an automated 7-step injection array, with cavities created at each site using 0.25 mJ/pulse for 45 s before injection. Volumetric PAI assessed post-injection dye distribution. Micro-US clearly visualized the PIRL fiber, cavitation clouds, and post-ablation hypoechoic cavities. Histology confirmed a ~1 mm cavity surrounded by coagulation. PAI demonstrated successful intratumoral dye distribution in 3D tumor volumes. These results show that PIRL combined with micro-US and PAI enables tumor ablation and targeted dye delivery.",
      "keywords": [
+      "picosecond infrared laser",
+      "laser ablation",
+      "drug delivery",
       "micro-ultrasound",
       "photoacoustic imaging",
       "prostate cancer imaging",
-      "therapy guidance and monitoring"
+      "therapy guidance"
      ]
     }
    ]
@@ -25911,15 +25896,15 @@
      "id": 8169,
      "topic": "1.9",
      "topicName": "System & Device Design (MSD)",
-     "title": "U-Sonic: An Open-Source 8-Channel Ultrasound Transmit IP in a 130 nm RISC-V SoC",
+     "title": "U-Sonic: an Open-Source 8-Channel Ultrasound Transmit IP in a 130 nm RISC-V SoC",
      "authors": [
       "Federico Villani",
       "Nico Canzani",
       "Marc-André Wessner",
       "Philippe Sauter",
       "Enrico Zelioli",
-      "Alessandro Ottaviano",
-      "Andrea Cos..."
+      "Andrea Cossettini",
+      "Christoph Lei..."
      ],
      "abstract": "Miniaturized ultrasound (US) front-ends require synchronized multi-element TX with programmable bursts, aperture selection, and damping control. Existing research ASICs achieve high channel counts but are closed and difficult to reuse, commercial HV pulser ICs offer mainly register-level control, and MCU-based pulsers are typically single-channel with limited synchronization. We present an open-source TX peripheral for a RISC-V US SoC, spanning RTL, open EDA, and open PDK integration. The SoC core configures up to 16 pulser cores through a memory-mapped Open Bus Interface. Each core supports single- or dual-frequency bursts, programmable period, duty cycle, burst length, polarity, and an optional inverted stop pulse for damping, with 10 ns timing resolution at 100 MHz. A shared control register enables simultaneous start/stop and clock-gating for synchronized multi-channel excitation. The IP was verified in Verilator against a Python golden model, validated on an Intel DE10-Lite FPGA, and implemented in IHP SG13 130 nm using Yosys and OpenROAD. RTL, drivers, verification, and physical design scripts are released under permissive licenses.",
      "keywords": [
@@ -25957,7 +25942,7 @@
      "id": 8178,
      "topic": "1.9",
      "topicName": "System & Device Design (MSD)",
-     "title": "Open-Source, High-Throughput, Scalable Backplane Link Architecture for High-End Wearable Ultrasound Probes",
+     "title": "Open-Source Multi-Wire SPI Readout for Wearable Ultrasound Probes",
      "authors": [
       "Federico Villani",
       "Soumyo Bhattacharjee",
@@ -26000,8 +25985,8 @@
      "authors": [
       "Nikolas Constantinou",
       "Henk W. van Zeijl",
-      "Michiel A.P. Pertijs",
-      "Tiago Costa"
+      "Tiago L. Costa",
+      "Michiel A.P. Pertijs"
      ],
      "abstract": "In 2D ultrasound arrays, application-specific integrated circuits (ASICs) must be pitch-matched to the transducer above, and conventional planar integration limits the circuit area per element. Existing solutions such as redistribution layers introduce parasitic coupling. We propose orienting ASICs with their active face perpendicular to the transducer, decoupling circuit area from transducer dimensions. Here, we demonstrate the fabrication of side-wall contacts on a chip using planar processes. Chips from a TSMC 180nm BCD wafer with aluminum interconnects were diced along their active plane to expose the interconnect pattern on the vertical face, enabling side contacts when the chip is oriented vertically. Through CMOS post-processing, Transfer Length Method (TLM) pad structures were deposited to contact the exposed aluminum and the BCD silicon substrate for reference. Kelvin 4-point probe measurements confirmed current flow through the aluminum interconnects, and the extracted contact resistance was consistent with literature values. These results demonstrate the feasibility of side-wall contacts on CMOS chips for vertical integration of transceivers under 2D ultrasound arrays.",
      "keywords": [
@@ -26075,7 +26060,6 @@
      "authors": [
       "Frank Nicolet",
       "Laurent Gerfault",
-      "Guillaume Charvet",
       "Fabien Sauter"
      ],
      "abstract": "Ultrasound enables non-invasive neuromodulation with high spatiotemporal precision. However, transcranial ultrasound (TUS) suffers from skull-induced attenuation and aberration, which result in limited resolution. In contrast, intracranial ultrasound (IUS), with transducers implanted epidurally, bypasses skull-induced distortions, enabling stable, reproducible transducer positioning—ideal for chronic closed-loop neuromodulation. Nevertheless, IUS requires hermetic and biocompatible encapsulation, but its effects on acoustic fields remain unclear. To quantify IUS advantages on acoustic transmission, we modeled TUS and IUS using finite-element simulations, incorporating all anatomical layers for both configurations. The results demonstrate that titanium encapsulation can be suitable for acoustic transmission, with up to two-fold higher pressure compared with TUS. Furthermore, IUS enables the use of higher frequencies, which are key parameters to improve spatial selectivity in ultrasound neuromodulation applications.",
@@ -26752,6 +26736,7 @@
       "Barbara Nicolas",
       "Enrico Boni",
       "Piero Tortoli",
+      "Philippe Joos",
       "Hervé Liebgott"
      ],
      "abstract": "Doppler-based velocity estimation requires accurate knowledge of the beam-to-flow angle. Current approaches often rely on algorithms that, especially in 3D, are computationally demanding and hardly feasible in real-time. This work presents a fast and robust procedure for 3D Doppler angle estimation, based on a method, so far limited to 2D, which exploits the symmetry properties of Doppler spectra acquired with a matrix array probe.",

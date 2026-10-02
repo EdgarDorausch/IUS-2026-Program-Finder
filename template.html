@@ -79,6 +79,49 @@ button:focus-visible, select:focus-visible, a:focus-visible { outline: 2px solid
 .star[data-mode="must"] { color: var(--must); }
 .star[data-mode="maybe"] { color: var(--maybe); }
 .star[data-mode="online"] { color: var(--online); }
+.ttl { color: inherit; text-decoration: none; }
+.ttl:hover { color: var(--accent); text-decoration: underline; }
+dialog.pv { width: min(720px, calc(100vw - 24px)); max-height: min(90vh, 900px); padding: 0; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--surface); color: var(--ink); box-shadow: 0 20px 60px rgba(0,0,0,.35); overflow: auto; }
+dialog.pv::backdrop { background: rgba(8, 12, 24, .55); }
+.pvb { padding: 18px 22px 22px; display: grid; gap: 12px; }
+.pvh { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.pvh .code { font: 500 12px var(--mono); color: var(--accent); }
+.pvx { border: 0; background: none; color: var(--faint); font-size: 20px; line-height: 1; cursor: pointer; padding: 2px 6px; border-radius: 6px; }
+.pvx:hover { color: var(--ink); }
+.pvb h2 { font: 700 clamp(20px, 3.4vw, 26px)/1.2 var(--cond); margin: 0; text-wrap: balance; }
+.pvb h3 { font: 600 12px var(--sans); text-transform: uppercase; letter-spacing: .08em; color: var(--faint); margin: 6px 0 -4px; }
+.pvauth { margin: 0; color: var(--muted); }
+.pvauth button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
+.pvauth button:hover { color: var(--accent); text-decoration: underline; }
+.pvmeta { display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; margin: 0; font-size: 14px; }
+.pvmeta dt { color: var(--faint); font: 500 12px var(--sans); text-transform: uppercase; letter-spacing: .06em; padding-top: 2px; }
+.pvmeta dd { margin: 0; }
+.pvmeta .kw { display: inline-block; font-size: 12px; background: var(--accent-soft); color: var(--accent); border-radius: 4px; padding: 0 6px; margin: 0 4px 3px 0; }
+.pvrow { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.pvb p.abs2 { margin: 0; font-size: 14.5px; line-height: 1.55; color: var(--ink); max-width: 62em; }
+.pvb textarea { width: 100%; min-height: 110px; resize: vertical; font: 14px/1.45 var(--sans); color: var(--ink); background: var(--ground);
+  border: 1.5px solid var(--line); border-radius: 8px; padding: 8px 10px; outline: none; }
+.pvb textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.pvlink { margin: 0; font-size: 13px; } .pvlink a { color: var(--accent); }
+.acts { display: inline-flex; gap: 2px; align-items: center; }
+.note { justify-self: start; border: 0; background: none; color: var(--faint); font-size: 15px; line-height: 1; padding: 2px 4px; cursor: pointer; opacity: .55; }
+.note:hover, .note.has { opacity: 1; color: var(--accent); }
+.note.has::after { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); vertical-align: top; margin-left: 1px; }
+.tl-card .acts { grid-row: 1 / span 3; flex-direction: column; align-items: flex-start; align-self: start; gap: 0; }
+.tl-card .acts .star { grid-row: auto; }
+.tl-card .acts .note { font-size: 13px; padding: 0 2px; }
+.notepop { position: absolute; z-index: 20; width: min(340px, calc(100vw - 16px)); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 10px; padding: 10px; box-shadow: 0 8px 24px rgba(0,0,0,.22); display: grid; gap: 8px; }
+.notepop .nh { font: 600 13px var(--cond); color: var(--muted); display: grid; gap: 1px; }
+.notepop .nh small { font: 12px var(--sans); font-weight: 400; color: var(--faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.notepop textarea { width: 100%; min-height: 130px; resize: vertical; font: 14px/1.45 var(--sans); color: var(--ink); background: var(--ground);
+  border: 1.5px solid var(--line); border-radius: 8px; padding: 8px 10px; outline: none; }
+.notepop textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.notepop .nf { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.notepop .nf span { font: 11px var(--mono); color: var(--faint); }
+.notepop .nf button { font: 500 13px var(--sans); border: 1px solid var(--line); background: var(--surface); color: var(--muted); border-radius: 7px; padding: 5px 11px; cursor: pointer; }
+.notepop .nf button.primary { background: var(--accent); color: var(--surface); border-color: var(--accent); }
 .bmmenu { position: absolute; z-index: 20; min-width: 190px; background: var(--surface); border: 1px solid var(--line);
   border-radius: 10px; padding: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.22); display: grid; }
 .bmmenu button { display: flex; gap: 10px; align-items: center; text-align: left; border: 0; background: none; color: var(--ink);
@@ -204,8 +247,9 @@ footer a { color: inherit; }
       <div id="tlwrap" hidden><span class="lbl">Show</span><span class="seg" id="tlmode"><button type="button" data-v="" aria-pressed="true">All</button><button type="button" data-v="must" aria-pressed="false">Must</button><button type="button" data-v="maybe" aria-pressed="false">Maybe</button><button type="button" data-v="online" aria-pressed="false">Online</button></span></div>
       <button type="button" class="savedbtn" id="invited" aria-pressed="false" title="Show only invited talks">Invited only</button>
       <button type="button" class="savedbtn" id="saved" aria-pressed="false" title="Show only bookmarked talks and posters">★ Saved only</button>
-      <span class="io"><button type="button" class="savedbtn" id="bmexport" title="Download your bookmarks as a JSON file">Export</button>
-      <button type="button" class="savedbtn" id="bmimport" title="Load bookmarks from a JSON file">Import</button>
+      <span class="io"><button type="button" class="savedbtn" id="bmexport" title="Download your bookmarks and notes as a JSON file (for backup or another device)">Export</button>
+      <button type="button" class="savedbtn" id="bmimport" title="Load bookmarks and notes from a JSON file">Import</button>
+      <button type="button" class="savedbtn" id="notesmd" title="Download your notes as a Markdown file">Notes (.md)</button>
       <input type="file" id="bmfile" accept="application/json,.json" hidden></span>
       <select id="day" aria-label="Day"><option value="">All days</option></select>
       <select id="sess" aria-label="Session"><option value="">All sessions</option></select>
@@ -214,6 +258,7 @@ footer a { color: inherit; }
   </div>
 
   <main id="out" aria-busy="false"></main>
+  <dialog class="pv" id="pv" aria-labelledby="pvtitle"></dialog>
   <footer id="foot"></footer>
 </div>
 
@@ -304,6 +349,21 @@ try {
 function saveBookmarks() {
   try { localStorage.setItem("ius26-bookmarks", JSON.stringify([...bm])); } catch {}
 }
+// Notes are free text per paper id, independent of bookmarks.
+const notes = new Map();
+try {
+  const known = new Set(papers.map(p => p.id));
+  const raw = JSON.parse(localStorage.getItem("ius26-notes") || "{}");
+  if (raw && typeof raw === "object" && !Array.isArray(raw)) for (const [k, v] of Object.entries(raw)) if (known.has(Number(k)) && typeof v === "string" && v.trim()) notes.set(Number(k), v);
+} catch {}
+function saveNotes() {
+  try { localStorage.setItem("ius26-notes", JSON.stringify(Object.fromEntries(notes))); } catch {}
+}
+const noteBtn = p => {
+  const n = notes.get(p.id);
+  return `<button type="button" class="note${n ? " has" : ""}" data-note="${p.id}" aria-haspopup="dialog" aria-expanded="false" aria-label="Paper ${p.id}: ${n ? "has a note" : "no note"}. Edit note." title="${n ? esc(n.length > 120 ? n.slice(0, 120) + "…" : n) : "Add a note"}">✎</button>`;
+};
+const actBtns = p => `<span class="acts">${starBtn(p)}${noteBtn(p)}</span>`;
 const starBtn = p => {
   const m = bm.get(p.id), now = m ? MODES[m].label : "Not bookmarked";
   return `<button type="button" class="star" data-bm="${p.id}"${m ? ` data-mode="${m}"` : ""} aria-haspopup="menu" aria-expanded="false" aria-label="Paper ${p.id}: ${now}. Choose bookmark type." title="${now} · click to choose">${m ? MODES[m].glyph : "☆"}</button>`;
@@ -534,8 +594,8 @@ function semCard() {
   return "";
 }
 
-const titleHtml = (p, terms) => `${highlight(cleanTitle(p), hlFor("titles", terms))}${isInvited(p) ? `<span class="tag invited">Invited</span>` : ""}`;
-const paperRow = (p, terms) => `<div class="paper"><span class="idcell">${paperLink(p)}${p.s.type === "Lecture" ? `<span class="ord">#${p.ord}</span>` : ""}${starBtn(p)}</span><div class="ptitle">${titleHtml(p, terms)}</div><div class="authors">${authorButtons(p, terms)}</div>${absBlock(p)}</div>`;
+const titleHtml = (p, terms) => `<a class="ttl" href="#paper-${p.id}" data-open="${p.id}">${highlight(cleanTitle(p), hlFor("titles", terms))}</a>${isInvited(p) ? `<span class="tag invited">Invited</span>` : ""}`;
+const paperRow = (p, terms) => `<div class="paper"><span class="idcell">${paperLink(p)}${p.s.type === "Lecture" ? `<span class="ord">#${p.ord}</span>` : ""}${actBtns(p)}</span><div class="ptitle">${titleHtml(p, terms)}</div><div class="authors">${authorButtons(p, terms)}</div>${absBlock(p)}</div>`;
 
 // Bookmarked items on a to-scale day axis (PX_MIN px per minute). Items whose times overlap
 // (parallel sessions) sit side by side in lanes. Overlaps are flagged unless one of the two is a watch-online item, which can be
@@ -581,10 +641,10 @@ function timelineHtml() {
       for (const x of items) {
         const { p, r } = x, m = bm.get(p.id), h = (r.b - r.a) * PX_MIN;
         const authors = h >= 90, n = Math.max(1, Math.floor((h - 8 - 15 - (authors ? 15 : 0)) / 16));
-        const tip = `${cleanTitle(p)}\n${p.authors.join(", ")}\n${p.s.code} ${p.s.title}\n${fmt(r.a)}–${fmt(r.b)} · ${p.s.location} · ${MODES[m].label}${r.over ? "\nRuns past the scheduled end of the session (" + p.s.time + ")" : ""}${clash.has(p.id) ? "\nOverlaps another bookmark" : ""}`;
+        const tip = `${cleanTitle(p)}\n${p.authors.join(", ")}\n${p.s.code} ${p.s.title}\n${fmt(r.a)}–${fmt(r.b)} · ${p.s.location} · ${MODES[m].label}${r.over ? "\nRuns past the scheduled end of the session (" + p.s.time + ")" : ""}${clash.has(p.id) ? "\nOverlaps another bookmark" : ""}${notes.has(p.id) ? "\n\nNote: " + notes.get(p.id) : ""}`;
         html += `<article class="tl-card ${m}${clash.has(p.id) ? " clash" : ""}" style="top:${(r.a - t0) * PX_MIN}px;height:${h}px;left:${100 * x.lane / x.n}%;width:${100 / x.n}%;--n:${n}" title="${esc(tip)}">
-          ${starBtn(p)}<div class="m">${fmt(r.a)}–${fmt(r.b)}${r.over ? " ⚠" : ""} · <a href="${BASE}paper_details.php?paper_id=${p.id}" target="_blank" rel="noopener">${p.id}</a> · ${esc(p.s.code)} · ${esc(p.s.location)}${isInvited(p) ? `<span class="tag invited">Inv</span>` : ""}${clash.has(p.id) ? " ⚠ overlap" : ""}</div>
-          <div class="t">${esc(cleanTitle(p))}</div>${authors ? `<div class="a">${esc(p.authors.join(", "))}</div>` : ""}</article>`;
+          ${actBtns(p)}<div class="m">${fmt(r.a)}–${fmt(r.b)}${r.over ? " ⚠" : ""} · <a href="${BASE}paper_details.php?paper_id=${p.id}" target="_blank" rel="noopener">${p.id}</a> · ${esc(p.s.code)} · ${esc(p.s.location)}${isInvited(p) ? `<span class="tag invited">Inv</span>` : ""}${clash.has(p.id) ? " ⚠ overlap" : ""}</div>
+          <div class="t"><a class="ttl" href="#paper-${p.id}" data-open="${p.id}">${esc(cleanTitle(p))}</a></div>${authors ? `<div class="a">${esc(p.authors.join(", "))}</div>` : ""}</article>`;
       }
       html += `</div></div>`;
     }
@@ -615,7 +675,7 @@ function render() {
       html += `<div class="ranked${stale ? " stale" : ""}">`;
       for (const r of shown) {
         const p = r.p;
-        html += `<div class="rank"><span class="idcell">${paperLink(p)}${starBtn(p)}</span>
+        html += `<div class="rank"><span class="idcell">${paperLink(p)}${actBtns(p)}</span>
           <div class="ptitle">${titleHtml(p, terms)}${tag(p.s)}</div>
           ${scoreBar(r)}
           <div class="authors">${authorButtons(p, [])}</div>
@@ -679,7 +739,7 @@ function render() {
       const L = last(a)[0].toUpperCase();
       if (L !== letter) { html += `<div class="letter">${esc(L)}</div>`; letter = L; }
       html += `<div class="author"><h3>${highlight(a, hlFor("authors", terms))} <small>${ps.length} presentation${ps.length > 1 ? "s" : ""}</small></h3><ul>`;
-      for (const p of ps) html += `<li><span class="idcell">${paperLink(p)}${starBtn(p)}</span><span>${titleHtml(p, terms)}${tag(p.s)}</span><span class="where">${whereLine(p)}</span>${absBlock(p)}</li>`;
+      for (const p of ps) html += `<li><span class="idcell">${paperLink(p)}${actBtns(p)}</span><span>${titleHtml(p, terms)}${tag(p.s)}</span><span class="where">${whereLine(p)}</span>${absBlock(p)}</li>`;
       html += `</ul></div>`;
     }
     if (list.length > state.limit) html += `<button type="button" class="more" id="more">Show ${Math.min(300, list.length - state.limit)} more of ${list.length - state.limit} remaining</button>`;
@@ -701,7 +761,9 @@ function syncControls() {
   $("#tlwrap").hidden = state.view !== "timeline";
   for (const g of ["scope", "kind", "view", "tlmode"]) for (const b of $("#" + g).children) b.setAttribute("aria-pressed", b.dataset.v === state[g]);
   $("#saved").setAttribute("aria-pressed", state.saved);
-  $("#bmexport").disabled = !bm.size;
+  $("#bmexport").disabled = !bm.size && !notes.size;
+  $("#notesmd").disabled = !notes.size;
+  $("#notesmd").textContent = notes.size ? `Notes (${notes.size}) .md` : "Notes (.md)";
   $("#invited").setAttribute("aria-pressed", state.invited);
   $("#tlbtn").textContent = bm.size ? `Timeline (${bm.size})` : "Timeline";
   const semOn = state.scope === "semantic";
@@ -748,52 +810,85 @@ let importMsg = "";         // result or error line shown above the list
 
 function exportBookmarks() {
   const body = { app: FILE_APP, version: 1, exported: new Date().toISOString(),
-    bookmarks: [...bm].map(([id, mode]) => ({ id, mode })) };
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([JSON.stringify(body, null, 2) + "\n"], { type: "application/json" }));
-  a.download = `ius26-bookmarks-${new Date().toISOString().slice(0, 10)}.json`;
-  document.body.appendChild(a); a.click(); a.remove();
-  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    bookmarks: [...bm].map(([id, mode]) => ({ id, mode })),
+    notes: [...notes].map(([id, text]) => ({ id, text })) };
+  downloadFile(`ius26-program-state-${new Date().toISOString().slice(0, 10)}.json`, "application/json", JSON.stringify(body, null, 2) + "\n");
 }
 
-// Lenient: {bookmarks:[{id,mode}]}, a bare array of {id,mode}, [id,mode] pairs or plain ids.
+// Lenient: {bookmarks:[{id,mode}], notes:[{id,text}]}, or a bare array of {id,mode}, [id,mode] pairs or plain ids.
 function parseBookmarkFile(text) {
   let raw;
   try { raw = JSON.parse(text); } catch { return { error: "That file isn’t valid JSON." }; }
-  const list = Array.isArray(raw) ? raw : raw && Array.isArray(raw.bookmarks) ? raw.bookmarks : null;
-  if (!list) return { error: "No bookmarks found in that file." };
-  const known = new Set(papers.map(p => p.id)), entries = new Map();
+  const obj = raw && typeof raw === "object" && !Array.isArray(raw);
+  const list = Array.isArray(raw) ? raw : obj && Array.isArray(raw.bookmarks) ? raw.bookmarks : null;
+  const noteList = obj && Array.isArray(raw.notes) ? raw.notes : null;
+  if (!list && !noteList) return { error: "No bookmarks or notes found in that file." };
+  const known = new Set(papers.map(p => p.id)), entries = new Map(), noteIn = new Map();
   let skipped = 0;
-  for (const e of list) {
+  for (const e of list || []) {
     const [id, mode = DEFAULT_MODE] = Array.isArray(e) ? e : e && typeof e === "object" ? [e.id, e.mode] : [e];
     if (known.has(id) && MODES[mode]) entries.set(id, mode); else skipped++;
   }
-  return { entries, skipped };
+  for (const e of noteList || []) {
+    if (e && known.has(e.id) && typeof e.text === "string" && e.text.trim()) noteIn.set(e.id, e.text); else skipped++;
+  }
+  return { entries, notes: noteIn, hasNotes: !!noteList, skipped };
 }
 
 function applyImport(how) {
-  const { entries } = pendingImport;
-  if (how === "replace") bm.clear();
+  const { entries, notes: noteIn, hasNotes } = pendingImport;
+  if (how === "replace") { bm.clear(); if (hasNotes) notes.clear(); }
   for (const [id, mode] of entries) bm.set(id, mode);
-  importMsg = `Imported ${entries.size} bookmark${entries.size === 1 ? "" : "s"} (${how === "replace" ? "replaced" : "merged with"} your existing ones). You now have ${bm.size}.`;
+  for (const [id, text] of noteIn) notes.set(id, text);
+  const part = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
+  importMsg = `Imported ${part(entries.size, "bookmark")}${hasNotes ? ` and ${part(noteIn.size, "note")}` : ""} (${how === "replace" ? "replaced" : "merged with"} your existing ones). You now have ${part(bm.size, "bookmark")} and ${part(notes.size, "note")}.`;
   pendingImport = null;
-  saveBookmarks(); syncControls();
+  saveBookmarks(); saveNotes(); syncControls();
   if (state.saved) rescore(false);
 }
 
 function importNotice() {
   if (pendingImport) {
-    const { entries, skipped } = pendingImport;
-    let fresh = 0, changed = 0;
+    const { entries, notes: noteIn, hasNotes, skipped } = pendingImport;
+    let fresh = 0, changed = 0, nFresh = 0, nChanged = 0;
     for (const [id, mode] of entries) { if (!bm.has(id)) fresh++; else if (bm.get(id) !== mode) changed++; }
-    return `<p class="notice">File has ${entries.size} bookmark${entries.size === 1 ? "" : "s"}: ${fresh} new, ${changed} with a different type${skipped ? `, ${skipped} skipped (not in this program)` : ""}.
-      <button type="button" id="bmmerge">Merge</button> keeps your existing bookmarks and lets the file win on conflicts ·
-      <button type="button" id="bmreplace">Replace</button> swaps in the file’s set (${bm.size} existing removed) ·
+    for (const [id, text] of noteIn) { if (!notes.has(id)) nFresh++; else if (notes.get(id) !== text) nChanged++; }
+    const part = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
+    return `<p class="notice">File has ${part(entries.size, "bookmark")} (${fresh} new, ${changed} with a different type)${hasNotes ? ` and ${part(noteIn.size, "note")} (${nFresh} new, ${nChanged} different)` : ""}${skipped ? `, ${skipped} skipped (not in this program)` : ""}.
+      <button type="button" id="bmmerge">Merge</button> keeps what you have and lets the file win on conflicts ·
+      <button type="button" id="bmreplace">Replace</button> swaps in the file’s set (${part(bm.size, "bookmark")}${hasNotes ? ` and ${part(notes.size, "note")}` : ""} removed first) ·
       <button type="button" id="bmcancel">Cancel</button></p>`;
   }
   return importMsg ? `<p class="notice">${esc(importMsg)} <button type="button" id="bmdismiss">Dismiss</button></p>` : "";
 }
 
+// Notes as a Markdown document in program order (day, then time), one section per note.
+function notesMarkdown() {
+  const dayIx = d => days.indexOf(d);
+  const items = papers.filter(p => notes.has(p.id)).map(p => ({ p, r: itemRange(p) }))
+    .sort((x, y) => dayIx(x.p.s.day) - dayIx(y.p.s.day) || (x.r?.a ?? 1e9) - (y.r?.a ?? 1e9) || x.p.s.code.localeCompare(y.p.s.code) || x.p.ord - y.p.ord);
+  const md = s => s.replace(/[\\`*_{}\[\]<>#|]/g, "\\$&");
+  const out = [`# IUS 2026 notes`, ``, `${items.length} note${items.length === 1 ? "" : "s"} · exported ${new Date().toISOString().slice(0, 10)}`];
+  let day = "";
+  for (const { p, r } of items) {
+    if (p.s.day !== day) { day = p.s.day; out.push(``, `## ${p.s.day}, ${p.s.date}`); }
+    const m = bm.get(p.id);
+    out.push(``, `### ${r ? `${fmt(r.a)}–${fmt(r.b)} · ` : ""}${md(cleanTitle(p))}`, ``,
+      `- **Authors:** ${p.authors.map(md).join(", ")}`,
+      `- **Session:** ${p.s.code}${p.s.type === "Lecture" ? ` #${p.ord}` : ""} · ${md(p.s.title.replace(/\s*\(\d+ posters\)$/, ""))} · ${p.s.location} · ${p.s.type}${isInvited(p) ? " (invited)" : ""}`,
+      `- **Paper:** [${p.id}](${BASE}paper_details.php?paper_id=${p.id})${m ? ` · ${MODES[m].label}` : ""}`,
+      ``, notes.get(p.id).trim());
+  }
+  return out.join("\n") + "\n";
+}
+function downloadFile(name, mime, text) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([text], { type: mime }));
+  a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+$("#notesmd").addEventListener("click", () => downloadFile(`ius26-notes-${new Date().toISOString().slice(0, 10)}.md`, "text/markdown", notesMarkdown()));
 $("#bmexport").addEventListener("click", exportBookmarks);
 $("#bmimport").addEventListener("click", () => $("#bmfile").click());
 $("#bmfile").addEventListener("change", async e => {
@@ -804,11 +899,104 @@ $("#bmfile").addEventListener("change", async e => {
   else {
     const r = parseBookmarkFile(await f.text());
     if (r.error) importMsg = r.error;
-    else if (!r.entries.size) importMsg = `Nothing to import${r.skipped ? ` (${r.skipped} entries aren’t in this program)` : ""}.`;
+    else if (!r.entries.size && !r.notes.size) importMsg = `Nothing to import${r.skipped ? ` (${r.skipped} entries aren’t in this program)` : ""}.`;
     else { importMsg = ""; pendingImport = r; }
   }
   render();
   window.scrollTo({ top: 0 });
+});
+
+// Note editor: one floating popover outside #out (like the bookmark menu), saved as you type.
+let notePop = null, noteTimer;
+function closeNote(refocus) {
+  if (!notePop) return;
+  const id = notePop.dataset.for;
+  clearTimeout(noteTimer); saveNotes();
+  notePop.remove(); notePop = null;
+  for (const b of document.querySelectorAll('[data-note][aria-expanded="true"]')) b.setAttribute("aria-expanded", "false");
+  syncControls();
+  if (refocus) document.querySelector(`[data-note="${id}"]`)?.focus();
+}
+function onNoteInput(id, value) {
+  if (value.trim()) notes.set(id, value); else notes.delete(id);
+  for (const b of document.querySelectorAll(`[data-note="${id}"]`)) { b.classList.toggle("has", notes.has(id)); b.title = notes.has(id) ? value.slice(0, 120) : "Add a note"; }
+  clearTimeout(noteTimer); noteTimer = setTimeout(saveNotes, 300);
+}
+function openNote(btn) {
+  const id = Number(btn.dataset.note), again = notePop && notePop.dataset.for === String(id);
+  closeMenu(false); closeNote(false);
+  if (again) return;
+  const p = papers.find(x => x.id === id);
+  notePop = document.createElement("div");
+  notePop.className = "notepop"; notePop.setAttribute("role", "dialog"); notePop.dataset.for = id;
+  notePop.setAttribute("aria-label", `Note for paper ${id}`);
+  notePop.innerHTML = `<div class="nh">Note · paper ${id}<small>${esc(cleanTitle(p))}</small></div>
+    <textarea aria-label="Note text" placeholder="Your notes on this talk… (Markdown is fine)"></textarea>
+    <div class="nf"><button type="button" data-nclear>Clear</button><span>saved automatically</span><button type="button" class="primary" data-ndone>Done</button></div>`;
+  const ta = notePop.querySelector("textarea");
+  ta.value = notes.get(id) || "";
+  ta.addEventListener("input", () => onNoteInput(id, ta.value));
+  document.body.appendChild(notePop);
+  btn.setAttribute("aria-expanded", "true");
+  const r = btn.getBoundingClientRect();
+  notePop.style.left = Math.max(8, Math.min(r.left + scrollX, scrollX + document.documentElement.clientWidth - notePop.offsetWidth - 8)) + "px";
+  notePop.style.top = (r.bottom + scrollY + 4) + "px";
+  ta.focus();
+}
+document.addEventListener("click", e => {
+  if (!notePop) return;
+  if (e.target.closest("[data-ndone]")) { closeNote(true); return; }
+  if (e.target.closest("[data-nclear]")) {
+    const ta = notePop.querySelector("textarea"); ta.value = ""; ta.dispatchEvent(new Event("input")); ta.focus(); return;
+  }
+  if (!e.target.closest(".notepop") && !e.target.closest("[data-note]")) closeNote(false);
+});
+document.addEventListener("keydown", e => { if (notePop && e.key === "Escape") { e.preventDefault(); closeNote(true); } });
+
+// Presentation overview: a modal with everything known about one paper, plus bookmark type and note.
+const pv = $("#pv");
+function pvHtml(p) {
+  const r = itemRange(p), m = bm.get(p.id), s = p.s;
+  const row = (k, v) => v ? `<dt>${k}</dt><dd>${v}</dd>` : "";
+  const when = `${esc(s.day)} ${esc(s.date)}, ${r ? `${fmt(r.a)}–${fmt(r.b)}` : esc(s.time)}${s.type === "Lecture" && r ? ` <span style="color:var(--faint)">(session ${esc(s.time)}${r.over ? " · runs past the session end ⚠" : ""})</span>` : ""}`;
+  return `<div class="pvb"><div class="pvh"><div><span class="code">${esc(s.code)}${s.type === "Lecture" ? ` · talk #${p.ord} of ${s.papers.length}` : ""}</span>${tag(s)}${isInvited(p) ? `<span class="tag invited">Invited</span>` : ""}</div>
+      <button type="button" class="pvx" data-pvclose aria-label="Close">✕</button></div>
+    <h2 id="pvtitle">${esc(cleanTitle(p))}</h2>
+    <p class="pvauth">${authorButtons(p, [])}</p>
+    <dl class="pvmeta">${row("When", when)}${row("Where", esc(s.location))}${row("Session", `${esc(s.title.replace(/\s*\(\d+ posters\)$/, ""))}${s.chair ? ` <span style="color:var(--faint)">· chair ${esc(s.chair)}</span>` : ""}`)}${row("Topic", esc(p.topicName || ""))}${row("Keywords", (p.keywords || []).map(k => `<span class="kw">${esc(k)}</span>`).join(""))}</dl>
+    <div class="pvrow"><span class="lbl">Bookmark</span><span class="seg" id="pvmode">${[["", "None"], ...Object.entries(MODES).map(([k, v]) => [k, v.label])].map(([k, l]) => `<button type="button" data-pvmode="${k}" aria-pressed="${(m || "") === k}">${l}</button>`).join("")}</span></div>
+    <h3>Abstract</h3><p class="abs2">${p.abstract ? esc(p.abstract) : "No abstract available."}</p>
+    <h3>Notes</h3><textarea id="pvnote" aria-label="Notes for this presentation" placeholder="Your notes on this talk… (saved automatically, Markdown is fine)"></textarea>
+    <p class="pvlink"><a href="${BASE}paper_details.php?paper_id=${p.id}" target="_blank" rel="noopener">Open paper ${p.id} on epapers2 ↗</a></p></div>`;
+}
+function openPaper(id) {
+  const p = papers.find(x => x.id === id); if (!p) return;
+  closeMenu(false); closeNote(false);
+  pv.dataset.for = id;
+  pv.innerHTML = pvHtml(p);
+  pv.querySelector("#pvnote").value = notes.get(id) || "";
+  if (!pv.open) pv.showModal();
+  pv.scrollTop = 0;
+}
+function searchAuthor(name) {
+  state.q = name; setScope("authors"); state.view = "authors"; syncControls(); render(); window.scrollTo({ top: 0 });
+}
+pv.addEventListener("click", e => {
+  if (e.target === pv || e.target.closest("[data-pvclose]")) { pv.close(); return; }
+  const a = e.target.closest("[data-author]");
+  if (a) { pv.close(); searchAuthor(a.dataset.author); return; }
+  const b = e.target.closest("[data-pvmode]");
+  if (b) {
+    setBookmark(Number(pv.dataset.for), b.dataset.pvmode);
+    for (const x of pv.querySelectorAll("[data-pvmode]")) x.setAttribute("aria-pressed", x === b);
+  }
+});
+pv.addEventListener("input", e => { if (e.target.id === "pvnote") onNoteInput(Number(pv.dataset.for), e.target.value); });
+pv.addEventListener("close", () => {
+  const id = pv.dataset.for;
+  clearTimeout(noteTimer); saveNotes(); syncControls();
+  pv.innerHTML = "";
+  document.querySelector(`[data-open="${id}"]`)?.focus();
 });
 
 // Bookmark type picker: one floating menu outside #out, so the list's innerHTML re-renders never destroy it.
@@ -828,7 +1016,7 @@ function setBookmark(id, mode) {
 }
 function openMenu(btn) {
   const id = Number(btn.dataset.bm), again = menu && menu.dataset.for === String(id);
-  closeMenu(false);
+  closeMenu(false); closeNote(false);
   if (again) return;
   const cur = bm.get(id);
   menu = document.createElement("div");
@@ -862,14 +1050,18 @@ document.addEventListener("keydown", e => {
   if (e.key === "Tab") closeMenu(false);
 });
 let lastW = innerWidth;
-addEventListener("resize", () => { if (innerWidth !== lastW) { lastW = innerWidth; closeMenu(false); } });   // phone address bars resize the height while scrolling
+addEventListener("resize", () => { if (innerWidth !== lastW) { lastW = innerWidth; closeMenu(false); closeNote(false); } });   // phone address bars resize the height while scrolling
 $("#invited").addEventListener("click", () => { state.invited = !state.invited; state.limit = defaultLimit(); rescore(true); syncControls(); render(); });
 $("#saved").addEventListener("click", () => { state.saved = !state.saved; state.limit = defaultLimit(); rescore(true); syncControls(); render(); });
 $("#out").addEventListener("click", e => {
   const star = e.target.closest("[data-bm]");
   if (star) { openMenu(star); return; }
+  const nb = e.target.closest("[data-note]");
+  if (nb) { openNote(nb); return; }
+  const op = e.target.closest("[data-open]");
+  if (op) { e.preventDefault(); openPaper(Number(op.dataset.open)); return; }
   const a = e.target.closest("[data-author]");
-  if (a) { state.q = a.dataset.author; setScope("authors"); state.view = "authors"; syncControls(); render(); window.scrollTo({ top: 0 }); return; }
+  if (a) { searchAuthor(a.dataset.author); return; }
   if (e.target.id === "bmmerge" || e.target.id === "bmreplace") { applyImport(e.target.id === "bmmerge" ? "merge" : "replace"); render(); return; }
   if (e.target.id === "bmcancel") { pendingImport = null; render(); return; }
   if (e.target.id === "bmdismiss") { importMsg = ""; render(); return; }
@@ -878,7 +1070,7 @@ $("#out").addEventListener("click", e => {
   if (e.target.id === "semgo") { requestSemantic(state.q); render(); }
 });
 document.addEventListener("keydown", e => {
-  if (e.key === "/" && document.activeElement !== $("#q")) { e.preventDefault(); $("#q").focus(); }
+  if (e.key === "/" && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)) { e.preventDefault(); $("#q").focus(); }
 });
 syncControls();
 render();
