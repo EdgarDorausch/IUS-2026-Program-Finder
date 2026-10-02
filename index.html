@@ -250,6 +250,7 @@ footer a { color: inherit; }
       <span class="io"><button type="button" class="savedbtn" id="bmexport" title="Download your bookmarks and notes as a JSON file (for backup or another device)">Export</button>
       <button type="button" class="savedbtn" id="bmimport" title="Load bookmarks and notes from a JSON file">Import</button>
       <button type="button" class="savedbtn" id="notesmd" title="Download your notes as a Markdown file">Notes (.md)</button>
+      <button type="button" class="savedbtn" id="bmics" title="Download all bookmarked talks and posters as a calendar file (.ics)">Calendar (.ics)</button>
       <input type="file" id="bmfile" accept="application/json,.json" hidden></span>
       <select id="day" aria-label="Day"><option value="">All days</option></select>
       <select id="sess" aria-label="Session"><option value="">All sessions</option></select>
@@ -763,6 +764,7 @@ function syncControls() {
   $("#saved").setAttribute("aria-pressed", state.saved);
   $("#bmexport").disabled = !bm.size && !notes.size;
   $("#notesmd").disabled = !notes.size;
+  $("#bmics").disabled = !bm.size;
   $("#notesmd").textContent = notes.size ? `Notes (${notes.size}) .md` : "Notes (.md)";
   $("#invited").setAttribute("aria-pressed", state.invited);
   $("#tlbtn").textContent = bm.size ? `Timeline (${bm.size})` : "Timeline";
@@ -889,6 +891,35 @@ function downloadFile(name, mime, text) {
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 $("#notesmd").addEventListener("click", () => downloadFile(`ius26-notes-${new Date().toISOString().slice(0, 10)}.md`, "text/markdown", notesMarkdown()));
+// Bookmarks as an iCalendar file. Times are "floating" (no time zone): they show at the program's clock time.
+function calendarIcs() {
+  const MON = { Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6, Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12 };
+  const stamp = new Date().toISOString().replace(/[-:]|\.\d+/g, "");
+  const esc = t => String(t).replace(/[\\;,]/g, "\\$&").replace(/\r?\n/g, "\\n");
+  const fold = l => { const o = []; let cur = ""; for (const ch of l) { if (new TextEncoder().encode(cur + ch).length > (o.length ? 74 : 75)) { o.push(cur); cur = ch; } else cur += ch; } o.push(cur); return o.join("\r\n "); };
+  const out = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//IUS 2026 Program Finder//EN", "CALSCALE:GREGORIAN", "X-WR-CALNAME:IUS 2026 bookmarks"];
+  let n = 0, skipped = 0;
+  for (const p of papers) {
+    if (!bm.has(p.id)) continue;
+    const r = itemRange(p), d = p.s.date.match(/([A-Za-z]{3})\w*\s+(\d+)\w*,\s*(\d{4})/);
+    if (!r || !d || !MON[d[1]]) { skipped++; continue; }
+    const day = `${d[3]}${String(MON[d[1]]).padStart(2, "0")}${d[2].padStart(2, "0")}`, at = m => `${day}T${fmt(m).replace(":", "")}00`;
+    const m = bm.get(p.id), note = notes.get(p.id)?.trim();
+    const desc = [p.authors.join(", "), `${p.s.code}${p.s.type === "Lecture" ? ` #${p.ord}` : ""} · ${p.s.title.replace(/\s*\(\d+ posters\)$/, "")}`,
+      `${MODES[m].label}${isInvited(p) ? " · invited" : ""}${p.s.type !== "Lecture" ? " · poster session slot" : ""}`, `${BASE}paper_details.php?paper_id=${p.id}`, note ? `\nNotes:\n${note}` : ""].filter(Boolean).join("\n");
+    out.push("BEGIN:VEVENT", `UID:ius26-${p.id}@ius2026-program-finder`, `DTSTAMP:${stamp}`, `DTSTART:${at(r.a)}`, `DTEND:${at(r.b)}`,
+      fold(`SUMMARY:${esc(`[${MODES[m].label}] ${cleanTitle(p)}`)}`), fold(`LOCATION:${esc(p.s.location)}`), fold(`DESCRIPTION:${esc(desc)}`), `URL:${BASE}paper_details.php?paper_id=${p.id}`,
+      `TRANSP:${m === "online" ? "TRANSPARENT" : "OPAQUE"}`, "END:VEVENT");
+    n++;
+  }
+  out.push("END:VCALENDAR");
+  return { text: out.join("\r\n") + "\r\n", n, skipped };
+}
+$("#bmics").addEventListener("click", () => {
+  const { text, n, skipped } = calendarIcs();
+  downloadFile(`ius26-bookmarks-${new Date().toISOString().slice(0, 10)}.ics`, "text/calendar", text);
+  importMsg = `Calendar file with ${n} event${n === 1 ? "" : "s"} downloaded${skipped ? ` (${skipped} without a time skipped)` : ""}.`; render();
+});
 $("#bmexport").addEventListener("click", exportBookmarks);
 $("#bmimport").addEventListener("click", () => $("#bmfile").click());
 $("#bmfile").addEventListener("change", async e => {
