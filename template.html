@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IUS 2026 Program Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root {
+  --ground: #f3f5f9;
+  --surface: #ffffff;
+  --ink: #141a2b;
+  --muted: #5a6378;
+  --faint: #8c94a8;
+  --line: #dde2ec;
+  --accent: #2446c7;
+  --accent-soft: #e4e9fb;
+  --mark: #ffe58a;
+  --mark-ink: #141a2b;
+  --must: #2446c7; --maybe: #b45309; --online: #0f766e;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --cond: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0f131d; --surface: #171c29; --ink: #e6e9f2; --muted: #a0a8bc; --faint: #6f7890;
+    --line: #283044; --accent: #8ea6ff; --accent-soft: #1f2a4d; --mark: #5c4a0c; --mark-ink: #fff3c4;
+    --must: #8ea6ff; --maybe: #f0b44c; --online: #4fd1c5;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0f131d; --surface: #171c29; --ink: #e6e9f2; --muted: #a0a8bc; --faint: #6f7890;
+  --line: #283044; --accent: #8ea6ff; --accent-soft: #1f2a4d; --mark: #5c4a0c; --mark-ink: #fff3c4;
+  --must: #8ea6ff; --maybe: #f0b44c; --online: #4fd1c5;
+}
+* { box-sizing: border-box; }
+body { background: var(--ground); color: var(--ink); font: 15px/1.5 var(--sans); padding-inline: 16px; }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 28px 64px; }
+header h1 { font: 700 clamp(26px, 5vw, 36px)/1.1 var(--cond); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+header p { margin: 6px 0 0; color: var(--muted); max-width: 65ch; }
+header p a { color: var(--accent); }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--ground);
+  padding-block: 14px 10px; margin-top: 18px; border-bottom: 1px solid var(--line); display: grid; gap: 10px; }
+.search { position: relative; }
+.search input { width: 100%; font: 17px var(--sans); color: var(--ink); background: var(--surface);
+  border: 1.5px solid var(--line); border-radius: 10px; padding: 12px 40px 12px 14px; outline: none; }
+.search input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.search button { position: absolute; right: 6px; top: 50%; transform: translateY(-50%); border: 0; background: none;
+  color: var(--faint); font-size: 20px; cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button { border: 0; background: none; color: var(--muted); font: 500 13px var(--sans); padding: 6px 11px; cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
+.lbl { font: 500 11px var(--sans); text-transform: uppercase; letter-spacing: .08em; color: var(--faint); margin-right: 4px; }
+select { font: 13px var(--sans); color: var(--ink); background: var(--surface); border: 1px solid var(--line);
+  border-radius: 8px; padding: 6px 8px; max-width: 100%; }
+.count { margin-left: auto; font: 13px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+button:focus-visible, select:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.slot { margin-top: 28px; }
+.slot > h2 { font: 600 13px var(--mono); color: var(--muted); letter-spacing: .04em; text-transform: uppercase;
+  margin: 0 0 10px; display: flex; gap: 10px; align-items: baseline; }
+.slot > h2 span { color: var(--faint); font-weight: 400; }
+.session { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+.session > .head { padding: 12px 16px; border-bottom: 1px solid var(--line); display: grid; gap: 2px; }
+.session .code { font: 500 12px var(--mono); color: var(--accent); }
+.session h3 { font: 600 18px/1.25 var(--cond); margin: 0; text-wrap: balance; }
+.session .meta { font-size: 13px; color: var(--muted); }
+.paper { display: grid; grid-template-columns: 4.2em 1fr; gap: 2px 12px; padding: 10px 16px; }
+.paper + .paper { border-top: 1px solid var(--line); }
+.pid { font: 500 13px var(--mono); color: var(--accent); text-decoration: none; padding-top: 2px; font-variant-numeric: tabular-nums; }
+.pid:hover { text-decoration: underline; }
+.idcell { display: grid; align-content: start; }
+.star { justify-self: start; border: 0; background: none; color: var(--faint); font-size: 18px; line-height: 1; padding: 2px 4px 2px 0; cursor: pointer; }
+.star:hover { color: var(--accent); }
+.star[data-mode="must"] { color: var(--must); }
+.star[data-mode="maybe"] { color: var(--maybe); }
+.star[data-mode="online"] { color: var(--online); }
+.bmmenu { position: absolute; z-index: 20; min-width: 190px; background: var(--surface); border: 1px solid var(--line);
+  border-radius: 10px; padding: 4px; box-shadow: 0 8px 24px rgba(0,0,0,.22); display: grid; }
+.bmmenu button { display: flex; gap: 10px; align-items: center; text-align: left; border: 0; background: none; color: var(--ink);
+  font: 500 14px var(--sans); padding: 8px 10px; border-radius: 6px; cursor: pointer; }
+.bmmenu button.dflt, .bmmenu button:hover, .bmmenu button:focus-visible { background: var(--accent-soft); outline: none; }
+.bmmenu button[aria-checked="true"] { font-weight: 600; }
+.bmmenu button i { font-style: normal; width: 1.2em; text-align: center; }
+.bmmenu button[data-set="must"] i { color: var(--must); } .bmmenu button[data-set="maybe"] i { color: var(--maybe); } .bmmenu button[data-set="online"] i { color: var(--online); }
+.bmmenu hr { border: 0; border-top: 1px solid var(--line); margin: 4px 0; width: 100%; }
+.modetag { font: 600 10.5px var(--sans); text-transform: uppercase; letter-spacing: .08em; padding: 1px 6px; border-radius: 4px;
+  border: 1px solid currentColor; margin-left: 6px; vertical-align: 1px; }
+.modetag.must { color: var(--must); } .modetag.maybe { color: var(--maybe); } .modetag.online { color: var(--online); }
+.tl-day { position: relative; margin-top: 8px; }
+.tl-grid { position: absolute; inset: 0 0 0 3.4em; }
+.tl-grid i { position: absolute; left: 0; right: 0; border-top: 1px solid var(--line); }
+.tl-grid i.half { border-top-style: dashed; opacity: .55; }
+.tl-grid b { position: absolute; left: -3.4em; width: 3em; text-align: right; transform: translateY(-50%);
+  font: 500 11px var(--mono); color: var(--faint); font-variant-numeric: tabular-nums; }
+.tl-lane { position: absolute; left: 3.4em; right: 0; top: 0; bottom: 0; }
+.tl-card { position: absolute; box-sizing: border-box; overflow: hidden; background: var(--surface);
+  border: 1px solid var(--line); border-left: 3px solid var(--mc); border-radius: 6px; padding: 3px 6px 3px 6px;
+  display: grid; grid-template-columns: auto 1fr; gap: 0 4px; align-content: start; font-size: 12.5px; line-height: 1.3; }
+.tl-card.must { --mc: var(--must); } .tl-card.maybe { --mc: var(--maybe); } .tl-card.online { --mc: var(--online); }
+.tl-card.clash { outline: 2px solid var(--maybe); outline-offset: -2px; }
+.tl-card .star { grid-row: 1 / span 3; font-size: 15px; padding: 0 2px 0 0; align-self: start; }
+.tl-card .m { font: 500 11px var(--mono); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tl-card .m a { color: var(--accent); text-decoration: none; }
+.tl-card .m .tag { margin-left: 4px; padding: 0 4px; font-size: 9.5px; vertical-align: 0; }
+.tl-card .t { font-weight: 500; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: var(--n, 1); overflow: hidden; }
+.tl-card .a { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tl-card:hover, .tl-card:focus-within { z-index: 3; }
+.tl-un { margin-top: 18px; }
+.flag { margin-left: 6px; }
+.flag { font: 600 10.5px var(--sans); text-transform: uppercase; letter-spacing: .08em; padding: 1px 6px; border-radius: 4px;
+  background: var(--mark); color: var(--mark-ink); }
+.savedbtn { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--muted); font: 500 13px var(--sans); padding: 6px 11px; cursor: pointer; }
+.io { display: inline-flex; gap: 6px; }
+.savedbtn[disabled] { opacity: .45; cursor: default; }
+.savedbtn[aria-pressed="true"] { background: var(--accent); color: var(--surface); }
+.ord { font: 11px var(--mono); color: var(--faint); }
+.tag { font: 600 10.5px var(--sans); text-transform: uppercase; letter-spacing: .08em; padding: 1px 6px; border-radius: 4px;
+  background: var(--accent-soft); color: var(--accent); margin-left: 6px; vertical-align: 1px; }
+.tag.invited { background: var(--accent); color: var(--surface); }
+.tag.poster { background: var(--line); color: var(--muted); }
+.ptitle { font-weight: 500; }
+.authors { grid-column: 2; font-size: 13.5px; color: var(--muted); }
+.authors button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
+.authors button:hover { color: var(--accent); text-decoration: underline; }
+.where { grid-column: 2; font: 12px var(--mono); color: var(--faint); }
+mark { background: var(--mark); color: var(--mark-ink); border-radius: 2px; padding: 0 1px; }
+
+.letter { font: 700 22px var(--cond); color: var(--accent); margin: 26px 0 8px; }
+.author { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 8px; padding: 10px 16px; }
+.author h3 { font: 600 16px var(--sans); margin: 0 0 4px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+.author h3 small { font: 12px var(--mono); color: var(--faint); font-weight: 400; }
+.author ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.author li { display: grid; grid-template-columns: 4.2em 1fr; gap: 0 12px; font-size: 14px; }
+.author li .where { grid-column: 2; }
+
+.abs { grid-column: 2; font-size: 13px; color: var(--muted); margin-top: 3px; }
+.abs > summary { cursor: pointer; color: var(--faint); font: 12px var(--mono); list-style: none; }
+.abs > summary::-webkit-details-marker { display: none; }
+.abs > summary::before { content: "▸ abstract"; }
+.abs[open] > summary::before { content: "▾ abstract"; }
+.abs > summary:hover { color: var(--accent); }
+.abs p { margin: 6px 0 2px; line-height: 1.5; max-width: 62em; }
+
+/* Semantic mode */
+.seg.off { opacity: .45; }
+.seg button[disabled] { cursor: default; }
+.sem { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 14px; }
+.sem h4 { margin: 0 0 6px; font: 600 15px var(--cond); }
+.sem p { margin: 0; font-size: 13px; color: var(--muted); }
+.prog { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; margin: 10px 0 6px; }
+.prog i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .2s; }
+.sem button { font: 500 13px var(--sans); color: var(--surface); background: var(--accent); border: 0;
+  border-radius: 7px; padding: 7px 14px; cursor: pointer; margin-top: 10px; }
+.notice { background: var(--accent-soft); border: 1px solid var(--line); border-radius: 8px;
+  padding: 10px 14px; font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.notice button { font: 500 13px var(--sans); color: var(--accent); background: none; border: 0; cursor: pointer; text-decoration: underline; padding: 0; }
+.ranked { display: grid; gap: 6px; }
+.ranked.stale { opacity: .45; }
+.rank { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 16px;
+  display: grid; grid-template-columns: 4.2em 1fr 3.2em; gap: 0 12px; font-size: 14px; }
+.rank .where, .rank .authors, .rank .abs { grid-column: 2; }
+.score { grid-column: 3; grid-row: 1; align-self: start; font: 500 11px var(--mono); color: var(--faint);
+  text-align: right; font-variant-numeric: tabular-nums; }
+.score i { display: block; height: 4px; border-radius: 2px; margin-top: 3px;
+  background: linear-gradient(to right, var(--accent) var(--f), var(--line) var(--f)); }
+.empty { text-align: center; color: var(--muted); padding: 60px 0; }
+.more { display: block; margin: 16px auto 0; font: 500 14px var(--sans); color: var(--accent); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 8px; padding: 8px 16px; cursor: pointer; }
+footer { margin-top: 40px; font-size: 12px; color: var(--faint); }
+footer a { color: inherit; }
+@media (max-width: 560px) {
+  .count { margin-left: 0; width: 100%; }
+  .paper, .author li { grid-template-columns: 3.6em 1fr; }
+  .rank { grid-template-columns: 3.6em 1fr 2.6em; }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>IUS 2026 Program Finder</h1>
+    <p id="intro"></p>
+  </header>
+
+  <div class="bar">
+    <div class="search">
+      <input id="q" type="search" placeholder="Search authors, titles, paper IDs, sessions, rooms…" autocomplete="off" spellcheck="false" aria-label="Search">
+      <button id="clear" type="button" aria-label="Clear search" hidden>×</button>
+    </div>
+    <div class="controls">
+      <div><span class="lbl">Match</span><span class="seg" id="scope">
+        <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="authors" aria-pressed="false">Authors</button><button type="button" data-v="titles" aria-pressed="false">Titles</button><button type="button" data-v="semantic" aria-pressed="false" title="Search by meaning. Downloads a 34 MB model once, then caches it.">Meaning</button>
+      </span></div>
+      <div><span class="lbl">Type</span><span class="seg" id="kind">
+        <button type="button" data-v="" aria-pressed="true">Both</button><button type="button" data-v="Lecture" aria-pressed="false">Lectures</button><button type="button" data-v="Poster" aria-pressed="false">Posters</button>
+      </span></div>
+      <div><span class="lbl">View</span><span class="seg" id="view">
+        <button type="button" data-v="sessions" aria-pressed="true">By session</button><button type="button" data-v="authors" aria-pressed="false">By author</button><button type="button" data-v="timeline" aria-pressed="false" id="tlbtn">Timeline</button>
+      </span></div>
+      <div id="tlwrap" hidden><span class="lbl">Show</span><span class="seg" id="tlmode"><button type="button" data-v="" aria-pressed="true">All</button><button type="button" data-v="must" aria-pressed="false">Must</button><button type="button" data-v="maybe" aria-pressed="false">Maybe</button><button type="button" data-v="online" aria-pressed="false">Online</button></span></div>
+      <button type="button" class="savedbtn" id="invited" aria-pressed="false" title="Show only invited talks">Invited only</button>
+      <button type="button" class="savedbtn" id="saved" aria-pressed="false" title="Show only bookmarked talks and posters">★ Saved only</button>
+      <span class="io"><button type="button" class="savedbtn" id="bmexport" title="Download your bookmarks as a JSON file">Export</button>
+      <button type="button" class="savedbtn" id="bmimport" title="Load bookmarks from a JSON file">Import</button>
+      <input type="file" id="bmfile" accept="application/json,.json" hidden></span>
+      <select id="day" aria-label="Day"><option value="">All days</option></select>
+      <select id="sess" aria-label="Session"><option value="">All sessions</option></select>
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <main id="out" aria-busy="false"></main>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const DATA = /*DATA*/null;
+const EMB = /*EMB*/null;
+const BASE = "https://epapers2.org/ius2026/ESR/";
+const $ = s => document.querySelector(s);
+
+// Accent- and case-insensitive folding that keeps a map back to the original string for highlighting.
+const foldChar = c => c.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
+const fold = s => [...s].map(foldChar).join("");
+function highlight(text, terms) {
+  const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  if (!terms.length) return esc(text);
+  const chars = [...text];
+  let f = "", map = [];
+  chars.forEach((c, i) => { const fc = foldChar(c); f += fc; for (const _ of fc) map.push(i); });
+  const hit = new Array(chars.length).fill(false);
+  for (const t of terms) {
+    let at = f.indexOf(t);
+    while (at !== -1) { for (let k = at; k < at + t.length; k++) hit[map[k]] = true; at = f.indexOf(t, at + 1); }
+  }
+  let out = "", open = false;
+  chars.forEach((c, i) => {
+    if (hit[i] && !open) { out += "<mark>"; open = true; }
+    if (!hit[i] && open) { out += "</mark>"; open = false; }
+    out += esc(c);
+  });
+  return out + (open ? "</mark>" : "");
+}
+const esc = s => highlight(s, []);
+
+// Flatten papers with their session context and precomputed search haystacks.
+const papers = [];
+for (const s of DATA.sessions) for (const p of s.papers) {
+  papers.push({ ...p, s, vi: papers.length,
+    fAuthors: fold(p.authors.join(" · ")),
+    fTitle: fold(p.title),
+    fOther: fold(`${p.id} ${s.code} ${s.title} ${p.topicName} ${s.chair} ${s.location} ${p.keywords ? p.keywords.join(" ") : ""} ${p.abstract || ""}`),
+    ord: s.papers.indexOf(p) + 1 });
+}
+const slotKey = s => `${s.day}|${s.date}|${s.time}`;
+const slotSort = s => `${String(parseInt(s.date.match(/(\d+)(st|nd|rd|th)/)?.[1] ?? 0)).padStart(2, "0")} ${s.time}`;
+DATA.sessions.sort((a, b) => slotSort(a).localeCompare(slotSort(b)) || a.code.localeCompare(b.code));
+const slots = [...new Set(DATA.sessions.map(slotKey))];
+const days = [...new Set(DATA.sessions.map(s => s.day))];
+const authorCount = new Set(papers.flatMap(p => p.authors)).size;
+
+// The vectors are positional: row i belongs to papers[i]. Refuse them if the paper set has drifted
+// since the build, rather than silently ranking by the wrong embeddings.
+const EMB_FP = papers.reduce((a, p) => (a + p.id) >>> 0, 0);
+const EMB_OK = !!EMB && EMB.n === papers.length && EMB.fp === EMB_FP;
+if (EMB && !EMB_OK) console.warn("ius26: embeddings do not match this data set; semantic search disabled.");
+
+const nKind = k => papers.filter(p => p.s.type === k).length;
+$("#intro").innerHTML = `${nKind("Lecture")} lectures and ${nKind("Poster")} posters by ${authorCount.toLocaleString("en")} authors in ${DATA.sessions.filter(s => s.papers.length).length} sessions, Oct 5–7. Search ignores case and accents; every word must match. Switch Match to <b>Meaning</b> to search by idea instead of spelling.`;
+$("#foot").innerHTML = `Source: epapers2.org IUS 2026 <a href="${BASE}session_sched_view.php?sched_id=1" target="_blank" rel="noopener">lecture</a> and <a href="${BASE}session_sched_view.php?sched_id=2" target="_blank" rel="noopener">poster</a> schedules, retrieved ${DATA.fetched}. Paper IDs open the official paper page. Talk numbers (#1, #2…) give the order within a lecture session; the site lists no individual talk times, so the Timeline counts them from the session start at 25 min per invited talk and 15 min per regular talk.`;
+for (const d of days) $("#day").add(new Option(d, d));
+function fillSessions() {
+  const sel = $("#sess");
+  sel.length = 1;
+  for (const s of DATA.sessions) if (s.papers.length && (!state.kind || s.type === state.kind) && (!state.day || s.day === state.day))
+    sel.add(new Option(`${s.code} · ${s.title}`, s.id));
+  if (![...sel.options].some(o => o.value === String(state.sess))) state.sess = "";
+}
+
+const state = { q: "", scope: "all", kind: "", view: "sessions", day: "", sess: "", saved: false, invited: false, tlmode: "", limit: 150 };
+try { Object.assign(state, JSON.parse(localStorage.getItem("ius26-state") || "{}"), { limit: 150 }); } catch {}
+if (!["sessions", "authors", "timeline"].includes(state.view)) state.view = "sessions";
+state.saved = state.saved === true;
+state.invited = state.invited === true;
+if (!["", "must", "maybe", "online"].includes(state.tlmode)) state.tlmode = "";
+
+// Bookmarks map a paper id to a watch mode, kept apart from view state so clearing filters never
+// drops them. Older saves were a bare array of ids; those become "must".
+const MODES = { must: { label: "Must watch", glyph: "★" }, maybe: { label: "Maybe watch", glyph: "◐" }, online: { label: "Watch online", glyph: "▣" } };
+const DEFAULT_MODE = "maybe";   // pre-selected in the picker for a paper that has no bookmark yet
+const bm = new Map();
+try {
+  const known = new Set(papers.map(p => p.id));
+  const raw = JSON.parse(localStorage.getItem("ius26-bookmarks") || "[]");
+  if (Array.isArray(raw)) for (const e of raw) {
+    const [id, mode] = Array.isArray(e) ? e : [e, "must"];
+    if (known.has(id) && MODES[mode]) bm.set(id, mode);
+  }
+} catch {}
+function saveBookmarks() {
+  try { localStorage.setItem("ius26-bookmarks", JSON.stringify([...bm])); } catch {}
+}
+const starBtn = p => {
+  const m = bm.get(p.id), now = m ? MODES[m].label : "Not bookmarked";
+  return `<button type="button" class="star" data-bm="${p.id}"${m ? ` data-mode="${m}"` : ""} aria-haspopup="menu" aria-expanded="false" aria-label="Paper ${p.id}: ${now}. Choose bookmark type." title="${now} · click to choose">${m ? MODES[m].glyph : "☆"}</button>`;
+};
+const fmt = m => `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
+const mins = hm => { const [h, m] = hm.split(":").map(Number); return h * 60 + m; };
+const span = time => { const [a, b] = time.split("-"); return a && b ? [mins(a.trim()), mins(b.trim())] : null; };
+// The data has no invited flag; the program puts a literal "* INVITED *" at the start of the title.
+const INV_RE = /^\s*\*\s*INVITED\s*\*\s*/i;
+const isInvited = p => INV_RE.test(p.title);
+const cleanTitle = p => p.title.replace(INV_RE, "");
+// Talk slots: 25 min invited, 15 min regular, laid end to end from the session start.
+const DUR = { invited: 25, regular: 15 };
+const talkOffset = new Map();   // paper id -> minutes after session start
+for (const s of DATA.sessions) { let off = 0; for (const p of s.papers) { talkOffset.set(p.id, off); off += isInvited(p) ? DUR.invited : DUR.regular; } }
+function itemRange(p) {
+  const sp = span(p.s.time);
+  if (!sp || Number.isNaN(sp[0] + sp[1])) return null;
+  if (p.s.type !== "Lecture") return { a: sp[0], b: sp[1], over: false };
+  const a = sp[0] + talkOffset.get(p.id), b = a + (isInvited(p) ? DUR.invited : DUR.regular);
+  return { a, b, over: b > sp[1] };
+}
+if (state.scope === "semantic" && !EMB_OK) state.scope = "all";
+
+function matches(p, terms) {
+  if (state.scope === "semantic") return true;   // ranking, not filtering; see rescore()
+  const hay = state.scope === "authors" ? p.fAuthors
+    : state.scope === "titles" ? p.fTitle
+    : `${p.fAuthors} ${p.fTitle} ${p.fOther}`;
+  return terms.every(t => hay.includes(t));
+}
+const hlFor = (kind, terms) => state.scope === "semantic"
+  ? (kind === "titles" ? semTerms(terms) : [])
+  : (state.scope === "all" || state.scope === kind) ? terms : [];
+const paperLink = p => `<a class="pid" href="${BASE}paper_details.php?paper_id=${p.id}" target="_blank" rel="noopener" title="Open paper ${p.id} on epapers2">${p.id}</a>`;
+const whereLine = p => `${esc(p.s.code)}${p.s.type === "Lecture" ? ` #${p.ord}` : ""} · ${esc(p.s.day.slice(0, 3))} ${esc(p.s.time)} · ${esc(p.s.location)} · ${esc(p.s.title.replace(/\s*\(\d+ posters\)$/, ""))}`;
+const tag = s => `<span class="tag ${s.type === "Poster" ? "poster" : ""}">${s.type === "Poster" ? "Poster" : "Lecture"}</span>`;
+const absBlock = p => p.abstract ? `<details class="abs"><summary></summary><p>${esc(p.abstract)}</p></details>` : "";
+const authorButtons = (p, terms) => p.authors.map(a => `<button type="button" data-author="${esc(a)}">${highlight(a, hlFor("authors", terms))}</button>`).join(", ");
+
+// ---------------------------------------------------------------------------
+// Semantic search. Query embeddings come from the same model and dtype that
+// produced the document vectors at build time (see embed.mjs).
+//
+// render() must stay synchronous: everything async is reduced to plain fields
+// on `sem` before it runs, and render() never awaits or triggers a model load.
+// ---------------------------------------------------------------------------
+const TJS = "https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.3.0/+esm";
+const MODEL = "Xenova/bge-small-en-v1.5", MODEL_MB = 34;
+const QPREFIX = "Represent this sentence for searching relevant passages: ";
+
+const sem = {
+  status: "idle",   // idle | loading | ready | error
+  weak: false,      // nothing in the corpus is a close match for this query
+  pct: 0, mb: 0,
+  notice: "",
+  vec: null,        // unit-normalized query embedding
+  q: "",            // the query `vec` was built from
+  ranked: null,     // [{p, s, z}] sorted by score desc
+  cut: 0,           // how many to show by default
+  token: 0,         // in-flight guard
+  pending: null,
+  busy: false,
+};
+
+let extractor = null, loadPromise = null, VEC = null;
+
+// Base64 -> Int8Array, reinterpreting the same buffer rather than copying it.
+function vecs() {
+  if (VEC) return VEC;
+  const bin = atob(EMB.b64);
+  const u8 = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);
+  VEC = new Int8Array(u8.buffer);
+  EMB.b64 = null;
+  return VEC;
+}
+
+function loadModel() {
+  if (extractor) return Promise.resolve(extractor);
+  if (loadPromise) return loadPromise;
+  sem.status = "loading"; sem.pct = 0; sem.mb = 0;
+  loadPromise = (async () => {
+    const T = await import(/* webpackIgnore: true */ TJS);
+    T.env.allowLocalModels = false;              // don't probe this origin for /models/... first
+    T.env.backends.onnx.wasm.numThreads = 1;     // multithreaded ORT needs COOP/COEP headers we don't have
+    try { T.env.useBrowserCache = typeof caches !== "undefined"; } catch { T.env.useBrowserCache = false; }
+    const seen = new Map();
+    extractor = await T.pipeline("feature-extraction", MODEL, {
+      dtype: "q8", device: "wasm",
+      progress_callback: e => {
+        if (e.status !== "progress" || !e.total) return;
+        seen.set(e.file, e.loaded);
+        let loaded = 0; for (const v of seen.values()) loaded += v;
+        sem.mb = loaded / 1048576;
+        sem.pct = Math.min(99, Math.round(100 * sem.mb / MODEL_MB));
+        paintProgress();
+      },
+    });
+    sem.pct = 100;
+    return extractor;
+  })();
+  loadPromise.catch(() => { loadPromise = null; });
+  return loadPromise;
+}
+
+// Progress fires hundreds of times; poke the bar directly instead of rebuilding #out.
+function paintProgress() {
+  const fill = document.getElementById("semfill");
+  if (!fill) { render(); return; }
+  fill.style.width = sem.pct + "%";
+  const t = document.getElementById("semtxt");
+  if (t) t.textContent = `${sem.mb.toFixed(1)} MB of ~${MODEL_MB} MB`;
+}
+
+function failSemantic(e) {
+  console.error("ius26 semantic:", e);
+  extractor = null; loadPromise = null;
+  sem.status = "error"; sem.vec = null; sem.ranked = null; sem.pending = null;
+  sem.notice = location.protocol === "file:"
+    ? "Meaning search couldn’t load the model. Opening this file directly blocks the download — serve the folder over http (<code>python3 -m http.server</code>) and reload. Showing exact matches instead."
+    : "Couldn’t load the meaning-search model (offline, or the CDN is blocked). Showing exact matches instead. <button type=\"button\" id=\"semretry\">Try again</button>";
+  if (state.scope === "semantic") state.scope = "all";
+  syncControls();
+  render();   // reached via setScope()'s catch too, where nothing else would repaint
+}
+
+function requestSemantic(q) {
+  sem.token++;
+  q = (q || "").trim();
+  if (!q) { sem.vec = null; sem.ranked = null; sem.q = ""; sem.pending = null; return; }
+  sem.pending = q;
+  pump();
+}
+
+async function pump() {
+  if (sem.busy || sem.pending == null) return;
+  sem.busy = true;
+  const q = sem.pending, tok = sem.token;
+  try {
+    await loadModel();
+    if (tok !== sem.token) return;                       // superseded during the download
+    const o = await extractor(QPREFIX + q, { pooling: "mean", normalize: true });
+    if (tok !== sem.token) return;                       // superseded during the encode
+    sem.vec = o.data.length === EMB.d ? o.data : Float32Array.from(o.data).slice(0, EMB.d);
+    sem.q = q; sem.status = "ready"; sem.notice = "";
+    rescore(true);
+  } catch (e) {
+    if (tok === sem.token) failSemantic(e);
+  } finally {
+    sem.busy = false;
+    if (sem.pending === q) sem.pending = null;
+    render();
+    pump();
+  }
+}
+
+const STOP = new Set("the a an and or of for in on with to is are how what which does do can using use via".split(" "));
+const semTerms = terms => terms.filter(t => t.length > 3 && !STOP.has(t));
+
+// Structural filters, shared by render() and rescore() so both see the same candidate set.
+const structural = p =>
+  (!state.day || p.s.day === state.day) &&
+  (!state.kind || p.s.type === state.kind) &&
+  (!state.sess || String(p.s.id) === String(state.sess)) &&
+  (!state.invited || isInvited(p)) &&
+  (!state.saved || bm.has(p.id));
+
+// Score the filtered candidates, then cut relative to this query's own spread.
+//
+// Two rules that measurement rejected, recorded so they don't get reinvented:
+//   * An absolute cosine floor. Every abstract here is about ultrasound, so the whole corpus
+//     sits in a narrow band and the band moves with the query.
+//   * A z-score cut. z measures how *peaked* a query's distribution is, which tracks query
+//     specificity, not relevance: "quantum gravity" and "xylophone repair" produced z-profiles
+//     indistinguishable from real queries, while a good query ("heart imaging") peaked at z=2.3.
+//
+// What does separate them is the gap between the best hit and the corpus mean: measured over
+// this data, genuine queries land at 0.14-0.25 and off-topic ones at 0.08-0.12. So the gap sets
+// both the cutoff and the "nothing here really matches" warning.
+function rescore(resetLimit) {
+  sem.ranked = null; sem.cut = 0; sem.weak = false;
+  if (!sem.vec || !EMB_OK) return;
+  const V = vecs(), D = EMB.d, q = sem.vec;
+  const terms = semTerms(fold(sem.q).split(/\s+/).filter(Boolean));
+  const rows = [];
+  let sum = 0;
+  for (const p of papers) {
+    if (!structural(p)) continue;
+    const off = p.vi * D;
+    let dot = 0;
+    for (let j = 0; j < D; j++) dot += V[off + j] * q[j];
+    let sc = dot / 127;
+    // Small lexical nudge: dense retrieval alone is weak on the acronyms and coined terms that
+    // fill a conference program (CMUT, SAFT, Nakagami). Applied before z-normalization.
+    if (terms.length) sc += 0.05 * (terms.filter(t => p.fTitle.includes(t)).length / terms.length);
+    rows.push({ p, s: sc });
+    sum += sc;
+  }
+  if (!rows.length) { sem.ranked = []; return; }
+  rows.sort((a, b) => b.s - a.s);
+  const mean = sum / rows.length;
+  const gap = Math.max(1e-6, rows[0].s - mean);
+  for (const r of rows) r.rel = (r.s - mean) / gap;   // 1 at the best hit, 0 at the corpus mean
+  sem.weak = gap < 0.13;
+  sem.ranked = rows;
+  sem.cut = Math.min(rows.length, Math.max(10, Math.min(60, rows.filter(r => r.rel >= 0.65).length)));
+  if (resetLimit) state.limit = sem.cut;
+}
+
+const defaultLimit = () => state.scope === "semantic" ? (sem.cut || 25) : 150;
+// A rank-relative strength, not a probability: 100 is "closest thing in the program", not "perfect".
+const scorePct = r => Math.round(100 * Math.min(1, Math.max(0, r.rel)));
+const scoreBar = r => `<span class="score" title="cosine ${r.s.toFixed(3)}">${scorePct(r)}<i style="--f:${scorePct(r)}%"></i></span>`;
+
+function semCard() {
+  if (sem.status === "loading")
+    return `<div class="sem"><h4>Loading the meaning-search model</h4>
+      <div class="prog"><i id="semfill" style="width:${sem.pct}%"></i></div>
+      <p id="semtxt">${sem.mb.toFixed(1)} MB of ~${MODEL_MB} MB</p>
+      <p style="margin-top:6px">Downloaded once, then cached by the browser. Exact search keeps working meanwhile.</p></div>`;
+  if (state.q.trim() && sem.status === "idle")
+    return `<div class="sem"><h4>Search by meaning</h4>
+      <p>Ranking “${esc(state.q)}” needs a ${MODEL_MB} MB model, downloaded once and then cached by your browser.</p>
+      <button type="button" id="semgo">Download and search</button></div>`;
+  if (!state.q.trim())
+    return `<div class="sem"><h4>Search by meaning</h4><p>Describe what you're after in your own words — “ultrasound for treating the brain”, “making images from fewer channels”. Matches on ideas, not spelling, so it won't find people; use Authors for that.</p></div>`;
+  return "";
+}
+
+const titleHtml = (p, terms) => `${highlight(cleanTitle(p), hlFor("titles", terms))}${isInvited(p) ? `<span class="tag invited">Invited</span>` : ""}`;
+const paperRow = (p, terms) => `<div class="paper"><span class="idcell">${paperLink(p)}${p.s.type === "Lecture" ? `<span class="ord">#${p.ord}</span>` : ""}${starBtn(p)}</span><div class="ptitle">${titleHtml(p, terms)}</div><div class="authors">${authorButtons(p, terms)}</div>${absBlock(p)}</div>`;
+
+// Bookmarked items on a to-scale day axis (PX_MIN px per minute). Items whose times overlap
+// (parallel sessions) sit side by side in lanes. Overlaps are flagged unless one of the two is a watch-online item, which can be
+// caught up on later.
+function timelineHtml() {
+  const mine = papers.filter(p => bm.has(p.id) && (!state.day || p.s.day === state.day) && (!state.tlmode || bm.get(p.id) === state.tlmode))
+    .map(p => ({ p, r: itemRange(p) }));
+  $("#count").textContent = `${mine.length} bookmarked`;
+  if (!mine.length) return `<p class="empty">${bm.size ? "No bookmarks match this day and mode." : "Mark talks and posters (☆) as must, maybe or online to build your schedule here."}</p>`;
+  const dayIx = d => days.indexOf(d);
+  mine.sort((x, y) => dayIx(x.p.s.day) - dayIx(y.p.s.day) || (x.r?.a ?? 1e9) - (y.r?.a ?? 1e9) || (x.r?.b ?? 1e9) - (y.r?.b ?? 1e9) || x.p.s.code.localeCompare(y.p.s.code) || x.p.ord - y.p.ord);
+  const clash = new Set();
+  mine.forEach((x, i) => { for (const y of mine.slice(i + 1)) {
+    if (!x.r || !y.r || x.p.s.day !== y.p.s.day || bm.get(x.p.id) === "online" || bm.get(y.p.id) === "online") continue;
+    if (x.r.a < y.r.b && y.r.a < x.r.b) { clash.add(x.p.id); clash.add(y.p.id); }
+  } });
+  // One vertical time axis per day: top = minutes since the axis start × PX_MIN, height = duration × PX_MIN.
+  const PX_MIN = 3;
+  const byDay = new Map();
+  for (const x of mine) { if (!byDay.has(x.p.s.day)) byDay.set(x.p.s.day, []); byDay.get(x.p.s.day).push(x); }
+  let html = "";
+  for (const [day, all] of byDay) {
+    html += `<div class="letter">${esc(day)} ${esc(all[0].p.s.date)}</div>`;
+    const items = all.filter(x => x.r), loose = all.filter(x => !x.r);
+    if (items.length) {
+      const t0 = Math.floor(Math.min(...items.map(x => x.r.a)) / 60) * 60, t1 = Math.ceil(Math.max(...items.map(x => x.r.b)) / 60) * 60;
+      // Lane packing: within a cluster of overlapping items, prefer the lane the item's session already uses.
+      const lanes = []; let cluster = [], clusterEnd = -1, laneOf = new Map();
+      const flush = () => { const n = Math.max(1, ...cluster.map(c => laneOf.get(c) + 1)); for (const c of cluster) c.n = n; cluster = []; lanes.length = 0; laneOf = new Map(); clusterEnd = -1; };
+      const sessLane = new Map();
+      for (const x of items) {   // already sorted by start, then end
+        if (cluster.length && x.r.a >= clusterEnd) { flush(); sessLane.clear(); }
+        const free = i => (lanes[i] ?? -1) <= x.r.a;
+        let lane = sessLane.has(x.p.s.id) && free(sessLane.get(x.p.s.id)) ? sessLane.get(x.p.s.id) : -1;
+        if (lane < 0) { lane = 0; while (!free(lane)) lane++; }
+        lanes[lane] = x.r.b; sessLane.set(x.p.s.id, lane); laneOf.set(x, lane); x.lane = lane;
+        cluster.push(x); clusterEnd = Math.max(clusterEnd, x.r.b);
+      }
+      flush();
+      html += `<div class="tl-day" style="height:${(t1 - t0) * PX_MIN}px"><div class="tl-grid">`;
+      for (let m = t0; m <= t1; m += 30) html += `<i class="${m % 60 ? "half" : ""}" style="top:${(m - t0) * PX_MIN}px">${m % 60 ? "" : `<b>${fmt(m)}</b>`}</i>`;
+      html += `</div><div class="tl-lane">`;
+      for (const x of items) {
+        const { p, r } = x, m = bm.get(p.id), h = (r.b - r.a) * PX_MIN;
+        const authors = h >= 90, n = Math.max(1, Math.floor((h - 8 - 15 - (authors ? 15 : 0)) / 16));
+        const tip = `${cleanTitle(p)}\n${p.authors.join(", ")}\n${p.s.code} ${p.s.title}\n${fmt(r.a)}–${fmt(r.b)} · ${p.s.location} · ${MODES[m].label}${r.over ? "\nRuns past the scheduled end of the session (" + p.s.time + ")" : ""}${clash.has(p.id) ? "\nOverlaps another bookmark" : ""}`;
+        html += `<article class="tl-card ${m}${clash.has(p.id) ? " clash" : ""}" style="top:${(r.a - t0) * PX_MIN}px;height:${h}px;left:${100 * x.lane / x.n}%;width:${100 / x.n}%;--n:${n}" title="${esc(tip)}">
+          ${starBtn(p)}<div class="m">${fmt(r.a)}–${fmt(r.b)}${r.over ? " ⚠" : ""} · <a href="${BASE}paper_details.php?paper_id=${p.id}" target="_blank" rel="noopener">${p.id}</a> · ${esc(p.s.code)} · ${esc(p.s.location)}${isInvited(p) ? `<span class="tag invited">Inv</span>` : ""}${clash.has(p.id) ? " ⚠ overlap" : ""}</div>
+          <div class="t">${esc(cleanTitle(p))}</div>${authors ? `<div class="a">${esc(p.authors.join(", "))}</div>` : ""}</article>`;
+      }
+      html += `</div></div>`;
+    }
+    if (loose.length) html += `<div class="tl-un">${loose.map(x => paperRow(x.p, [])).join("")}</div>`;
+  }
+  return html;
+}
+
+function render() {
+  const terms = fold(state.q).split(/\s+/).filter(Boolean);
+  const hits = papers.filter(p => structural(p) && matches(p, terms));
+  const out = $("#out");
+  let html = "";
+  const banner = importNotice() + (sem.notice ? `<p class="notice">${sem.notice}</p>` : "")
+    + (state.scope === "semantic" ? semCard() : "");
+
+  if (state.scope === "semantic" && state.q.trim()) {
+    html += banner;
+    const stale = sem.q !== state.q.trim();
+    if (sem.ranked && sem.ranked.length) {
+      // Keep showing the previous ranking (dimmed) while a newer query is still encoding,
+      // rather than flashing an empty page at every pause in typing.
+      const shown = sem.ranked.slice(0, state.limit);
+      $("#count").textContent = `top ${shown.length} of ${sem.ranked.length} ranked`
+        + (sem.ranked.length < papers.length ? ` · ${sem.ranked.length} match the filters` : "");
+      if (sem.weak && !stale)
+        html += `<p class="notice">Nothing in the program is a close match for “${esc(sem.q)}”. These are the nearest, but treat them as a starting point rather than an answer.</p>`;
+      html += `<div class="ranked${stale ? " stale" : ""}">`;
+      for (const r of shown) {
+        const p = r.p;
+        html += `<div class="rank"><span class="idcell">${paperLink(p)}${starBtn(p)}</span>
+          <div class="ptitle">${titleHtml(p, terms)}${tag(p.s)}</div>
+          ${scoreBar(r)}
+          <div class="authors">${authorButtons(p, [])}</div>
+          <div class="where">${whereLine(p)}</div>${absBlock(p)}</div>`;
+      }
+      html += `</div>`;
+      if (sem.ranked.length > state.limit)
+        html += `<button type="button" class="more" id="more">Show ${Math.min(50, sem.ranked.length - state.limit)} more of ${sem.ranked.length - state.limit} remaining</button>`;
+    } else if (sem.ranked && !sem.ranked.length) {
+      $("#count").textContent = "no presentations match the filters";
+    } else if (sem.status === "loading") {
+      $("#count").textContent = "loading model…";
+    } else if (sem.status === "idle") {
+      $("#count").textContent = `${papers.length} presentations`;
+    } else {
+      $("#count").textContent = "ranking…";
+    }
+    out.innerHTML = html;
+    out.setAttribute("aria-busy", String(sem.busy));
+    $("#clear").hidden = !state.q;
+    saveState();
+    return;
+  }
+
+  if (state.view === "timeline") {
+    html = timelineHtml();
+  } else if (state.view === "sessions") {
+    $("#count").textContent = `${hits.length} of ${papers.length} presentations`;
+    for (const key of slots) {
+      const [day, date, time] = key.split("|");
+      const sess = DATA.sessions.filter(s => slotKey(s) === key)
+        .map(s => ({ s, ps: hits.filter(p => p.s === s) })).filter(x => x.ps.length);
+      if (!sess.length) continue;
+      html += `<section class="slot"><h2>${esc(day)} ${esc(date)} <span>${esc(time)}</span></h2>`;
+      for (const { s, ps } of sess) {
+        html += `<article class="session"><div class="head"><span class="code">${esc(s.code)} · ${highlight(s.location, hlFor("other", terms))}${tag(s)}</span>
+          <h3>${highlight(s.title, hlFor("other", terms))}</h3>
+          <span class="meta">Chair: ${highlight(s.chair, hlFor("other", terms))} · ${ps.length}${ps.length < s.papers.length ? ` of ${s.papers.length}` : ""} ${s.type === "Poster" ? "posters" : "talks"}</span></div>`;
+        for (const p of ps) html += paperRow(p, terms);
+        html += `</article>`;
+      }
+      html += `</section>`;
+    }
+  } else {
+    // Author index. When the query names an author, list only matching authors, not all their co-authors.
+    const map = new Map();
+    for (const p of hits) for (const a of p.authors) {
+      if (!map.has(a)) map.set(a, []);
+      map.get(a).push(p);
+    }
+    let list = [...map.entries()];
+    if (terms.length && state.scope !== "titles") {
+      const named = list.filter(([a]) => terms.every(t => fold(a).includes(t)));
+      if (named.length) list = named;
+    }
+    const last = a => fold(a.split(" ").slice(-1)[0] + " " + a);
+    list.sort((x, y) => last(x[0]).localeCompare(last(y[0])));
+    $("#count").textContent = `${list.length} authors · ${hits.length} presentations`;
+    let letter = "";
+    for (const [a, ps] of list.slice(0, state.limit)) {
+      const L = last(a)[0].toUpperCase();
+      if (L !== letter) { html += `<div class="letter">${esc(L)}</div>`; letter = L; }
+      html += `<div class="author"><h3>${highlight(a, hlFor("authors", terms))} <small>${ps.length} presentation${ps.length > 1 ? "s" : ""}</small></h3><ul>`;
+      for (const p of ps) html += `<li><span class="idcell">${paperLink(p)}${starBtn(p)}</span><span>${titleHtml(p, terms)}${tag(p.s)}</span><span class="where">${whereLine(p)}</span>${absBlock(p)}</li>`;
+      html += `</ul></div>`;
+    }
+    if (list.length > state.limit) html += `<button type="button" class="more" id="more">Show ${Math.min(300, list.length - state.limit)} more of ${list.length - state.limit} remaining</button>`;
+  }
+
+  out.innerHTML = banner + (html || `<p class="empty">No presentations match “${esc(state.q)}”. Try fewer words, or switch Match to Meaning.</p>`);
+  out.setAttribute("aria-busy", "false");
+  $("#clear").hidden = !state.q;
+  saveState();
+}
+
+function saveState() {
+  try { localStorage.setItem("ius26-state", JSON.stringify({ q: state.q, scope: state.scope, kind: state.kind, view: state.view, day: state.day, sess: state.sess, saved: state.saved, invited: state.invited, tlmode: state.tlmode })); } catch {}
+}
+
+function syncControls() {
+  fillSessions();
+  $("#q").value = state.q; $("#day").value = state.day; $("#sess").value = state.sess;
+  $("#tlwrap").hidden = state.view !== "timeline";
+  for (const g of ["scope", "kind", "view", "tlmode"]) for (const b of $("#" + g).children) b.setAttribute("aria-pressed", b.dataset.v === state[g]);
+  $("#saved").setAttribute("aria-pressed", state.saved);
+  $("#bmexport").disabled = !bm.size;
+  $("#invited").setAttribute("aria-pressed", state.invited);
+  $("#tlbtn").textContent = bm.size ? `Timeline (${bm.size})` : "Timeline";
+  const semOn = state.scope === "semantic";
+  for (const b of $("#view").children) b.disabled = semOn;
+  $("#view").classList.toggle("off", semOn);
+  const semBtn = [...$("#scope").children].find(b => b.dataset.v === "semantic");
+  if (semBtn) { semBtn.disabled = !EMB_OK; if (!EMB_OK) semBtn.title = "No embeddings were built into this page."; }
+}
+
+// One place that cancels in-flight semantic work, so nothing can land after a mode change.
+function setScope(v) {
+  state.scope = v; sem.token++; sem.notice = "";
+  if (v === "semantic") { loadModel().catch(failSemantic); requestSemantic(state.q); }
+  state.limit = defaultLimit();
+}
+let timer;
+function setQuery(v) {
+  state.q = v;
+  if (state.scope === "semantic") requestSemantic(v);   // fire-and-forget; pump() re-renders
+  state.limit = defaultLimit();
+  render();
+}
+$("#q").addEventListener("input", e => {
+  const v = e.target.value;
+  clearTimeout(timer);
+  timer = setTimeout(() => setQuery(v), state.scope === "semantic" ? 250 : 80);
+});
+$("#q").addEventListener("keydown", e => {
+  if (e.key === "Enter") { clearTimeout(timer); setQuery(e.target.value); }
+});
+$("#clear").addEventListener("click", () => { state.q = ""; requestSemantic(""); syncControls(); render(); $("#q").focus(); });
+for (const g of ["scope", "kind", "view", "tlmode"]) $("#" + g).addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b || b.disabled) return;
+  if (g === "scope") setScope(b.dataset.v);
+  else { state[g] = b.dataset.v; state.limit = defaultLimit(); if (g === "kind") rescore(true); }
+  syncControls(); render();
+});
+$("#day").addEventListener("change", e => { state.day = e.target.value; syncControls(); rescore(true); render(); });
+$("#sess").addEventListener("change", e => { state.sess = e.target.value; rescore(true); render(); });
+// ---- Export / import ------------------------------------------------------------------------
+const FILE_APP = "ius26-program-finder";
+let pendingImport = null;   // parsed file awaiting Merge / Replace / Cancel
+let importMsg = "";         // result or error line shown above the list
+
+function exportBookmarks() {
+  const body = { app: FILE_APP, version: 1, exported: new Date().toISOString(),
+    bookmarks: [...bm].map(([id, mode]) => ({ id, mode })) };
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(body, null, 2) + "\n"], { type: "application/json" }));
+  a.download = `ius26-bookmarks-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+// Lenient: {bookmarks:[{id,mode}]}, a bare array of {id,mode}, [id,mode] pairs or plain ids.
+function parseBookmarkFile(text) {
+  let raw;
+  try { raw = JSON.parse(text); } catch { return { error: "That file isn’t valid JSON." }; }
+  const list = Array.isArray(raw) ? raw : raw && Array.isArray(raw.bookmarks) ? raw.bookmarks : null;
+  if (!list) return { error: "No bookmarks found in that file." };
+  const known = new Set(papers.map(p => p.id)), entries = new Map();
+  let skipped = 0;
+  for (const e of list) {
+    const [id, mode = DEFAULT_MODE] = Array.isArray(e) ? e : e && typeof e === "object" ? [e.id, e.mode] : [e];
+    if (known.has(id) && MODES[mode]) entries.set(id, mode); else skipped++;
+  }
+  return { entries, skipped };
+}
+
+function applyImport(how) {
+  const { entries } = pendingImport;
+  if (how === "replace") bm.clear();
+  for (const [id, mode] of entries) bm.set(id, mode);
+  importMsg = `Imported ${entries.size} bookmark${entries.size === 1 ? "" : "s"} (${how === "replace" ? "replaced" : "merged with"} your existing ones). You now have ${bm.size}.`;
+  pendingImport = null;
+  saveBookmarks(); syncControls();
+  if (state.saved) rescore(false);
+}
+
+function importNotice() {
+  if (pendingImport) {
+    const { entries, skipped } = pendingImport;
+    let fresh = 0, changed = 0;
+    for (const [id, mode] of entries) { if (!bm.has(id)) fresh++; else if (bm.get(id) !== mode) changed++; }
+    return `<p class="notice">File has ${entries.size} bookmark${entries.size === 1 ? "" : "s"}: ${fresh} new, ${changed} with a different type${skipped ? `, ${skipped} skipped (not in this program)` : ""}.
+      <button type="button" id="bmmerge">Merge</button> keeps your existing bookmarks and lets the file win on conflicts ·
+      <button type="button" id="bmreplace">Replace</button> swaps in the file’s set (${bm.size} existing removed) ·
+      <button type="button" id="bmcancel">Cancel</button></p>`;
+  }
+  return importMsg ? `<p class="notice">${esc(importMsg)} <button type="button" id="bmdismiss">Dismiss</button></p>` : "";
+}
+
+$("#bmexport").addEventListener("click", exportBookmarks);
+$("#bmimport").addEventListener("click", () => $("#bmfile").click());
+$("#bmfile").addEventListener("change", async e => {
+  const f = e.target.files[0]; e.target.value = "";   // so the same file can be picked again
+  if (!f) return;
+  pendingImport = null;
+  if (f.size > 2e6) importMsg = "That file is too large to be a bookmark export.";
+  else {
+    const r = parseBookmarkFile(await f.text());
+    if (r.error) importMsg = r.error;
+    else if (!r.entries.size) importMsg = `Nothing to import${r.skipped ? ` (${r.skipped} entries aren’t in this program)` : ""}.`;
+    else { importMsg = ""; pendingImport = r; }
+  }
+  render();
+  window.scrollTo({ top: 0 });
+});
+
+// Bookmark type picker: one floating menu outside #out, so the list's innerHTML re-renders never destroy it.
+let menu = null;
+function closeMenu(refocus) {
+  if (!menu) return;
+  const id = menu.dataset.for;
+  menu.remove(); menu = null;
+  for (const b of document.querySelectorAll('[data-bm][aria-expanded="true"]')) b.setAttribute("aria-expanded", "false");
+  if (refocus) document.querySelector(`[data-bm="${id}"]`)?.focus();
+}
+function setBookmark(id, mode) {
+  mode ? bm.set(id, mode) : bm.delete(id);
+  saveBookmarks(); syncControls();
+  if (state.saved) rescore(false);
+  render();
+}
+function openMenu(btn) {
+  const id = Number(btn.dataset.bm), again = menu && menu.dataset.for === String(id);
+  closeMenu(false);
+  if (again) return;
+  const cur = bm.get(id);
+  menu = document.createElement("div");
+  menu.className = "bmmenu"; menu.setAttribute("role", "menu"); menu.dataset.for = id;
+  menu.setAttribute("aria-label", `Bookmark type for paper ${id}`);
+  menu.innerHTML = Object.entries(MODES).map(([k, m]) =>
+      `<button type="button" role="menuitemradio" aria-checked="${cur === k}" data-set="${k}"${!cur && k === DEFAULT_MODE ? ' class="dflt"' : ""}><i>${m.glyph}</i>${m.label}</button>`).join("")
+    + (cur ? `<hr><button type="button" role="menuitem" data-set=""><i>✕</i>Remove bookmark</button>` : "");
+  document.body.appendChild(menu);
+  btn.setAttribute("aria-expanded", "true");
+  const r = btn.getBoundingClientRect();
+  const left = Math.max(8, Math.min(r.left + scrollX, scrollX + document.documentElement.clientWidth - menu.offsetWidth - 8));
+  menu.style.left = left + "px";
+  menu.style.top = (r.bottom + scrollY + 4) + "px";
+  (menu.querySelector('[aria-checked="true"]') || menu.querySelector(".dflt") || menu.querySelector("button")).focus();
+}
+document.addEventListener("click", e => {
+  if (!menu) return;
+  const item = e.target.closest(".bmmenu [data-set]");
+  if (item) { const id = Number(menu.dataset.for); closeMenu(false); setBookmark(id, item.dataset.set); document.querySelector(`[data-bm="${id}"]`)?.focus(); }
+  else if (!e.target.closest("[data-bm]")) closeMenu(false);
+});
+document.addEventListener("keydown", e => {
+  if (!menu) return;
+  if (e.key === "Escape") { e.preventDefault(); closeMenu(true); return; }
+  if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+    e.preventDefault();
+    const items = [...menu.querySelectorAll("button")], i = items.indexOf(document.activeElement);
+    items[(i + (e.key === "ArrowDown" ? 1 : items.length - 1)) % items.length].focus();
+  }
+  if (e.key === "Tab") closeMenu(false);
+});
+let lastW = innerWidth;
+addEventListener("resize", () => { if (innerWidth !== lastW) { lastW = innerWidth; closeMenu(false); } });   // phone address bars resize the height while scrolling
+$("#invited").addEventListener("click", () => { state.invited = !state.invited; state.limit = defaultLimit(); rescore(true); syncControls(); render(); });
+$("#saved").addEventListener("click", () => { state.saved = !state.saved; state.limit = defaultLimit(); rescore(true); syncControls(); render(); });
+$("#out").addEventListener("click", e => {
+  const star = e.target.closest("[data-bm]");
+  if (star) { openMenu(star); return; }
+  const a = e.target.closest("[data-author]");
+  if (a) { state.q = a.dataset.author; setScope("authors"); state.view = "authors"; syncControls(); render(); window.scrollTo({ top: 0 }); return; }
+  if (e.target.id === "bmmerge" || e.target.id === "bmreplace") { applyImport(e.target.id === "bmmerge" ? "merge" : "replace"); render(); return; }
+  if (e.target.id === "bmcancel") { pendingImport = null; render(); return; }
+  if (e.target.id === "bmdismiss") { importMsg = ""; render(); return; }
+  if (e.target.id === "more") { state.limit += state.scope === "semantic" ? 50 : 300; render(); }
+  if (e.target.id === "semretry") { sem.notice = ""; setScope("semantic"); syncControls(); render(); }
+  if (e.target.id === "semgo") { requestSemantic(state.q); render(); }
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "/" && document.activeElement !== $("#q")) { e.preventDefault(); $("#q").focus(); }
+});
+syncControls();
+render();
+
+// A restored "Meaning" scope must not start a 34 MB download unprompted: resume only when the
+// model is already in the browser cache, otherwise wait for the user to act.
+if (state.scope === "semantic" && state.q.trim()) (async () => {
+  let cached = false;
+  try {
+    const c = await caches.open("transformers-cache");
+    cached = (await c.keys()).some(r => r.url.includes("bge-small"));
+  } catch {}
+  if (cached) requestSemantic(state.q);
+})();
+</script>

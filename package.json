@@ -1,0 +1,13 @@
+{
+  "name": "ius-2026-overview-build",
+  "private": true,
+  "type": "module",
+  "description": "Build-time only: precomputes paper embeddings for index.html. Nothing here ships.",
+  "scripts": {
+    "embed": "node embed.mjs",
+    "probe": "node probe.mjs"
+  },
+  "devDependencies": {
+    "@huggingface/transformers": "4.3.0"
+  }
+}
