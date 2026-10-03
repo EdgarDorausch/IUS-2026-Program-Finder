@@ -891,13 +891,15 @@ function downloadFile(name, mime, text) {
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 $("#notesmd").addEventListener("click", () => downloadFile(`ius26-notes-${new Date().toISOString().slice(0, 10)}.md`, "text/markdown", notesMarkdown()));
-// Bookmarks as an iCalendar file. Times are "floating" (no time zone): they show at the program's clock time.
+// Bookmarks as an iCalendar file. The symposium is in Raleigh, NC, so times carry the America/New_York zone and convert for other calendars.
 function calendarIcs() {
   const MON = { Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6, Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12 };
   const stamp = new Date().toISOString().replace(/[-:]|\.\d+/g, "");
   const esc = t => String(t).replace(/[\\;,]/g, "\\$&").replace(/\r?\n/g, "\\n");
   const fold = l => { const o = []; let cur = ""; for (const ch of l) { if (new TextEncoder().encode(cur + ch).length > (o.length ? 74 : 75)) { o.push(cur); cur = ch; } else cur += ch; } o.push(cur); return o.join("\r\n "); };
-  const out = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//IUS 2026 Program Finder//EN", "CALSCALE:GREGORIAN", "X-WR-CALNAME:IUS 2026 bookmarks"];
+  const out = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//IUS 2026 Program Finder//EN", "CALSCALE:GREGORIAN", "X-WR-CALNAME:IUS 2026 bookmarks", "X-WR-TIMEZONE:America/New_York",
+    "BEGIN:VTIMEZONE", "TZID:America/New_York", "BEGIN:DAYLIGHT", "TZOFFSETFROM:-0500", "TZOFFSETTO:-0400", "TZNAME:EDT", "DTSTART:19700308T020000", "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU", "END:DAYLIGHT",
+    "BEGIN:STANDARD", "TZOFFSETFROM:-0400", "TZOFFSETTO:-0500", "TZNAME:EST", "DTSTART:19701101T020000", "RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU", "END:STANDARD", "END:VTIMEZONE"];
   let n = 0, skipped = 0;
   for (const p of papers) {
     if (!bm.has(p.id)) continue;
@@ -907,7 +909,7 @@ function calendarIcs() {
     const m = bm.get(p.id), note = notes.get(p.id)?.trim();
     const desc = [p.authors.join(", "), `${p.s.code}${p.s.type === "Lecture" ? ` #${p.ord}` : ""} · ${p.s.title.replace(/\s*\(\d+ posters\)$/, "")}`,
       `${MODES[m].label}${isInvited(p) ? " · invited" : ""}${p.s.type !== "Lecture" ? " · poster session slot" : ""}`, `${BASE}paper_details.php?paper_id=${p.id}`, note ? `\nNotes:\n${note}` : ""].filter(Boolean).join("\n");
-    out.push("BEGIN:VEVENT", `UID:ius26-${p.id}@ius2026-program-finder`, `DTSTAMP:${stamp}`, `DTSTART:${at(r.a)}`, `DTEND:${at(r.b)}`,
+    out.push("BEGIN:VEVENT", `UID:ius26-${p.id}@ius2026-program-finder`, `DTSTAMP:${stamp}`, `DTSTART;TZID=America/New_York:${at(r.a)}`, `DTEND;TZID=America/New_York:${at(r.b)}`,
       fold(`SUMMARY:${esc(`[${MODES[m].label}] ${cleanTitle(p)}`)}`), fold(`LOCATION:${esc(p.s.location)}`), fold(`DESCRIPTION:${esc(desc)}`), `URL:${BASE}paper_details.php?paper_id=${p.id}`,
       `TRANSP:${m === "online" ? "TRANSPARENT" : "OPAQUE"}`, "END:VEVENT");
     n++;
